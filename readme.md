@@ -1,3 +1,3 @@
-It's pretty neat
-Yeah this is cool fr
+Welcome to the tycadome.
+The homebase of Tsunami Flow.
 
