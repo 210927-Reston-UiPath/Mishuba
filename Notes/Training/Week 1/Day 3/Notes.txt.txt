@@ -10,3 +10,14 @@ If i live in fl (that is the main road) (Branch Main)
 Git is the subway line.
 Different Repos have it own subway
 
+
+<!-- someone help make this one better please -->
+Git a place to store information like a library (system the library uses [like a history library)
+- books (are different branches in repos...)
+- shelf (a keys to help merge the branches) 
+
+(basically)
+Git is a system
+Github uses git (online repos.... [like google drive/onedrive for code).
+	- using git to as a version control systemt to track changes in the code to store.
+Git is an underline technology to monitor
