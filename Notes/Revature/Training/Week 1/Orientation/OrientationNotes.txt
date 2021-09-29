@@ -1,0 +1,196 @@
+RPA Job Market
+
+how will automation impactjobs?
+
+By 2025, new jobs will emerge, and others will be displaced by ashit in the division of labor between humans and machines.
+
+Ai and Machine Learning Specialists
+Big Data Seicialst
+Digital Marketig and Strategy Specialists
+Information Security Analysts
+Internet of Things Specialist
+Process Automation Specialist
+
+192 million jobs be created or replaced 
+
+Robotics Engineer is expected to be the number 2 growing job in the U.S.
+
+Ui Path
+Number 1 rated in all major indpendent user review sites for RPA
+
+FOrbes AI 50 UiPath is the only RPA provider named to Forbes AI 50 in 2020
+
+Disruptor 50 CNBC added UiPath in the 2020 edition of Disruptor 50
+
+Job industrys
+Banking, Finance
+MEdia 
+Retial and Consumer Goods
+Industrial and High Tech
+Energy
+
+Products
+
+
+Attended Robots
+
+
+Unattended Robots
+
+
+Hybrid Robots
+
+UiPath marketplace
+
+Learn the basic of Robotic Process Automation
+Develop and deploy attended and unattended robots indpendently
+
+
+UiPath Certififed Professional (UCP)
+Market demand for RPA professionas is growing by 100% every year
+
+Expedite automation time to value and ongoing ROI across the entire lifecycle
+
+low code - no code
+
+
+Associate RPA Exam
+Advanced RPA Developer (Pay attention to week 8)
+
+
+Download UiPath Studiuo
+	Reading databases
+	Looping
+	
+Close to tradiation development enivornment 
+
+
+research pega
+
+
+UiPath Studio
+
+you can use UiPath to mimic whatever you would do manually and only bother you if it needs information from a human. 
+
+Use UiPath to fix solutions automatically.
+
+learn (some sort of legacy programming) C or kubal(kupal idk if i spelled it right)
+
+
+full stack
+dev up
+
+
+
+
+Software Development Life Cycle (SDLC)
+
+
+Team
+together everyone achieves more
+
+
+Look into people's strengths
+time scale plan
+what p0 is
+0.5 team building
+
+1. gather infi
+2. build
+3. debug/test
+4. release
+
+
+Every good software team has a management team.
+
+Waterfall model
+Requirement Analsis
+System Design
+Implementation
+Testing
+Deployment
+Maintenance
+
+Agile Methodology
+	Mainly Scrum
+		Implementation of agile methodology
+		Characterized by daily standups (aka scrum meetings), sprints, scrum masters and scrum boards.
+		Ever continous
+
+
+	Everyone literally stands up and talks about 3 things:
+1.) Achievements
+	what they achieved since the last stand up 
+2.) Goals
+	Waht they're planning on doing till the next stand up
+3.) Blockers
+	Anything that's keeping them rom achieving their goals
+A scrum master facilitates these daily meetings
+
+
+Sprints
+The time a team has for developing their next deliverable
+No standard set time (usually 2-6 weeks
+4 phases:
+	1.) Sprint Planning
+	2.) Sprint proper
+	3.) Sprint Review
+	4.) Sprint retrospective
+
+Other Scrum Artifacts
+Scrum board
+	Where your user stories live
+Burdown chart
+	Visualization of the velocity of the sprint
+	How many points were accomplished in the sprint
+
+
+Discussion Questions
+- what is SDLC
+- What is the waterfzll sdlc? How does it compare to scrum?
+
+
+Astral Fleets
+	
+Phobos
+	Steven Agenor
+	Cyrus Chiu
+	Shawn Hong
+	Hubert Maxwell
+	Osiris Vital Siela
+
+Proteus 
+	Gabriel Alfaro
+	Mohit Damle
+	Francisco Keele
+	Myron Prince Jr
+	Niles Valentine
+
+Io 
+	Hassan Baraka
+	James Embrey
+	Ai Krashner
+	Colton Reed
+	Jacob Vander Z
+
+Selene
+	Peter Birri
+	Aaron Gallaway
+	Roderick Lewis
+	Brain Reeves
+	Daniel Wilson
+
+Deimos 
+	Kenneth Bradburn
+	Dyese Harvey
+	Aaron Lao
+	Nathan Rymarz
+	Rogel Maxie
+
+
+80% from weekly assessments
+20% from training participation
+
+unity game engine
+
+

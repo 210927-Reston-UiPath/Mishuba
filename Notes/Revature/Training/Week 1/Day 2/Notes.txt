@@ -1,0 +1,147 @@
+Week 1 Day 2 notes. (Git)
+
+Always attempt to answer the question
+If yuou don;t know the answer, do you best to make an educated guess.
+
+Don't make our answers
+- Too Short
+- use detail
+- use confident language
+- make it technically correct
+- no filter words or hesitations
+- gave explanations for the terms used
+- comprehensive
+very detailed and gave expalnataions
+gives an example of how this isused in a project.
+
+When is QC conducted
+- typically on mondays or tuesday
+How will I get eedback on pefromance?
+- we can go over missed topics or questions at the end of QC nd give overall eedback
+- Speciic fedback will come from your trainier
+-Always feel free to reach out to your trainer for feeback
+
+What happens if I Do really poorly in an evaluation?
+- We look at all evaluations to gauge performace and we also look at trends over time
+If you are not where you need to be, your trainer will discuss how to imporve performance with you
+
+How can I prepare and do better for QC?
+- Review the How to prepare or QC document
+
+What should I focus on each week?
+- Use revaturepro topics on curriculum or get clarit from your trainer
+
+Where it is, why is it used and how it is used. 
+
+All QC are oral test
+The questions are used from the stuff we learned the week before.
+
+The trainer has the last say so but the trainer will use the QC information to help with their decisions.
+
+QC email azhya.knox@revature.com
+
+1st things
+Worko n the structure of the answer.
+Create an outline of answer.
+
+pushpinder.kaur@revature.com
+
+in gitbash 
+use the letter l and s like ls
+not the number 1 and s like 1s
+
+notes use 
+mkdir Revature 
+to pull up revature folder
+
+mk (main directory)
+ls (list)
+
+to get out nano
+to exit press control X
+
+to get out of vim
+use :q (then press enter)
+
+
+
+
+
+
+cat
+
+
+
+
+The order is
+cd c:
+ls
+remember control + x
+or y
+than press Enter
+
+presss
+:q for vim
+
+Big picture of commitng and branching
+1 Main (master) branch
+2 (develop) branch
+3 (myfeature) branch
+Train another train line a commite is a stop or train station
+
+is how you add a files
+touch "filename.md" 
+
+
+Version Control System
+Git 
+- Version Control system (More Specifically a distributed version control system (DVCS))
+- It records the changes made to a project and maintains a history tree that contains the state of the project at a certain point
+-Basically, it tracks any changes yo've made to your files and records them.
+	- So when you implement some changes to your code and youve realized you made a mistake you can always go back to your last stable version.
+	- It's also helpful when working on a team environment.
+		- You;ll usuall7 have the working version in the main branch, and you would have feature branches that you could be working on that you can include merge later to the main branch once you;ve testes that it;s stable and it works.
+
+Make sure it meanful because you dont want to be selfish.
+you can switch out version you want to work on.
+
+rEPOSITORY
+This is where you code is stored.
+- You'll be working with two repositories the local one, the one on your machine, and a remote one, the one up on the web.
+- Ye'd like to have a remote one just in case we're unable to access our machine (which has the local repository), we'll still be able to access our code.
+- The remote repository we'll be using is github. Note that git and github are diferent. Git is a version control system, and is the tech used by GitHub. GiHub is an online git repository.
+
+Commit
+-Basically a version of our xevelopment code.
+When working on apllications, you'd want to record or bookmark developments using commits. So taht if at some point, you'd need to restore an old version of your code, (maybe the latest version doesn't work out) you can do so.
+
+Branch
+-When working on a team, or building a complex application you might want to have separate lines of development.
+-If you only worked on one branch, and you're working on multiple features or your project, it would be a hassle and a little confsuing if you just worked on a single line development. You'd lose sight on the last stable version you have.
+- It is best prctive to have at least 2 branches. A master branch taht contains the latest stable version of your program, and feature branches that may or may not be merged with the master branch.
+
+Staging
+- king of the purgatory for files 
+You use the staging area to group the files taht you want o include in a commit.
+	- Note taht you want your commits to make logical scuse.
+		- For example, I'm working on webapp I've done some changes in my apt, and my front end, Ewanna Separate committing the changes I've made in my API, rom the changes I've made in my front end. So that, if the changes on my API don't work, I can first rollback that commit and keep the changes in my front end.
+
+command
+mv
+cd 
+
+
+basic git commands
+
+
+cd
+
+git clone
+git add
+git commit
+git push
+git pull
+git status
+git branch
+git checkout
+
