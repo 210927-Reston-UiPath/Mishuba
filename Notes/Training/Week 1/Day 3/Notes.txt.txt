@@ -1,4 +1,9 @@
-Review (if anybody wants to update or add to the notes I will be greatly appreciative. 
+Squad motto
+Together everyone accomplishs more.
+Teamwork makes the dreamwork.
+
+Review 
+(if anybody wants to update or add to the notes I will be greatly appreciative. 
 
 What is git
 If i live in fl (that is the main road) (Branch Main)
@@ -21,3 +26,6 @@ Git is a system
 Github uses git (online repos.... [like google drive/onedrive for code).
 	- using git to as a version control systemt to track changes in the code to store.
 Git is an underline technology to monitor
+Git is a system not langugae.
+Github is a place where like minded coders can come together to work on the same project that can't be solved by one person.
+
