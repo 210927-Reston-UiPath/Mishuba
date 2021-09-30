@@ -38,3 +38,8 @@ Polymorphism
 - The ability for objects to act depending on context.
 - Polymorphism is like the many different characters/mask that we may put on for the day.
 
+### Methods in VB
+- 2 Types of methods: subs and functions.
+- Subs return void
+- Functions return something 
+- Both of these execute some loic when you call on them.
