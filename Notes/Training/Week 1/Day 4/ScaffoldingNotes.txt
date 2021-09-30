@@ -1,0 +1,6 @@
+Scaffolding
+-Definition
+  - a technique used to generate code at design time to support a number o common application scenarios when working with entity Framework Core. The code generation tool is available as a Nuget package.
+   
+New 
+- 
