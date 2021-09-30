@@ -1,0 +1,8 @@
+# Creating a console app
+1. Using the dotnet new command create a new console app in vb  
+    * Run 'dotnet new console --language vb -o <Name of your application>'
+    '--language' is a flag for letting the cli know that you want to use vb syntax
+    '-o' is a flag for letting the cli know that you want that project in a specific folder
+2. Create a .gitignore file or ignoring build output
+    -Run 'dotnet new gitignore;
+    -OR you can create your own gitignore file, go to gitignore.io and copy what it give you in the gile you just created.

@@ -1,0 +1,1 @@
+<!-- use dotnet new console --language vb -o appName --> to create a new app using dotnet.
