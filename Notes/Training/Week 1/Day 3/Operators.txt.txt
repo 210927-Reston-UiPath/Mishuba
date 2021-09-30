@@ -10,5 +10,7 @@
 	- logicial operations && or || for boolean expressions | that you can utilize with conditons
 - used to compare values using < > ==
 - used to assign values = 
--  
+"hello " + answer
+- kinda boring on its own, usually used in tandem with control flow statements
+
 	- 
