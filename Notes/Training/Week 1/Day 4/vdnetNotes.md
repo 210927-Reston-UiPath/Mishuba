@@ -1,6 +1,9 @@
 ## Intro to VB.NEt
 ## What is VB.NEt?
 
+documentation links
+https://docs.microsoft.com/en-us/dotnet/visual-basic/
+
     When using dotnet make sure you are in the correct folder If not things will not run.
 
     No semicolons are used
@@ -43,3 +46,7 @@ Polymorphism
 - Subs return void
 - Functions return something 
 - Both of these execute some loic when you call on them.
+
+
+dicussion on managing namespaces on VB.net link
+http://www.fmsinc.com/free/NewTips/net/nettip40.asp
