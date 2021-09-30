@@ -1,0 +1,14 @@
+## Operators
+
+- they modify variables/data
+- process /data 
+- perform operations on primitive values
+	- Like addtion, subtraction etc.
+- putting data to use
+- conditions in a program
+	- ternary operator ??
+	- logicial operations && or || for boolean expressions | that you can utilize with conditons
+- used to compare values using < > ==
+- used to assign values = 
+-  
+	- 
