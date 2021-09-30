@@ -1,0 +1,25 @@
+## Variables
+- it is a placeholder for data
+- it is a specific address for data
+	- most placeholders a variable is an abstracted address.
+- an analogy
+	: empty cup you can pour liquid to (can be water, juice, etc.)
+- value can change based on some conditions
+- scope: whether an address is something you can reach or not, where does the variables live/die
+- encapsulation - related to variable access because you can limit access to variables using access modifiers in some placeholders (like C#, Java, VB.net)
+- Do have self documenting names for variables.
+	- unless it's a counter variable for your for loops, don't just have variables called x.
+	-student instead of x
+	- hasValue instead of x or h or x2.
+	(Basically give it a name an identity.
+    - This helps make the code more readable.
+- Do use camel case
+	- this helps in the readability
+	- hasValue vs hasvalue
+	- getCustomer vs getcustomer
+	- thisisIsCamelCase - every new word save the first uses upper case in the first letter.
+	- ThisIsPascalCase - every new word uses upper case in the first letter
+- You cn use _ to represent private variables
+	- _repo instead of repo
+- Follow naming conventions
+	- don't be weird
