@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<SoftwareIdentity tagId="wix:bundle/E92D2D44-B77F-4BF0-B70C-54B40B7A3398" name="Microsoft Windows Desktop Runtime - 3.1.19 (x86)" version="3.1.19.30416" versionScheme="multipartnumeric" xmlns="http://standards.iso.org/iso/19770/-2/2015/schema.xsd">
-  <Entity name="Microsoft Corporation" regid="microsoft.com" role="softwareCreator tagCreator" />
-  <Meta persistentId="wix:bundle.upgrade/4E46BEF1-57B5-605B-F5E0-573001BAB86F" />
-</SoftwareIdentity>
