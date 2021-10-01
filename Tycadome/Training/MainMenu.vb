@@ -25,7 +25,7 @@ Class MainMenu
                     Console.WriteLine("Exit")
                     repeat = false
             End Select
-        Loop
+        
     End Sub
     Sub AddFriend ()
     Console.WriteLine("Name: ")
