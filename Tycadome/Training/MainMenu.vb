@@ -45,7 +45,7 @@ Class MainMenu
         Next
     End Sub
     Sub Addfriend2File(ByVal person as Contact)
-        dim exisitingContact as List(of Contact = GetContacts()
+        dim exisitingContacts as List(of Contact = GetContacts()
         existingContacts.add(person)
         jsonstring = JsonSerializer.Serialize(existingContacts)
         file.WriteAllText(filename, jsonstring)
