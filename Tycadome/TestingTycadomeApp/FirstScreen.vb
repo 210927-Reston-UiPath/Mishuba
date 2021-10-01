@@ -12,7 +12,6 @@ Class FirstScreen
 
     Console.WriteLine("Let's begin here shall we")
     do while HolyGrail
-    
         Console.WriteLine("Where do you want to go")
         Console.WriteLine("kingdom")
         Console.Writeline("church")
@@ -31,12 +30,14 @@ Class FirstScreen
 
         case "lunchroom"
         lunchroom()
-    loop
+
         end select
+
+    Loop
+
     End Sub
 
     sub kingdom()
-    do while HolyGrail
     Console.WriteLine("which way do you want to go")
     dim input as string = Console.ReadLine()
     select case input
@@ -89,9 +90,11 @@ Class FirstScreen
 
     case "chorus area"
     Console.WriteLine(" ")
-    if (input = "yes") {
+    if (input = "yes") 
         AddItems()
-    } else {Console.WriteLine("To bad")}
+    
+
+    end if
 
     case "bathroom"
     Console.WriteLine("Finally a clean bathroom")
@@ -133,6 +136,9 @@ Class FirstScreen
     dim NewItem as Item = new Thing(name)
     Item.add(NewItem)
      Console.WriteLine("New item put into your bag! " + NewItem.toString())
+         
+     End Sub
+     
 
     sub ShowItems()
     Console.WriteLine("Here is a list of non holy grail items")
