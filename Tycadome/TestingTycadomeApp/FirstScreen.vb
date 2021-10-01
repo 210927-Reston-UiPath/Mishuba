@@ -93,6 +93,9 @@ Class FirstScreen
     case "bathroom"
     Console.WriteLine("Finally a clean bathroom")
 
+    case "yard"
+    Console.WriteLine("Goin Goin, back back to the yard the yard")
+
 
     end select
     end Sub 
