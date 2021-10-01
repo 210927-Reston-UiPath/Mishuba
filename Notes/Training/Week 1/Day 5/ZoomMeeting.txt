@@ -1,0 +1,67 @@
+##Why you should be a trainer
+
+
+- Computers will create two types of jobs. People who tell computers what to do and people who listen to the computer.
+
+- Information Security
+
+- bitcoin  
+    *Value systems
+
+- It's not rocket surgery
+
+
+What is code
+- Declarative Knowledge: sqrt(x) = y^2
+
+imperative Knowledge:
+
+    How to find the sqrt of x
+        1 Guess a number < x, known as Guess
+        2 put it in x = g^2
+        3. if that is x, stop
+        4. if it is > x, guess a lower number
+        5. if it is < x, guess a higher number.
+
+        Algorithm
+            define how to do something
+
+        Programming is Giving Computers Instructions
+        - 
+
+
+        ada Lovelace
+            - The analytical engine, on the contrary, is not merely adapted or tabulating the results of one particular function and of no other, but or developing and tabulating any funciton whatever. In act the engine may be described as being the material expression of any indefinite function of any degree of generality and complexity.
+                Science of operations, constructed with peculiar reference to abstract number as the subject of those operations.
+                    but the science of operations, as derived from mathematics more especially, is a science of itself.
+
+        Culture
+        Values
+            -Lifelong Leanrer
+                *Curiosity
+                *Bravery
+                *Self-Compassion
+                *Feedback
+                *Iteration
+                *Teaching
+
+FAIL 
+First Atttempt In Learning
+
+When confused asked a question
+    -feedback and Iteration
+
+When learning 
+- it is ok to be wrong 
+- try to teach what you think you know to someone else.
+- write a blog post after doing some research on the topic.
+
+- discover what you know and what you don't know
+
+Grit 
+- Perseverance
+- Habits
+- Process-Oriented
+- Hope
+- Humility
+- Self-Worth
