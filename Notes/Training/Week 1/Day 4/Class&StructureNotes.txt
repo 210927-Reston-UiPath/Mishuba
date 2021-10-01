@@ -1,2 +1,6 @@
 A structure can only inherit from an interface and are seal (they cannot be changed).
 A class can inherit from a class and an interface.
+
+
+
+creates something, search a collection of that something, and show everything it has (aka a user interface)

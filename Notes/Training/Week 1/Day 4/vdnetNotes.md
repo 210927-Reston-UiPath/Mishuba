@@ -4,6 +4,8 @@
 documentation links
 https://docs.microsoft.com/en-us/dotnet/visual-basic/
 
+gitignore does not upload the file.
+
     When using dotnet make sure you are in the correct folder If not things will not run.
 
     No semicolons are used
