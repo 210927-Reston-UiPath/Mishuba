@@ -106,6 +106,13 @@ Module Program
 
     end sub 
 
+    sub ShowItems()
+    Console.WriteLine("Here is a list of non holy grail items")
+    For each FalseGrail as Wishlist in getItemFromFile()
+    Console.WriteLine(FalseGrail.ToString())
+    next
+    end sub
+
     sub AddItems(byVal FalseGrail as Wishlist)
     dim PastItems as List(of Wishlist = GetItems())
     PastItems.add(FalseGrail)
