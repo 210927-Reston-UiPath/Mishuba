@@ -20,14 +20,14 @@ Class MainMenu
                     AddFriend()
                 case "1"
                     Console.WriteLine("Show All Friends")
-                    ShowFreinds() 
+                    ShowFriends() 
                 Case "x"
                     Console.WriteLine("Exit")
                     repeat = false
             End Select
         
     End Sub
-    Sub AddFriend ()
+    Sub AddFriend()
     Console.WriteLine("Name: ")
     dim name as string = Console.ReadLine()
     Console.WriteLine("Number: ")

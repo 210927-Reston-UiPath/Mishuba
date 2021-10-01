@@ -7,6 +7,7 @@ Module Program
         dim ItemName as String = ""
         dim Winner as String = "holy grail"
         dim "holy grail" as boolean = false
+       
         
     Console.WriteLine("Let's begin here shall we")
     
@@ -32,14 +33,38 @@ Module Program
         lunchroom()
 
         end select
-
-        Console.WriteLine("Hello World!")
     End Sub
 
     sub kingdom()
+    do while "holy grail"
     Console.WriteLine("which way do you want to go")
+    select case input
+    case "throne"
+    throne()
+
+    case "round table"
+    RoundTable()
+
+    case "courtyard"
+    Courtyard()
+
+    case "armory"
+    Armory()
+
+    case "blacksmith"
+    Blacksmith()
 
     end sub
 
-    sub 
+    sub church()
+
+    end Sub 
+    
+    sub graveyard()
+
+    end sub
+
+    sub lunchroom()
+
+    end sub 
 End Module
