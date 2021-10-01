@@ -86,10 +86,43 @@ Module Program
     end Sub 
     
     sub graveyard()
-
+    "holy grail" = true
     end sub
 
     sub lunchroom()
+    do while "holy grail" 
+        Console.WriteLine("What's Next")
+        Select case input
+        case "table"
+        Console.WriteLine("there is food here")
+
+        case "food line"
+        Console.WriteLine("So much different delicious food here")
+        AddItems()
+
+        case "bathroom"
+        Console.WriteLine("someone need to clean up in here.")
+
 
     end sub 
+
+    sub AddItems(byVal FalseGrail as Wishlist)
+    dim PastItems as List(of Wishlist = GetItems())
+    PastItems.add(FalseGrail)
+    ItemName = JsonSerializer.Serialize(PastItems)
+    file.WriteAllText(Priceless, ItemName)
+    end Sub 
+ 
+    Function GetItems() as List(of Wishlist)
+    try ItemName = file.ReadAll(Priceless)
+    return JsonSerializer.Deserialize(of List(of Wishlist))(jsonstring)
+    Catch ex as Exception
+    Return new List(of Wishlist)
+    end try 
+    end Function
+
+    End Sub
+    
+
+
 End Module
