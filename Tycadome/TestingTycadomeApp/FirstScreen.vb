@@ -62,24 +62,27 @@ Class FirstScreen
     end sub
 
     sub church()
-    do while "holy grail"
     Console.WriteLine("Where to now")
     dim input as string = Console.ReadLine()
     select case input
     case "stage"
-    stage()
+        Console.WriteLine("Why is the stage so small")
+        AddItems()
 
     case "youth center"
-    YouthCenter()
+    Console.WriteLine("Looks like they are busy in here")
 
     case "seating"
-    Seating()
+    Console.WriteLine("I wonder if anything is in here. Mayve we should look around")
 
     case "food area"
-    FoodArea()
+    Console.WriteLine("This food is to healthy")
+        AddItems()
 
     case "band area"
-    BandArea()
+    Console.WriteLine("Wow look at all the instruments in here")
+    Console.WriteLine("What is your favorite Instrument")
+        AddItems()
 
     case "chorus area"
     Console.WriteLine(" ")
