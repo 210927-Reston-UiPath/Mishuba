@@ -146,7 +146,7 @@ Class FirstScreen
     end sub
 
     sub AddItems(byVal FalseGrail as Wishlist)
-    dim PastItems as List(of Wishlist = GetItems())
+    dim PastItems as List (of Wishlist) = GetItems()
     PastItems.add(FalseGrail)
     ItemName = JsonSerializer.Serialize(PastItems)
     file.WriteAllText(Priceless, ItemName)
@@ -154,9 +154,11 @@ Class FirstScreen
  
     Function GetItems() as List(of Wishlist)
 
-    try ItemName = file.ReadAll(Priceless)
+    try 
+    ItemName = file.ReadAll(Priceless)
     return JsonSerializer.Deserialize(of List(of Wishlist))(jsonstring)
     Catch ex as Exception
+    Console.WriteLine(ex.message)
     Return new List(of Wishlist)
     end try 
     
