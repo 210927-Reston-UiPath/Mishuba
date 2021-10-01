@@ -1,6 +1,9 @@
 ##Why you should be a trainer
 
+avi@revature.com
+
 (SideNote For myself <! -- quantum computing --> check spelling)
+    {Look up some different theories on quantum computing}
 - Computers will create two types of jobs. People who tell computers what to do and people who listen to the computer.
 
 - Information Security
