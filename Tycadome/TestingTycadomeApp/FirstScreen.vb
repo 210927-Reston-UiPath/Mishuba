@@ -12,6 +12,7 @@ Class FirstScreen
 
     Console.WriteLine("Let's begin here shall we")
     do while HolyGrail
+    
         Console.WriteLine("Where do you want to go")
         Console.WriteLine("kingdom")
         Console.Writeline("church")
@@ -30,7 +31,7 @@ Class FirstScreen
 
         case "lunchroom"
         lunchroom()
-
+    loop
         end select
     End Sub
 
@@ -121,7 +122,7 @@ Class FirstScreen
         case "bathroom"
         Console.WriteLine("someone need to clean up in here.")
 
-
+        end select
     end sub 
 
     sub AddItem()
@@ -137,7 +138,6 @@ Class FirstScreen
     Console.WriteLine("Here is a list of non holy grail items")
     For each FalseGrail as Wishlist in getItemFromFile()
     Console.WriteLine(FalseGrail.ToString())
-    
     next
     end sub
 
@@ -158,4 +158,4 @@ Class FirstScreen
     
     end Function
 
-    End Sub
+end class
