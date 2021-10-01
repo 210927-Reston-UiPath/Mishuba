@@ -35,8 +35,9 @@ Class FirstScreen
     End Sub
 
     sub kingdom()
-    do while "holy grail"
+    do while HolyGrail
     Console.WriteLine("which way do you want to go")
+    dim input as string = Console.ReadLine()
     select case input
     case "throne"
     throne()
@@ -52,6 +53,10 @@ Class FirstScreen
 
     case "blacksmith"
     Blacksmith()
+
+    case "yard"
+    Console.WriteLine("Going back to the yard")
+    
     end select
 
     end sub
@@ -59,6 +64,7 @@ Class FirstScreen
     sub church()
     do while "holy grail"
     Console.WriteLine("Where to now")
+    dim input as string = Console.ReadLine()
     select case input
     case "stage"
     stage()
@@ -91,6 +97,7 @@ Class FirstScreen
     sub lunchroom()
     do while "holy grail" 
         Console.WriteLine("What's Next")
+        dim input as string = Console.ReadLine()
         Select case input
         case "table"
         Console.WriteLine("there is food here")
@@ -110,7 +117,7 @@ Class FirstScreen
     dim name as string = Console.ReadLine()
     Console.WriteLine()
     
-    dim NewItem as Thing = new Thing(name, int32.Parse(number))
+    dim NewItem as Item = new Thing(name)
     Item.add(NewItem)
      Console.WriteLine("New item put into your bag! " + NewItem.toString())
 
