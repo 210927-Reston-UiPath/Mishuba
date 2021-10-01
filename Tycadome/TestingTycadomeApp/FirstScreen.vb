@@ -56,7 +56,7 @@ Class FirstScreen
 
     case "yard"
     Console.WriteLine("Going back to the yard")
-    
+
     end select
 
     end sub
@@ -82,10 +82,14 @@ Class FirstScreen
     BandArea()
 
     case "chorus area"
-    ChorusArea()
+    Console.WriteLine(" ")
+    if (input = "yes") {
+        AddItems()
+    } else {Console.WriteLine("To bad")}
 
     case "bathroom"
-    Bathroom()
+    Console.WriteLine("Finally a clean bathroom")
+
 
     end select
     end Sub 
@@ -95,15 +99,15 @@ Class FirstScreen
     end sub
 
     sub lunchroom()
-    do while "holy grail" 
         Console.WriteLine("What's Next")
+        Console.WriteLine(" ")
         dim input as string = Console.ReadLine()
         Select case input
         case "table"
         Console.WriteLine("there is food here")
 
         case "food line"
-        Console.WriteLine("So much different delicious food here")
+        Console.WriteLine("So many different delicious food here")
         AddItems()
 
         case "bathroom"
