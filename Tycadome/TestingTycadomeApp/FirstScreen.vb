@@ -136,9 +136,7 @@ Class FirstScreen
     dim NewItem as Item = new Thing(name)
     Item.add(NewItem)
      Console.WriteLine("New item put into your bag! " + NewItem.toString())
-         
-     End Sub
-     
+    end sub 
 
     sub ShowItems()
     Console.WriteLine("Here is a list of non holy grail items")
