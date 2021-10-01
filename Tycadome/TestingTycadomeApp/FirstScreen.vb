@@ -40,19 +40,21 @@ Class FirstScreen
     dim input as string = Console.ReadLine()
     select case input
     case "throne"
-    throne()
+    Console.WriteLine("Look its King Shuba")
 
     case "round table"
-    RoundTable()
+    Console.WriteLine("The inscription says 'The table Rote used for King Shuba and his honoray members of Nifaqe")
 
     case "courtyard"
-    Courtyard()
-
+    Console.WriteLine("This place looks so peaceful")
+    
     case "armory"
-    Armory()
+    Console.WriteLine("Mhmmm, this says restricted area")
+
 
     case "blacksmith"
-    Blacksmith()
+    Console.WriteLine("I wonder what kind of weapon we can get made.")
+        AddItem()
 
     case "yard"
     Console.WriteLine("Going back to the yard")
