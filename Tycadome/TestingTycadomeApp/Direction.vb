@@ -1,8 +1,8 @@
-interface walk
+interface Direction
 
     sub move()
 
     end sub
 
 
-End interface Direction
+End interface 

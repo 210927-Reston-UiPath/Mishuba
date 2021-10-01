@@ -1,6 +1,6 @@
 class WR 
 
-    sub WalkRight() implements Direction.move
+    sub Right() implements Direction.move
 
     end Sub
 

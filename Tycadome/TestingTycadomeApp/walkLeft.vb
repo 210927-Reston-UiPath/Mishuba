@@ -1,6 +1,6 @@
 Class WL 
 
-    sub WalkLeft() implements Direction.move
+    sub Left() implements Direction.move
 
     end sub
 
