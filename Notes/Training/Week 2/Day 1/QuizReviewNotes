@@ -1,0 +1,30 @@
+When working on a large project in a team environment, any changes you make should be pushed directly to the master branch
+
+The version of a repository that is hosted on a server, lie GitHub, is known as the (Remote)
+
+A (repository) is the most basic element of git. It contains all project files including documentation.
+
+Running this Git command can fail if there are conflicting local changes.
+
+In a Gir repository, origin refers to:  (The remote repository that the local repository was cloned from)
+
+Which of the following characters is an escape haracter in VB scripting i.e it indicates that the adjacent special character is to be treated as literal character?
+        \
+            Backlash character is of upmost importance when you want toe scape meta characters while using Regular expressions
+
+Which of the following is an entry point method of VB.NET Program?
+    Sub Main
+        -indicates the entry point of VB.Net program
+
+Which of the following is correct about variable declared using 'Private" in VBScript?
+
+Which of the following block of VB.NET (identifies a block of code for which particular exceptions will be activated)
+    - Finally
+
+Which of the follwing block of VB.NET is used to execute a given set of statements, whether an exception is thrown or not thrown for example, if you oan a file, it must be closed whether an exception is 
+
+select all ways you can display additional information/help text for a command 'foo'
+    - man foo
+
+In bash, ~ represents what?
+    - the root of the current Git repo
