@@ -1,0 +1,22 @@
+RPA Basics
+
+Workflows
+- A small piece of automation that you can take and reuse in your projects
+- Workflow layouts
+    - sequences
+    - flowcharts
+    - state machines
+    - globals exception handler
+- For now, we focus on sequences
+    - Sequences are primarily used or linear processes with minimal branching logic involved.
+
+Variables & Arguments
+- Containers that hod data of a certain data types
+- Main Properties
+    - Name
+    - Type
+    - Default Value
+    - Scope
+- Arguments are like variables exept they pass data between workflows and have the additional property of the direction
+    - in, out, in/out
+    
