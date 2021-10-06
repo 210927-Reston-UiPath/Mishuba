@@ -1,0 +1,34 @@
+Data Types i UiPath
+
+All data types of Vb>net are legitmate data types in UiPath
+
+UiPath also has some specific data types unique to it
+	DataTable
+		- Represent a type o variable that can store big pieces of information, and act as a database or a simple spreadsheet with rows and columns.
+
+	GenericValue
+		- UiPath proprietary variable type taht can store any kind of data including text, numbers, dates and arrays.
+
+
+Conditionals
+	-if
+		-Conditions
+		-
+	- switch
+
+
+if
+Condition (RetrievedName.Contains("a")
+
+Then
+(You have an A in your name)
+
+else
+(Unfortunately you don't have an A in your name)
+
+
+switch
+Expression (retrievedName)
+	Default activity ()
+		case value("marielle")
+			Add a messagebox

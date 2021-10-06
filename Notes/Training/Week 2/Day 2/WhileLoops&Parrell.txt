@@ -1,0 +1,11 @@
+While Loops
+
+	-
+
+you have a condition and in your body you have  a subsequence
+
+Parrell activity
+    -(I don't care which one you do first but if you can do them at the same time you can.)
+2 workflows or lines of actions that do not follow any order and can act independently
+(Use it to get all that data at the same time
+- Enables you to execute two or more child ....
