@@ -1,0 +1,25 @@
+52 questions
+
+1. What is rpa?
+
+2. Tell me about databases and how they are used in UiPath?
+
+3. What is a workflow?
+
+4. Explain excel application scope?
+
+5. 
+
+6.
+
+7.
+
+8.
+
+9.
+
+10.
+
+11.
+
+12
