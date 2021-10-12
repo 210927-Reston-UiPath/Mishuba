@@ -44,3 +44,49 @@ DDL
     - Create
     - Alter
     - Drop
+
+DML
+- Data Manipulation Language
+- All operations on individual rows
+    - Commands
+        -Select
+        -Insert
+        -Update
+        -Delete
+
+DCL 
+- Data Control Language
+-Commands
+grant
+revoke
+
+tCL 
+- Transaction Control Language
+
+- Commands
+    - COmmit 
+    - Savepoint
+    - Rollbact
+    - Transact
+
+
+Database Design
+-Data Definition Language
+    - Concerned with designing the 
+
+    Alter Drop
+
+Constraints
+- Documentation link
+        * https://www.postgresql.org/docs/9.0/ddl-constraints.html
+
+- In creating tables, columns can have Constraints
+Used for setting guidelines ain what data belongs to acolumn
+- types     
+    - Data types
+    - Not Null
+    - Unique
+    - Check (check the value)
+    - Exclusion (If i take two different rows one had to be true and the other must be false)
+    - Primary Key - unique and not Null
+    - Foreign Key
