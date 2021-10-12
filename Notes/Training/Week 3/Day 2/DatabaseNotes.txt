@@ -1,0 +1,46 @@
+Batabases
+
+    -An organized collection of structured information, or data, typically stored electroniclaly in a computer system.
+    -Usually controlled by a database management system (DBMS
+        - serves as an interface between the database and tis end users or programs, allowing users to retrieve, updata, and manage how the inormation is organized and optimized.
+        - also facilitates oversight and control of databases, enabling a variety of adminstrative operations such as performance monitioring tuning.
+
+
+Relational databases
+
+- type of database taht stores and provides access to data points that are related to one another
+- based on the relational model, an intuitive, straightorward way of representing data in tables
+- Stores dat into relations (tables)
+
+SQL
+- Structured Query Language
+- a programming language used by nearly all relational databases to query, manipulate, and define data, and to provide access control
+- Used to provide structure to your database
+- Declared
+    - Say what we want, not how to implement how to get what we want.
+
+Architecture
+
+- Quwry Processing includes translations on high level queries into low level expressions that can be used at physical level of file system, query optiomization and actual execution of query to get the actual result.
+
+- DBMS Engine is the core part of a DBMS'S that provide access to the data in a database managed try the DBMS
+
+Elephant SQL
+
+
+SQL
+- Structued Query Language
+- A programming Language used by nearly all relational databases to query, manipulate, and define data, and to provide access control
+
+SQL sublanguage vs Sql Dialect
+- DQL Dialect refers to SQL variant used by a database vendor.
+    - The SqL dialect we'll be using aPcSQL since the database vendor we' be using a PostgreSQL
+SQL Sublanguages refer to the different categories of the statements/commands in SQL
+
+DDL 
+- Data Definition Language
+- USed for creating Database tables, deining the database structure COmmands 
+    - Commands
+    - Create
+    - Alter
+    - Drop
