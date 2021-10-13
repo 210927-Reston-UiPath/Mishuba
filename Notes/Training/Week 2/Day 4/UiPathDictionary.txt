@@ -6,7 +6,7 @@ https://www.youtube.com/watch?v=6DGvWojJPe0
 Dictionary is a collecion of keys and values
 	Every Dictinary has a pairs of keys and values.
 	Dictionary<TKey, TValue>
-The Dictionary<TKey, TValue> is a class of System.Collections.Generic namespace. It can stoe any data types in a form of keys and values. It provides a mapping from a set of keys to a set of values.
+The Dictionary<TKey, TValue> is a class of System.Collections.Generic namespace. It can store any data types in a form of keys and values. It provides a mapping from a set of keys to a set of values.
 
 System.Collections.Generic namespace can be imported in UiPath Studio.
 
