@@ -1,0 +1,202 @@
+
+body {
+    margin: 0%;
+        border-width: ;
+        border-style: ;
+        border-color: ;
+            padding: 0;
+                content: 100;
+
+      }
+
+header {
+                        position: relative;
+                            top:0;
+                            left:0;
+                                width: 100%;
+                                height: 10%;
+                                        overflow:auto;
+                                            background:brown;
+}
+
+#Navigation {
+    position: relative;
+        top:0;
+        left:0;
+            float:none;
+                clear:none;
+                    overflow:hidden;
+                        background:pink;
+}
+
+#News {
+    width:12%;
+    height:100%;
+        position:absolute;
+            left:0;
+                float:none;
+                    clear:none;
+                        overflow:inherit;
+                            background:blue;
+                            
+}
+
+#MainSection {
+    width: 73%;
+    height: 74%; 
+    position: absolute;
+        left: 12%;
+            overflow: auto;
+                background:red;
+}
+
+#TsunamiFlowInformation {
+    width:15%;
+    height:100%;
+        position: absolute;
+            right:0;
+                float:right;
+                    clear:none;
+                        overflow:inherit;
+                            background:green;
+}
+
+#TsunamiFlowStyle {
+    width: 100%;
+    height: 10%;
+    position: absolute;
+        bottom:0%;
+                overflow:scroll;
+                                            background:black;
+                  }
+
+footer {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+        top:100%;
+    overflow:scroll;
+        background:yellow;
+}
+
+#Tycadome {
+                    width: 50%;
+                    height:100%;
+                        position: absolute;
+                            left:0;
+                                float:none;
+                                    clear:both;
+                                    font: ;
+                                    text: ;
+
+        }
+
+#Mantra {
+                    width:50%;
+                    height:100%;
+                        position: absolute;
+                            right:0;
+                                float:none;
+                                    clear:both;
+                                        overflow:hidden;
+                                        font: ;
+                                        text: ;
+        }
+
+
+
+
+
+#TsunamiNews {
+        position: relative;
+            top:0;
+            left:0;
+                        overflow:hidden;
+                        font: ;
+                        text: ;
+
+}
+
+#IntroVideo {
+    
+    width:auto;
+    height:auto;     
+            }      
+
+
+
+#TFBio {
+    position: relative;
+    top:0;
+    left:0;
+                overflow:hidden;
+        }
+
+#MissionStatement {
+    position: relative;
+    top:0;
+    left:0;
+                overflow:hidden;
+        }
+
+#ExecutiveSummary {
+    position: relative;
+        top:0;
+        left:0;
+            overflow:hidden;
+        }
+
+
+#SomethingList {
+    position: relative;
+    top:0;
+    left:0;
+                overflow:hidden;
+        }
+#TheList {
+    position: relative;
+    top:0;
+    left:0;
+                overflow:hidden;
+        }
+
+
+
+
+#TFNP {
+                        position: relative;
+                        top:0;
+                        left:0;
+        }
+
+#TFA {
+                        position: relative;
+                        top:0;
+                        left:0;
+        }
+
+#Donation {
+                    position: relative;
+                    top:0;
+                    left:0;
+        }
+
+#QuickLinks {
+                        position: relative;
+                        top:0;
+                        left:0;
+        }
+
+#Subscribe {
+                    position: relative;
+                    top:0;
+                    left:0;
+                                    overflow: hidden;
+        }
+
+
+#MusicPlayer {
+                    position:relative;
+                    top:0;
+                    left:0;
+        }
