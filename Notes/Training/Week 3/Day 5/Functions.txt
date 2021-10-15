@@ -1,0 +1,25 @@
+SQL FUnctions
+
+Functions are read only
+
+- A function is a set of SQL statemnets that perform a speciic task
+
+- Functions can be created in a language of your choice like SQL, PL/pgSqL, C, Python, etc
+
+- FUnctions foster code reusability, if you have to repeatedly write large SQl scripts to perorm the same task, you can create a function that performs that task. Next time instead of rewriting the SQL, you can simply call that function. A function accepts inputs in the form
+
+SQL Aggregate vs Scalar FUnctions
+- SQL Agrregate functions return a single value, calcuated from values in a column
+- SQL Scalar functions return a single value, based on the input value.
+
+Creating a function
+- We can create functions to execute custom queries
+
+
+<!-- to be continued-->
+Syntax
+create function FunctionName(args, )
+
+
+
+
