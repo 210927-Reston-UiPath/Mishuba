@@ -1,2 +1,80 @@
 Indexes & Views
 
+What is an Indexes
+- Structure or object that retrieve specific rows or data
+- Can be created using one or more columns
+- Can also be sued by partial data depending on query requirement conditions
+- Different types of Indexes:
+    B-tree
+    Hash
+    Gist
+        *SP-Gist
+    GIN
+    BRIN
+
+Special Types of Indexes
+- Different types of Indexes
+    - B-tree    
+        - stands for "balanced tree" and is a type of index that cna be created in relational databases
+        - Hash - Hash indexes support only single-column indexes and do not alow \uniqueness checking.
+
+        Hash indexes support only the = operator, so WHERE clauses that speciy range operations will not be able to take advantage of hash indexes. MOst commony used in Data Management
+        GIST - A GIST index is lossy, meaning that the index might produce
+
+
+
+        CREATE UNIQUE INDEX alsdktj;as On sadljk
+
+        CREATE INDEX sakdj;lkjs;d USING GIN asdsa
+
+        CREATE INDEX On
+
+WHY Index
+- 
+
+Why Not Index
+- There are times when indexes should be avoided
+- Indexes should not be used on small tables
+-
+
+Fill-Factor
+- The fill-actor option is provided for fine-tuning index data storage and performance.
+- Fill-factor value determines the percentage of space on each leaf-level page to be filled with data
+- Reserving the remainder on each page as free space or future growth 
+- The empty space is reserved beween the index rows rather than at the end of the index.
+
+HOW Index
+- We can list indexes from a POstgreSQL database by using either pg_indexes view or psql command
+    - Create Index - shows you how to deine a new index for a table
+    - Drop Index - guides you on how to remove an existing index
+    - List indexes - shows you hwo to list all indexes in the PostgreSQL database
+    - Index Types - discuess various types of indexes in PostgreSQL
+    - Unique Index - provides you with steps on defining unique indexes
+    - Index on Experssion - shows you how to define an index based on expressions
+    - Partial index - illustrates 
+
+What are Views?
+- PostgresSQL Views are psendo-table
+- Is based on one or more tables
+- Can have all 
+- Storing specalized results
+
+Why Views
+- Suppose we have a detailed SELECT statement with specific clauses that is to be used multiple times.
+-
+
+HOW Views
+- The PostgreSQL views are created using tables
+
+
+Discussion Questions
+- What are index?
+    - A way to optimize data retrieval
+    - A way to use keys
+
+
+
+Be careful because they take up a ton of space.
+
+
+primary key is a type of cluster index
