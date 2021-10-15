@@ -1,0 +1,21 @@
+SQL Triggers
+
+What are SQL Triggers
+- A SQL Trigger is a bundle of code that automatically executes when a valid event occurs in the database.  It must return either NULL or a record/row value and have, the exact structure
+
+-A trigger lets you write a set of SQL statements that multiple applications can use
+    - It lets you avoid redundant code
+
+
+How are SQL Triggers used?
+- A trigger function is created with the CREATE FUNCTION command, declaring it as a function with no arguments and return type of trigger
+
+Types of Triggers
+- Data Manipulation Language Triggers (DML) -
+    - They react to DML commands 
+- Data Definition Language Triggers
+
+- Logon triggers
+
+
+when you create a trigger before you delete a record.  It would be helpful in finidng the archive of it.
