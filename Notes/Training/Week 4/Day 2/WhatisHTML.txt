@@ -1,0 +1,20 @@
+What is html?
+- Stands for hyper text markup langauge
+
+How is your webpage read by the browser?
+- 4 Steps:
+    1. Request 
+        - CLient requests
+    2. Response
+        - Server responds
+    3. Build
+        - Browsers
+    4.
+        -
+
+HTML Version?
+- The web hypertext application technology working group (WRATWG) is in charge of maintaining this living standard.
+
+Semantic Elements
+- HTML5 introduced semantic Elements
+- these are elemnts taht clearly describe their meaning in a human readable way
