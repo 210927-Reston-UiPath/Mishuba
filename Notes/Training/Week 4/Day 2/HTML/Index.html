@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML 5 Notes</title>
+
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
@@ -18,39 +20,48 @@
             <th>Quantity</th>
         </thead>
         <tbody>
-            <tr>
+            <tr id="SukangIlaco">
                 <td>Sukang Ilaco</td>
-                <td>$3.00</td>
+                <td class="price">$3.00</td>
                 <td>Ilocano Vinegar</td>
-                <td><input type="number" name=" " id=" "></td>
-                <td><input type="button" value="Buy"></td>
+                <td><input type="number" name=" " id=" " class="form-control quantity"></td>
+                <td><input type="button" value="Buy" class="btn btn-info" onclick="buy('Sukang Ilaco')"></td>
             </tr>
-            <tr>g
+            <tr id="SukangTuba">
                 <td>Sukang Tuba</td>
-                <td>$4.00</td>
+                <td class="price">$4.00</td>
                 <td>Coco Vinegar</td>
-                <td><input type="number" name=" " id=" "></td>
-                <td><input type="button" value="Buy"></td>
+                <td><input type="number" name=" " id=" " class="form-control quantity"></td>
+                <td><input type="button" value="Buy" class="btn btn-info" onclick="buy('Sukang Tuba')"></td>
             </tr>
-            <tr>
+            <tr id="SukangPuti">
                 <td>Sukang Puti</td>
-                <td>$2.00</td>
+                <td class="price">$2.00</td>
                 <td>White Vinegar</td>
-                <td><input type="number" name=" " id=" "></td>
-                <td><input type="button" value="Buy"></td>
+                <td><input type="number" name=" " id=" " class="form-control quantity"></td>
+                <td><input type="button" value="Buy" class="btn btn-info" onclick="buy('Sukang Puti')"></td>
             </tr>
         </tbody>
     </table>
 <!-- Dadta that you'll be presenting-->
     <div class="container">
-        <h1>
 
-        </h1>
-        <h1>
-            
-        </h1>
+        <H5>
+            cart
+        </H5>
+        <table class="table" id="cart">
+            <thead>
+                <th>name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+<button onclick="checkout()">CheckOut</button>
     </div>   
-    <div class="container">
+ <!-- <div class="container">
         
             <ol>
                 <li>Sukang Puti
@@ -87,5 +98,6 @@
                 </dd>
         </dl>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>
