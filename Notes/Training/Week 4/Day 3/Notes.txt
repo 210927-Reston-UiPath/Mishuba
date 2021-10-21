@@ -1,0 +1,34 @@
+$Targeting Methods
+ - Provide several ways to identity the UI element the Robot will be interacting with
+ - Key Targeting Methods 
+    * Selectors (Day 3 & Day 4)
+    * Family Selectors
+    * Image 
+        #think pixels and what not
+    * Anchor
+        #use if the element is unstable. (as in it always changes)
+
+InputMethods
+- Input actions require you or the robot to directly interact with an opened application of web page. How UiPath goes about it is deined by your input Methods
+- Hardware Events (default)
+    * Does not work in the background
+    * Simulates a click or type with the help at the hardware driver 
+    * default
+- Send window messages
+    * Works in the background
+    * Work by sending a specific message directly to be target application
+- Simulate 
+    * Works in the background
+    * Studio hooks into the application and triggers the evend handler of an indicated UI element
+
+
+Output Methods
+- Full Text
+    - default methodsfast and accurate
+
+Native
+- only works with apps that are built to render text with the graphics device interace (CDI
+- the screen coordinates of the host)
+
+OCR
+- not 100% accurate but can be useufl toe xtract text that the other two methods could not, as it works with all apllications including Citrix
