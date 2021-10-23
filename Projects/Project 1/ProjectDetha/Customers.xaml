@@ -1,6 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Expenses" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,688" sap2010:WorkflowViewState.IdRef="Expenses_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Get_stuff_from_data" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="ViewCustomers" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,842</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Get_stuff_from_data_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="48">
+    <scg:List x:TypeArguments="x:String" Capacity="46">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -22,10 +30,10 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
-      <x:String>System.Reflection</x:String>
-      <x:String>System.Runtime.InteropServices</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
       <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -46,8 +54,8 @@
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
@@ -57,33 +65,36 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Expenses" sap:VirtualizedContainerService.HintSize="539,623" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="Expenses" />
-    </Sequence.Variables>
+  <Sequence DisplayName="Get_stuff_from_data" sap:VirtualizedContainerService.HintSize="539,777" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="497,291" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="What would you like to do?" OptionsString="Check Expenses;Send Email;Main Menu;Finish" Title="Expenses">
+    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="497,291" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="What would you like to do?" OptionsString="Customer Info;Shopping List;Shop;Add Customer;Main Menu;Finish" Title="Customers Menu">
       <ui:InputDialog.Result>
-        <OutArgument x:TypeArguments="x:String">[Expenses]</OutArgument>
+        <OutArgument x:TypeArguments="x:String">[ViewCustomers]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Expenses]" sap:VirtualizedContainerService.HintSize="497,200" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-      <x:Null x:Key="Check Expenses" />
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="Send Email" DisplayName="Invoke Send Email workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Send Email.xaml">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[ViewCustomers]" sap:VirtualizedContainerService.HintSize="497,354" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <x:Null x:Key="Customer Info" />
+      <x:Null x:Key="Shopping List" />
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="Shop" DisplayName="Invoke Shopping Bot workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Shop.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <scg:Dictionary x:TypeArguments="x:String, Argument" />
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="Main Menu" DisplayName="Invoke User Interface workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="User Interface.xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="Add Customer" DisplayName="Invoke Add Customer workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Add Customer.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <scg:Dictionary x:TypeArguments="x:String, Argument" />
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" x:Key="Exit" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Duece&quot;]" />
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="Main Menu" DisplayName="Invoke User Interface workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="User Interface.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" x:Key="Finish" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Adios&quot;]" />
     </Switch>
   </Sequence>
 </Activity>
