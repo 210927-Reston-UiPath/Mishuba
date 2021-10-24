@@ -2,11 +2,19 @@
 Steps for buying stuff for customers
 - Pega Vendor
     * Step 1
+        $ Get info from database.
+    * Step 2
         $ Pega Website for project.
         $ https://training.openspan.com/login
-    * Step 2
     * Step 3
+        $ Get stuff from pega website.
+        $ Put in variables.
     * Step 4
+        $ Get stuff from my website.
+        $ put in variables.
     * Step 5
+        $ Put in Expenses Total.
     * Step 6
+        $ Put in Unavailable Items.
     * Step 7
+        $Send Emails.
