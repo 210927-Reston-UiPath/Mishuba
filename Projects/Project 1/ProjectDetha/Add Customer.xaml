@@ -1,6 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Add_Customer" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,1829" sap2010:WorkflowViewState.IdRef="Add_Customer_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="28">
+    <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -29,6 +29,9 @@
       <x:String>UiPath.Database</x:String>
       <x:String>UiPath.Database.Activities</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -70,47 +73,69 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="497,291" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="What would you like to do?" OptionsString="Add New Customer; Add Customer Item; Main Menu;Finish" Title="Customer Details">
+    <ui:InputDialog Options="{x:Null}" DisplayName="NewCustomerType" sap:VirtualizedContainerService.HintSize="497,291" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="What would you like to do?" OptionsString="Add New Customer; Add Customer Item; Main Menu;Finish" Title="Customer Info">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[CustomerDetails]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
     <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[CustomerDetails]" sap:VirtualizedContainerService.HintSize="497,1341" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-      <Sequence x:Key="Add New Customer" sap:VirtualizedContainerService.HintSize="376,1113" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence x:Key="Add New Customer" DisplayName="ReallyDetailsfr" sap:VirtualizedContainerService.HintSize="376,1113" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
-          <Variable x:TypeArguments="ui:DatabaseConnection" Name="AddCustomerDatabase" />
           <Variable x:TypeArguments="x:String" Name="NameCustomer" />
           <Variable x:TypeArguments="x:String" Name="EmailCustomer" />
           <Variable x:TypeArguments="x:String" Name="AddressCustomer" />
+          <Variable x:TypeArguments="ui:DatabaseConnection" Name="ACIDC" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:DatabaseConnect DatabaseConnection="[AddCustomerDatabase]" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;uid=fgfkcsqm;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L" />
-        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="What is the customers' name?" Title="Customer Name">
+        <ui:DatabaseConnect DatabaseConnection="[ACIDC]" DisplayName="DB connect for customer info" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;uid=fgfkcsqm;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L" />
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Give me the name" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="What is the customers' name?" Title="Customer Name">
           <ui:InputDialog.Result>
             <OutArgument x:TypeArguments="x:String">[NameCustomer]</OutArgument>
           </ui:InputDialog.Result>
         </ui:InputDialog>
-        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="What is the customers' email?" Title="Customer Email">
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Now the email" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="What is the customers' email?" Title="Customer Email">
           <ui:InputDialog.Result>
             <OutArgument x:TypeArguments="x:String">[EmailCustomer]</OutArgument>
           </ui:InputDialog.Result>
         </ui:InputDialog>
-        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="What is the customers' address?" Title="Customer Address">
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Finally address" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="What is the customers' address?" Title="Customer Address">
           <ui:InputDialog.Result>
             <OutArgument x:TypeArguments="x:String">[AddressCustomer]</OutArgument>
           </ui:InputDialog.Result>
         </ui:InputDialog>
-        <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[AddCustomerDatabase]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_1" Sql="Insert into Customers (customerName, customerEmail, customerAddress) values (NameCustomer), (EmailCustomer), (AddressCustomer)">
+        <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Non Query Type Shit you feel me" ExistingDbConnection="[ACIDC]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_1" Sql="Insert into Customers (customerName, customerEmail, customerAddress) values (NameCustomer), (EmailCustomer), (AddressCustomer)">
           <ui:ExecuteNonQuery.Parameters>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
           </ui:ExecuteNonQuery.Parameters>
         </ui:ExecuteNonQuery>
       </Sequence>
-      <x:Null x:Key="Add Customer Item" />
+      <Sequence x:Key="Add Customer Item" DisplayName="Adding Cust Items" sap:VirtualizedContainerService.HintSize="376,707" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="ChooseCustomer" />
+          <Variable x:TypeArguments="x:String" Name="NewItemBeingAdded" />
+          <Variable x:TypeArguments="ui:DatabaseConnection" Name="SupposeToBe" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:DatabaseConnect DatabaseConnection="[SupposeToBe]" DisplayName="Db Connect for customer Item" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_2" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;uid=fgfkcsqm;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L" />
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Choose One" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_9" IsPassword="False" Label="Which customer would you like to add item for? (Type Exit if you are done)" Title="Choose Customer">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[ChooseCustomer]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Item" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_6" IsPassword="False" Label="What item would you like to add?" Title="add Item">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[NewItemBeingAdded]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
+      </Sequence>
       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="Main Menu" DisplayName="Invoke User Interface workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="User Interface.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <scg:Dictionary x:TypeArguments="x:String, Argument" />

@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SendEmail" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,1554" sap2010:WorkflowViewState.IdRef="SendEmail_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SendEmail" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,1439" sap2010:WorkflowViewState.IdRef="SendEmail_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="42">
+    <scg:List x:TypeArguments="x:String" Capacity="30">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -34,7 +34,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -64,7 +64,7 @@
       <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SendEmail" sap:VirtualizedContainerService.HintSize="539,1489" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SendEmail" sap:VirtualizedContainerService.HintSize="539,1374" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="SendEmail" />
     </Sequence.Variables>
@@ -78,153 +78,158 @@
         <OutArgument x:TypeArguments="x:String">[SendEmail]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[SendEmail]" sap:VirtualizedContainerService.HintSize="497,1066" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-      <Sequence x:Key="Send Expenses" sap:VirtualizedContainerService.HintSize="510,862" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[SendEmail]" sap:VirtualizedContainerService.HintSize="497,951" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Sequence x:Key="Send Expenses" sap:VirtualizedContainerService.HintSize="426,679" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="ui:DatabaseConnection" Name="SendEmailDatabase" />
+          <Variable x:TypeArguments="sd:DataTable" Name="SendExpensesDatatable" />
+        </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:DatabaseConnect DatabaseConnection="{x:Null}" sap:VirtualizedContainerService.HintSize="468,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L;uid=fgfkcsqm" />
-        <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" ExistingDbConnection="{x:Null}" Sql="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Query" sap:VirtualizedContainerService.HintSize="468,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1">
+        <ui:DatabaseConnect DatabaseConnection="[SendEmailDatabase]" sap:VirtualizedContainerService.HintSize="384,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L;uid=fgfkcsqm" />
+        <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[SendExpensesDatatable]" DisplayName="Execute Query" ExistingDbConnection="[SendEmailDatabase]" sap:VirtualizedContainerService.HintSize="384,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="Select * from customers">
           <ui:ExecuteQuery.Parameters>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
           </ui:ExecuteQuery.Parameters>
         </ui:ExecuteQuery>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="{x:Null}" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="468,391" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[SendExpensesDatatable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="384,208" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
-              <Sequence sap:VirtualizedContainerService.HintSize="418,243" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" />
-                </Sequence>
-              </Sequence>
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[row(&quot;id&quot;).ToString + &quot; &quot; + row(&quot;customerName&quot;).ToString + &quot; &quot; + row(&quot;customerEmail&quot;).ToString]" />
             </ActivityAction>
           </ui:ForEachRow.Body>
         </ui:ForEachRow>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke User Interface workflow" sap:VirtualizedContainerService.HintSize="468,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="User Interface.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke User Interface workflow" sap:VirtualizedContainerService.HintSize="384,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="User Interface.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </Sequence>
-      <Sequence x:Key="Send Unavailable Items" sap:VirtualizedContainerService.HintSize="376,702" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence x:Key="Send Unavailable Items" sap:VirtualizedContainerService.HintSize="468,770" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="ui:DatabaseConnection" Name="SendUnavailableItemDatabase" />
+          <Variable x:TypeArguments="sd:DataTable" Name="SendUnavailableDatatable" />
+        </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:DatabaseConnect DatabaseConnection="{x:Null}" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_2" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;uid=fgfkcsqm;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L" />
-        <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" ExistingDbConnection="{x:Null}" Sql="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Query" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2">
+        <ui:DatabaseConnect DatabaseConnection="[SendUnavailableItemDatabase]" sap:VirtualizedContainerService.HintSize="426,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_2" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;uid=fgfkcsqm;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L" />
+        <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[SendUnavailableDatatable]" DisplayName="Execute Query" ExistingDbConnection="[SendUnavailableItemDatabase]" sap:VirtualizedContainerService.HintSize="426,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" Sql="Select * from customers">
           <ui:ExecuteQuery.Parameters>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
           </ui:ExecuteQuery.Parameters>
         </ui:ExecuteQuery>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="{x:Null}" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="334,231" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[SendUnavailableDatatable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="426,299" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[row(&quot;id&quot;).ToString + &quot; &quot; + row(&quot;customerName&quot;).ToString + &quot; &quot; + row(&quot;customerEmail&quot;).ToString]" />
               </Sequence>
             </ActivityAction>
           </ui:ForEachRow.Body>
         </ui:ForEachRow>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke User Interface workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="User Interface.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke User Interface workflow" sap:VirtualizedContainerService.HintSize="426,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="User Interface.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </Sequence>
-      <Sequence x:Key="Send Updates" sap:VirtualizedContainerService.HintSize="376,702" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence x:Key="Send Updates" sap:VirtualizedContainerService.HintSize="468,770" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="ui:DatabaseConnection" Name="SendUpdatesDatabase" />
+          <Variable x:TypeArguments="sd:DataTable" Name="SendUpdatesDatatable" />
+        </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:DatabaseConnect DatabaseConnection="{x:Null}" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_3" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L;uid=fgfkcsqm" />
-        <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" ExistingDbConnection="{x:Null}" Sql="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Query" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_3">
+        <ui:DatabaseConnect DatabaseConnection="[SendUpdatesDatabase]" sap:VirtualizedContainerService.HintSize="426,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_3" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L;uid=fgfkcsqm" />
+        <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[SendUpdatesDatatable]" DisplayName="Execute Query" ExistingDbConnection="[SendUpdatesDatabase]" sap:VirtualizedContainerService.HintSize="426,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_3" Sql="Select * from customers">
           <ui:ExecuteQuery.Parameters>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
           </ui:ExecuteQuery.Parameters>
         </ui:ExecuteQuery>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="{x:Null}" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="334,231" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[SendUpdatesDatatable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="426,299" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[row(&quot;id&quot;).ToString + &quot; &quot; + row(&quot;customerName&quot;).ToString + &quot; &quot; + row(&quot;customerEmail&quot;).ToString]" />
               </Sequence>
             </ActivityAction>
           </ui:ForEachRow.Body>
         </ui:ForEachRow>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke User Interface workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="User Interface.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke User Interface workflow" sap:VirtualizedContainerService.HintSize="426,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="User Interface.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </Sequence>
-      <Sequence x:Key="Send Custom Message" sap:VirtualizedContainerService.HintSize="418,794" sap2010:WorkflowViewState.IdRef="Sequence_11">
+      <Sequence x:Key="Send Custom Message" sap:VirtualizedContainerService.HintSize="510,862" sap2010:WorkflowViewState.IdRef="Sequence_11">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,279" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence sap:VirtualizedContainerService.HintSize="468,618" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="ui:DatabaseConnection" Name="SendCustomDatabase" />
+            <Variable x:TypeArguments="sd:DataTable" Name="SendCustomDatatable" />
+          </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:DatabaseConnect DatabaseConnection="{x:Null}" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_4" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;uid=fgfkcsqm;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L" />
-          <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" ExistingDbConnection="{x:Null}" Sql="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Query" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_4">
+          <ui:DatabaseConnect DatabaseConnection="[SendCustomDatabase]" sap:VirtualizedContainerService.HintSize="426,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_4" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;uid=fgfkcsqm;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L" />
+          <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[SendCustomDatatable]" DisplayName="Execute Query" ExistingDbConnection="[SendCustomDatabase]" sap:VirtualizedContainerService.HintSize="426,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_4" Sql="Select * from customers">
             <ui:ExecuteQuery.Parameters>
               <scg:Dictionary x:TypeArguments="x:String, Argument" />
             </ui:ExecuteQuery.Parameters>
           </ui:ExecuteQuery>
+          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[SendCustomDatatable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="426,299" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[row(&quot;id&quot;).ToString + &quot; &quot; + row(&quot;customerName&quot;).ToString + &quot; &quot; + row(&quot;customerEmail&quot;).ToString]" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+          </ui:ForEachRow>
         </Sequence>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="{x:Null}" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
-          <ui:ForEachRow.Body>
-            <ActivityAction x:TypeArguments="sd:DataRow">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
-              </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </Sequence>
-            </ActivityAction>
-          </ui:ForEachRow.Body>
-        </ui:ForEachRow>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke User Interface workflow" sap:VirtualizedContainerService.HintSize="376,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="User Interface.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke User Interface workflow" sap:VirtualizedContainerService.HintSize="468,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="User Interface.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
           </ui:InvokeWorkflowFile.Arguments>
