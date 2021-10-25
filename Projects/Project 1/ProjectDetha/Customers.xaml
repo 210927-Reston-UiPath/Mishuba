@@ -79,23 +79,23 @@
       </ui:InputDialog.Result>
     </ui:InputDialog>
     <Switch x:TypeArguments="x:String" DisplayName="CustomersSwitch" Expression="[ViewCustomers]" sap:VirtualizedContainerService.HintSize="497,384" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-      <Sequence x:Key="Customer Info" DisplayName="This2Much" sap:VirtualizedContainerService.HintSize="468,770" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence x:Key="Customer Info" DisplayName="This2Much" sap:VirtualizedContainerService.HintSize="452,804" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <Sequence.Variables>
-          <Variable x:TypeArguments="sd:DataTable" Name="CustomersDT" />
           <Variable x:TypeArguments="ui:DatabaseConnection" Name="ProjectOneDatabase" />
+          <Variable x:TypeArguments="sd:DataTable" Name="dt_Customers" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:DatabaseConnect DatabaseConnection="[ProjectOneDatabase]" DisplayName="DbConnect" sap:VirtualizedContainerService.HintSize="426,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;uid=fgfkcsqm;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L" />
-        <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[CustomersDT]" DisplayName="Execute this fr" ExistingDbConnection="[ProjectOneDatabase]" sap:VirtualizedContainerService.HintSize="426,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="Select * From customers">
+        <ui:DatabaseConnect DatabaseConnection="[ProjectOneDatabase]" DisplayName="DbConnect" sap:VirtualizedContainerService.HintSize="410,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;uid=fgfkcsqm;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L" />
+        <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt_Customers]" DisplayName="Execute this fr" ExistingDbConnection="[ProjectOneDatabase]" sap:VirtualizedContainerService.HintSize="410,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="Select * From customers">
           <ui:ExecuteQuery.Parameters>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
           </ui:ExecuteQuery.Parameters>
         </ui:ExecuteQuery>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[CustomersDT]" DisplayName="GOing through each one" sap:VirtualizedContainerService.HintSize="426,299" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Customers]" DisplayName="GOing through each one" sap:VirtualizedContainerService.HintSize="410,271" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
@@ -112,29 +112,30 @@
             </ActivityAction>
           </ui:ForEachRow.Body>
         </ui:ForEachRow>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke User Interface workflow" sap:VirtualizedContainerService.HintSize="426,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="User Interface.xaml">
+        <ui:DatabaseDisconnect DatabaseConnection="[ProjectOneDatabase]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="410,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="IWontForgetNextTIme" sap:VirtualizedContainerService.HintSize="410,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="User Interface.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </Sequence>
-      <Sequence x:Key="Shopping List" DisplayName="Its petty lowkey" sap:VirtualizedContainerService.HintSize="468,770" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence x:Key="Shopping List" DisplayName="Its petty lowkey" sap:VirtualizedContainerService.HintSize="452,804" sap2010:WorkflowViewState.IdRef="Sequence_5">
         <Sequence.Variables>
-          <Variable x:TypeArguments="ui:DatabaseConnection" Name="P1Database" />
-          <Variable x:TypeArguments="sd:DataTable" Name="ShoppingList" />
+          <Variable x:TypeArguments="sd:DataTable" Name="dt_ShoppingList" />
+          <Variable x:TypeArguments="ui:DatabaseConnection" Name="DethaDatabase" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:DatabaseConnect DatabaseConnection="[P1Database]" DisplayName="Taking Time From Me" sap:VirtualizedContainerService.HintSize="426,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_2" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;uid=fgfkcsqm;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L" />
-        <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[ShoppingList]" DisplayName="Execute INside" ExistingDbConnection="[P1Database]" sap:VirtualizedContainerService.HintSize="426,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" Sql="Select * from Shoppinglist">
+        <ui:DatabaseConnect DatabaseConnection="[DethaDatabase]" DisplayName="Taking Time From Me" sap:VirtualizedContainerService.HintSize="410,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_2" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;uid=fgfkcsqm;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L" />
+        <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt_ShoppingList]" DisplayName="Execute INside" ExistingDbConnection="[DethaDatabase]" sap:VirtualizedContainerService.HintSize="410,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" Sql="Select * from Shoppinglist">
           <ui:ExecuteQuery.Parameters>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
           </ui:ExecuteQuery.Parameters>
         </ui:ExecuteQuery>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ShoppingList]" DisplayName="The Disrespect" sap:VirtualizedContainerService.HintSize="426,299" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_ShoppingList]" DisplayName="The Disrespect" sap:VirtualizedContainerService.HintSize="410,271" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
@@ -151,19 +152,24 @@
             </ActivityAction>
           </ui:ForEachRow.Body>
         </ui:ForEachRow>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke User Interface workflow" sap:VirtualizedContainerService.HintSize="426,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="User Interface.xaml">
+        <ui:DatabaseDisconnect DatabaseConnection="[DethaDatabase]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="410,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_2" />
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SoMany" sap:VirtualizedContainerService.HintSize="410,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="User Interface.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </Sequence>
-      <x:Null x:Key="Add Customer" />
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="Shop" DisplayName="Invoke Shop workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Shop.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="Add Customer" DisplayName="IfIHaveTODoThisAgain" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Add Customer.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <scg:Dictionary x:TypeArguments="x:String, Argument" />
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="Main Menu" DisplayName="ThatsIt" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="User Interface.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="Shop" DisplayName="WhatWeDoin" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Shop.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="Main Menu" DisplayName="ThatsIt" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="User Interface.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <scg:Dictionary x:TypeArguments="x:String, Argument" />
         </ui:InvokeWorkflowFile.Arguments>

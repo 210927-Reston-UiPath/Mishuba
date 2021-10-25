@@ -57,7 +57,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Schedule" sap:VirtualizedContainerService.HintSize="539,605" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ProbablyAB" sap:VirtualizedContainerService.HintSize="539,605" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Schedule" />
     </Sequence.Variables>
@@ -66,7 +66,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="497,291" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="What would you like to do?" OptionsString="Check Schedule;Update Schedule;Main Menu;Finish" Title="Schdule">
+    <ui:InputDialog Options="{x:Null}" DisplayName="HowMM" sap:VirtualizedContainerService.HintSize="497,291" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="What would you like to do?" OptionsString="Check Schedule;Update Schedule;Main Menu;Finish" Title="Schdule">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[Schedule]</OutArgument>
       </ui:InputDialog.Result>
