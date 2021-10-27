@@ -5,3 +5,6 @@ Select * from Shoppinglist;
 Select * from ExpenseTotal;
 
 Select * from UnavailableItems;
+
+
+Select * from customers, shoppinglist;

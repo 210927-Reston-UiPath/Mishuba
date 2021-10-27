@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Add_Customer" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,2017" sap2010:WorkflowViewState.IdRef="Add_Customer_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Add_Customer" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="772,5137" sap2010:WorkflowViewState.IdRef="Add_Customer_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
       <x:String>System.Activities</x:String>
@@ -65,7 +65,7 @@
       <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Add_Customer" sap:VirtualizedContainerService.HintSize="539,1952" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Add_Customer" sap:VirtualizedContainerService.HintSize="539,5072" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="CustomerDetails" />
     </Sequence.Variables>
@@ -79,24 +79,40 @@
         <OutArgument x:TypeArguments="x:String">[CustomerDetails]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[CustomerDetails]" sap:VirtualizedContainerService.HintSize="497,1719" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-      <Sequence x:Key="Add New Customer" DisplayName="ReallyDetailsfr" sap:VirtualizedContainerService.HintSize="376,1363" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[CustomerDetails]" sap:VirtualizedContainerService.HintSize="497,4649" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Sequence x:Key="Add New Customer" DisplayName="ReallyDetailsfr" sap:VirtualizedContainerService.HintSize="376,4421" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="NameCustomer" />
           <Variable x:TypeArguments="x:String" Name="EmailCustomer" />
           <Variable x:TypeArguments="x:String" Name="AddressCustomer" />
           <Variable x:TypeArguments="ui:DatabaseConnection" Name="ACIDC" />
           <Variable x:TypeArguments="sd:DataTable" Name="Plzzz" />
+          <Variable x:TypeArguments="x:String" Name="LastNameCustomer" />
+          <Variable x:TypeArguments="x:String" Name="StateCustomer" />
+          <Variable x:TypeArguments="x:String" Name="CountryCustomer" />
+          <Variable x:TypeArguments="x:String" Name="ZipCodeCustomer" />
+          <Variable x:TypeArguments="x:String" Name="AreaCodeCustomer" />
+          <Variable x:TypeArguments="x:String" Name="PhoneNumberCustomer" />
+          <Variable x:TypeArguments="x:String" Name="CardTypeCustomer" />
+          <Variable x:TypeArguments="x:String" Name="SecurityCodeCustomer" />
+          <Variable x:TypeArguments="x:String" Name="CardNumberCustomer" />
+          <Variable x:TypeArguments="x:String" Name="ExpirationMCustomer" />
+          <Variable x:TypeArguments="x:String" Name="ExpirationYCustomer" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:DatabaseConnect DatabaseConnection="[ACIDC]" DisplayName="DB connect for customer info" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;uid=fgfkcsqm;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L" />
-        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Give me the name" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="What is the customers' name?" Title="Customer Name">
+        <ui:DatabaseConnect DatabaseConnection="[ACIDC]" DisplayName="DB connect for customer info" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=PostgreSQL35W;pwd=dkYEGykQp09caq8HaDuxq1CGN__xGJXX;uid=dcsnxrwc" />
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Give me the name" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="What is the customers' first name?" Title="Customer First Name">
           <ui:InputDialog.Result>
             <OutArgument x:TypeArguments="x:String">[NameCustomer]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_8" IsPassword="False" Label="What is the customers last name?" Title="customers last name">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[LastNameCustomer]</OutArgument>
           </ui:InputDialog.Result>
         </ui:InputDialog>
         <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Now the email" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="What is the customers' email?" Title="Customer Email">
@@ -109,8 +125,58 @@
             <OutArgument x:TypeArguments="x:String">[AddressCustomer]</OutArgument>
           </ui:InputDialog.Result>
         </ui:InputDialog>
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_9" IsPassword="False" Label="What state is the customer from?" Title="Customer State">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[StateCustomer]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_10" IsPassword="False" Label="What country is the customer from?" Title="Customer Country">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[CountryCustomer]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_11" IsPassword="False" Label="What is the customers zip code" Title="Customer Zip Code">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[ZipCodeCustomer]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_12" IsPassword="False" Label="What is the customers phone area code?" Title="Phone Area Code">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[AreaCodeCustomer]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_13" IsPassword="False" Label="What is the customers phone number?" Title="Customer Phone Number">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[PhoneNumberCustomer]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_14" IsPassword="False" Label="What is the customers credit/debit card type?" Title="Card Type">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[CardTypeCustomer]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_15" IsPassword="False" Label="What is the customer credit/debit card security code?" Title="Customer Security code">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[SecurityCodeCustomer]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_16" IsPassword="False" Label="What is the customer Card Number?" Title="Customer Card Number">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[CardNumberCustomer]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_17" IsPassword="False" Label="What month does the card expire?" Title="Card Expiration Month">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[ExpirationMCustomer]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
+        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_18" IsPassword="False" Label="What is the customers card expiration year?" Title="Expiration Year">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[ExpirationYCustomer]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
         <ui:BuildDataTable DataTable="[Plzzz]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;customername&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;customeremail&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;customeraddress&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{NameCustomer,EmailCustomer,AddressCustomer}]" DataTable="[Plzzz]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{NameCustomer, EmailCustomer, LastNameCustomer,AddressCustomer, StateCustomer, CountryCustomer, ZipCodeCustomer, AreaCodeCustomer, PhoneNumberCustomer, CardTypeCustomer, SecurityCodeCustomer, CardNumberCustomer, ExpirationMCustomer, ExpirationYCustomer}]" DataTable="[Plzzz]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
         <ui:InsertDataTable AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" DataTable="[Plzzz]" DisplayName="Insert" ExistingDbConnection="[ACIDC]" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="InsertDataTable_1" TableName="customers" />
         <ui:DatabaseDisconnect DatabaseConnection="[ACIDC]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
       </Sequence>
@@ -128,7 +194,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:DatabaseConnect DatabaseConnection="[db_AddItems]" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_2" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RevaturePostgreSQL;uid=fgfkcsqm;pwd=vFeU7YtUiqoIG-h-kzv-nuISEhVL1N7L" />
+        <ui:DatabaseConnect DatabaseConnection="[db_AddItems]" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_2" ProviderName="System.Data.Odbc" ConnectionString="Dsn=PostgreSQL35W;uid=dcsnxrwc;pwd=dkYEGykQp09caq8HaDuxq1CGN__xGJXX" />
         <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[HalfwayComplete]" DisplayName="Execute Query" ExistingDbConnection="[db_AddItems]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="select customers.customername, customers.customeraddress, shoppinglist.customeritems, shoppinglist.customeritemquantity from customers inner join shoppinglist on shoppinglist.customerid=customers.id;">
           <ui:ExecuteQuery.Parameters>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -149,7 +215,7 @@
             <OutArgument x:TypeArguments="x:String">[QuantityFr]</OutArgument>
           </ui:InputDialog.Result>
         </ui:InputDialog>
-        <ui:BuildDataTable DataTable="[dt_shopfr]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;customerid&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;customeritems&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;customeritemquantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+        <ui:BuildDataTable DataTable="[dt_shopfr]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;customerid&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;customeritems&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;customeritemquantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
         <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{People,ItemStored,QuantityFr}]" DataTable="[dt_shopfr]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
         <ui:InsertDataTable AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" DataTable="[dt_shopfr]" DisplayName="Insert" ExistingDbConnection="[db_AddItems]" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="InsertDataTable_2" TableName="Shoppinglist" />
         <ui:DatabaseDisconnect DatabaseConnection="[db_AddItems]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_2" />
