@@ -18,4 +18,4 @@ create table Customers (
 
 select * from customers;
 
-ALTER TABLE Customers ALTER COLUMN customerCardNumber TYPE BIGINT
+

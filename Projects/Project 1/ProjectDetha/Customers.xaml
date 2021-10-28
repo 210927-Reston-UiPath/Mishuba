@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Get_stuff_from_data" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="529,872" sap2010:WorkflowViewState.IdRef="Get_stuff_from_data_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Get_stuff_from_data" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="772,1564" sap2010:WorkflowViewState.IdRef="Get_stuff_from_data_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
       <x:String>System.Activities</x:String>
@@ -64,7 +64,7 @@
       <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get_stuff_from_data" sap:VirtualizedContainerService.HintSize="539,807" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Get_stuff_from_data" sap:VirtualizedContainerService.HintSize="539,1499" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ViewCustomers" />
     </Sequence.Variables>
@@ -78,7 +78,7 @@
         <OutArgument x:TypeArguments="x:String">[ViewCustomers]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <Switch x:TypeArguments="x:String" DisplayName="CustomersSwitch" Expression="[ViewCustomers]" sap:VirtualizedContainerService.HintSize="497,384" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+    <Switch x:TypeArguments="x:String" DisplayName="CustomersSwitch" Expression="[ViewCustomers]" sap:VirtualizedContainerService.HintSize="497,1076" sap2010:WorkflowViewState.IdRef="Switch`1_1">
       <Sequence x:Key="Customer Info" DisplayName="This2Much" sap:VirtualizedContainerService.HintSize="452,804" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <Sequence.Variables>
           <Variable x:TypeArguments="ui:DatabaseConnection" Name="ProjectOneDatabase" />
@@ -107,7 +107,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Testing something for now" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[row(&quot;Id&quot;).ToString +&quot; &quot; + row(&quot;customerName&quot;).ToString +&quot; &quot; +row(&quot;customerEmail&quot;).ToString]" />
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Testing something for now" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[row(&quot;Id&quot;).ToString +&quot; &quot; + row(&quot;customerName&quot;).ToString +&quot; &quot; +row(&quot;customerLastName&quot;).ToString + &quot; &quot; +row(&quot;customerEmail&quot;).ToString + &quot; &quot; + row(&quot;customerAddress&quot;).ToString + &quot; &quot; + row(&quot;customerState&quot;).ToString + &quot; &quot; + row(&quot;customerCountry&quot;).ToString + &quot; &quot; +row(&quot;customerZipCode&quot;).ToString +&quot; &quot; +row(&quot;customerAreaCode&quot;).ToString + &quot; &quot;+ row(&quot;customerPhoneNumber&quot;).ToString + &quot; &quot; + row(&quot;customerCardType&quot;).ToString + &quot; &quot; + row(&quot;customerSecurityCode&quot;).ToString + &quot; &quot; + row(&quot;customerCardNumber&quot;).ToString + &quot; &quot; + row(&quot;customerExpirationM&quot;).ToString + &quot; &quot; + row(&quot;customerExpirationY&quot;).ToString]" />
               </Sequence>
             </ActivityAction>
           </ui:ForEachRow.Body>

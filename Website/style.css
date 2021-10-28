@@ -47,7 +47,7 @@ header {
     position: absolute;
         left: 12%;
             overflow: auto;
-                background:red;
+                background:rgb(255, 255, 255);
 }
 
 #TsunamiFlowInformation {

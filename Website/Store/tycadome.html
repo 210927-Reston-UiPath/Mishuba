@@ -12,17 +12,6 @@
         </head>
 
         <body>
-            <script>
-                    // this is a javascript comment.
-            
-                   // declaring, defining, creating the variable.console    
-
-
-                console.log(alert);
-
-                
-
-            </script>
           
     <!-- vertical align values
       baseline, sub, super, text-top, text-bottom, middle, top, bottom, length, percentage.
@@ -252,72 +241,91 @@ Uniorm Resource Identifier means URI
                     <section id="MainSection">
             <!-- input store banner here. -->
                         <div id="IntroVideo"> 
-                            <video>
-
-                            </video>
+                            <table class="StoreTable">
+                                <thead>
+                                        <th>
+                                            Tsunami Squad Products
+                                        </th>
+            
+                                        <th>
+                                            Item Describtion
+                                        </th>
+            
+                                        <th>
+                                            Price
+                                        </th>
+                                        <th> 
+                                            Quantity 
+                                        </th>
+                                        <th>
+                                            Purchase
+                                        </th>
+                                </thead>
+                                <tbody>
+                                    <!-- <img src="../Pictures/TheLostPath.jpg"> -->
+                                    <tr id="TheLostPath">
+                                        <td>The Lost Path</td>
+                                        <td>
+                                            The lost path was created during the beginning of my journey as the artist known as "Mishuba".
+                                            It is filled with different events that happened in my life and explained through the viewpoint of my eyes.
+                                        </td>
+                                        <td class="price">
+                                            $20.00
+                                        </td>
+                                        <td>
+                                            <input type="number" name="" id="" class="form-control quantity">                            
+                                        </td>
+                                        <td>
+                                            <input type="button" value="Buy" class="btn btn-info" onclick="buy('The Lost Path')">
+                                        <!-- <a href="https://www.amazon.com/Lost-Path-Hubert-Christopher-Maxwell/dp/1675298106/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=&sr=" target="_blank"> Purchase Button or link </a> -->
+                                        </td>
+                                    </tr>
+                                    <tr id="Kuwo">
+                                        <td>
+                                            Kuwo
+                                          <!-- <img src="../Pictures/KuwoShoe.jpg"> -->
+                                        </td>
+                                        <td>
+                                            The Unique Original Kuwo. I design these shoes for the athletes, the ballers, the hustlers.  
+                                            There is an infinte amount of directions you can go; which one are you going to choose?
+                                        </td>
+                                        <td class="price">
+                                            $250.00
+                                        </td>
+                                        <td>
+                                            <input type="number" name="" id="" class="form-control quantity">
+                                        </td>
+                                        <td>
+                                            <input type="button" value="Buy" class="btn btn-info" onclick="buy('Kuwo')">
+                                         <!-- <a href="https://www.aliveshoes.com/kuwo" target="_blank"> Purchase Button or link </a>    -->                   
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
         
                         </div>
-                        <span class="StoreStuff" id="ExecutiveSummary">
-
+                        <span id="ExecutiveSummary">
 <!-- Items table -->
-                <table class="StoreTable" id="StoreProducts">
+                <h5>
+                    Cart
+                </h5>
+                <table class="table" id="cart">
                     <thead>
-                            <th>
-                                Tsunami Squad Products
-                            </th>
-                            <th>
-                                Item Describtion
-                            </th>
-                            <th>
-                                Price
-                            </th>
-                            <th> 
-                                Quantity 
-                            </th>
-                            <th>
-                                Purchase
-                            </th>
+                        <th>
+                            Item
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            Quantity
+                        </th>
                     </thead>
                     <tbody>
-                        
-                        <tr>
-                            <td>
-                                <img src="../Pictures/TheLostPath.jpg"> 
-                            </td>
-                            <td>
-                                The lost path was created during the beginning of my journey as the artist known as "Mishuba".
-                                It is filled with different events that happened in my life and explained through the viewpoint of my eyes.
-                            </td>
-                            <td>
 
-                            </td>
-                            <td>
-
-                            </td>
-                            <td>
-                                <a href="https://www.amazon.com/Lost-Path-Hubert-Christopher-Maxwell/dp/1675298106/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=&sr=" target="_blank"> Purchase Button or link </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="../Pictures/KuwoShoe.jpg">
-                            </td>
-                            <td>
-                                The Unique Original Kuwo. I design these shoes for the athletes, the ballers, the hustlers.  
-                                There is an infinte amount of directions you can go; which one are you going to choose?
-                            </td>
-                            <td>
-
-                            </td>
-                            <td>
-
-                            </td>
-                            <td>
-                                <a href="https://www.aliveshoes.com/kuwo" target="_blank"> Purchase Button or link </a>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
+                <button class="btn btn-secondary" onclick="checkout()">Checkout</button>
                 
                         </span>
 
@@ -1115,7 +1123,7 @@ Saturday
                 </span>
 
             </footer>
-
+            <script src="../script.js"></script>
         </body>
 
     </html>

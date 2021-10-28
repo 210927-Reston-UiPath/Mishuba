@@ -1,9 +1,9 @@
-insert into customers (customerName, customerEmail, customerAddress) values 
-(NameCustomer, EmailCustomer, AddressCustomer);
+insert into customers (customerName, customerLastName, customerEmail, customerAddress, customerState, customerCountry, customerZipCode, customerAreaCode, customerPhoneNumber, customerCardType, customerSecurityCode, customerCardNumber, customerExpirationM, customerExpirationY) values 
+(NameCustomer, EmailCustomer, LastNameCustomer, AddressCustomer, StateCustomer, CountryCustomer, ZipCodeCustomer, AreaCodeCustomer, PhoneNumberCustomer, CardTypeCustomer, SecurityCodeCustomer, CardNumberCustomer, ExpirationMCustomer, ExpirationYCustomer);
 
 
 insert into ShoppingList (customerId, customerItems, customerItemQuantity) values
-(1, 'The Lost Path', 1), (1, 'veggie spread', 2);
+(1, 'Chai', 3);
 
 insert into shoppinglist (customerid, customeritems, customeritemquantity) values ()
 

@@ -4,3 +4,6 @@ create table ShoppingList (
     customerItems varchar(100) not null,
     customerItemQuantity int not null
 );
+
+
+select * from shoppinglist
