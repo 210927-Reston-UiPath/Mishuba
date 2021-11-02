@@ -1,0 +1,118 @@
+Beginning of unrelated stuff.
+
+
+ask if the user wishes to enter an input or use geolocation
+
+Flow Decison 
+    * Key question in program. 
+        - do you wish to plot a route
+            # if true use location api.
+                $ Plot route between zipcode
+                $ Search site for weather/traf decision section.
+
+            # if false use search site for weather/traffic
+                $ search site for weather/traffic
+                    @ Store scrape info into data
+                        ! Flow Switch Default
+                            % Display Current weather
+                            % Display Weather Forecast
+                            % Display Current traffic
+                            % Display Traffic Patterns
+                             - use location api pcode provided = false, 
+ - use zipcod provider = true
+
+
+
+End of unrelated documentation stuff
+
+The road manager application " _____ " h50 is building will have a multitude of features that will be utilized in our program.
+The main goal is to be able to help the customer drive to their route in the best way possible for them and want they may want to see or not see.
+"_______" robots will be able to help the customer with either their zipcode or the location api (Using current location).
+With this informationi we will be able to gather details about the current weather, weather forecast, current traffic, traffic patterns.
+
+
+P1 Test
+step 1
+fanny.db.elephantsql.com
+
+step 2
+dqwzbhui
+
+step 3
+6jwq54ETX3w9R12dMBLvu4sJ7WLDdW2U
+
+step 4
+5432
+
+step 5
+Standard
+
+step 6
+dqwzbhui
+
+step 7
+ProjectTwoTest
+(Name whater you want)
+
+P2 Decision Making
+Step 1
+fanny.db.elephantsql.com
+
+Step 2
+vgrcwuxi
+
+step 3
+GiicQ0C3vMsBKYmvEUZzhRQxnKAUmjh3
+
+step 4
+5432
+
+step 5
+Standard
+
+step 6
+vgrcwuxi
+
+step 7
+ProjectTwoTeamDecision
+<name whatever you want>
+
+
+Project Two UhOh
+step 1
+fanny.db.elephantsql.com
+
+step 2
+yzmwyocy
+
+step 3
+eiooGYwxBnYx4gyTXl0d6zgVJJci-DrR
+
+step 4
+5432
+
+step 5
+Standard
+
+step 6
+yzmwyocy
+
+step 7
+ProjectTwoUhOH
+$Name Whatever You Want$
+
+
+
+Mvp
+Get users location api
+get users zipcode api
+get weather
+get traffic
+
+
+Stretch Goals
+- get weather to update automatic
+- Get the highway/local construction status.
+- get all the rest stops on the road trip.
+- get all toll booths
+- get historical roads, historical attractions and historical 
