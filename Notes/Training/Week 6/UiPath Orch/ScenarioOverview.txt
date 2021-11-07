@@ -1,0 +1,32 @@
+The Business scenario
+- Process steps
+  ! the process consists of the following steps:
+    1.) Check an Outlook mail box and get emails containing quotes.
+    2.) Download the quotes to a shared drive and save their paths.
+    3.) Send the paths to an intelligent OCR machine to extract the data.
+    4.) If the discount value on a quote exceeds the 20% threshold, send the quote for human approval.
+    5.) Send all reviewer approved or below threshold quotes to be entered into the approval system.
+    6.) When the processing is done, generate a report with the results for each quote and email it to the stakeholders.
+
+- Requirements
+    * when have received a set of specifications from the Business Analyst:
+        # As we have a limited number of machines available with intelligent OCR licenses, we need to use a queue to send the quotes for data extraction. The wait times are uncertain.
+        # Processing for quotes under threshold needs needs to continue while waiting for approvers to review the quotes above threshold.
+        # The data entry into the Quote approval system must be done via UI automation.
+        # Logging for the process must be cntralized.
+        # We need to be very efficent with robot usage. WHile waiting for external events to complete, robots should be freed up to perform other jobs.
+
+- Potential exceptions
+    * We have been notifed of the following potential exceptions:
+        # Quotes may fall during data extraction. 
+        # We need to keep track of rejected quotes.
+        # Quotes may fail during data entry.
+
+The To-Be Process Flowchart
+    * You can find the To-Be Process Flowchart below. Take amoment to check out the various systems our process need to interact with and the rules that govern the interaction.
+
+Automation Desgin decision
+    * Since our process requires waiting for other processes and human tasks to be completed, avoiding continous polling for resources by the robots, asynchornous processing and centralized logging we will base the automation design on long-running workflows and the Orchestration Process template.
+
+Solution Overview
+    * 
