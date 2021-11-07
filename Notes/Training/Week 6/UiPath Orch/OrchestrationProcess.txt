@@ -1,0 +1,38 @@
+Long-running workflows are master projects which support service orchestration, human intervention, and long-running transactions in unattended environments.
+Human intervention comes into play when certain processes require human inputs to handle exceptions, approvals or validation before proceeding to the next step in the activity.  in this situation, the process execution is suspended freeing up the Robots until the human task completes.
+
+WORKFLOW FRAGMENTATION
+- Long-running workflows may orchestrate:
+    * Background processes that may contain activities performing API calls, and running in Session 0. They can be invoked using Invoke Process activity.
+    * UI: a process with user interaction activities called through the 'Start Job' from Orchestrator activity, and running in a user session.
+    * Human in the lopp: the user interact through tasks that require forms to be completed in Orchestrator. It implies the usage of Create Form Task activity paired with Wait or Form Task and Resume.
+
+Orchestration Process Template
+- In Studio, go to HOme > Orchestration Process to open the template, which contains the default UiPath.Persistence.Activities and UiPath.System.Activities dependencies in a Flowchart workflow type.
+    * The template's project.json file has the supportsPersistence: true parameter, indicating that process execution resumes upon task completion.
+    * The requiresUserInteraction: false parameter indicates this workflow does not contain user interaction activities, similar to a Background Process.       
+        (It is not recommended to manually modify parameters int he project.json file.)
+    * A process may be turned into an Orchestration Process from the 'Project Settings' window by setting the Supports Persistence toggle to Yes.
+- Snippets for Orchestration Processes 
+    * the 'Snippets' panel contains a number of workflow snippets that can use to create an Orchestration Process.
+- Build an Orchestration Process
+    1.) Use the 'Add Queue Item and Get Reference' activity to add a Queue Item with 'in', 'in/out' or 'out' parameters and get the corresponding Queue Item object. When the Queue Item is processed, arguments provided in the 'ItemInformation' property are assigned back to the mapped workflow variables if this activity is paired with 'Wait for Queue Item and Resume' activity.
+    2.) the 'Wait for Queue Item and Resume' activity should be paired with 'Add Queue Item' and 'Get Reference' activity. The workflow enters the susupended state freeing up the Robot at this activity waiting on a specific queue item completion before proceeding to the next step in the process.
+    3.) the 'Start Job and Get Reference' activity invokes another process by providing arguments of type 'in', 'in/out' or 'out'. After execution, the modified arguments are then mapped back tot he workflow variables if this activity is paired with 'Wait for Job and Resume' activity.
+    4.) the 'Wait for Job and Resume' activity should be paired with 'Start Job and Get Reference' by providing the 'Job Object' given as output from the latter activity. This temporarily suspends the current process and waits for referencejob to complet, resuming the process once the reference job updates status to complete.
+    5.) Use the 'Create Form Task' activity to create a task with form-based visualization for human interactions within a workflow. THese forms with the relevant workflow context are presented to users for decision-making and other scenarios. To enable the orm Designer in this activity, you must install the UiPath.FormActivityLibrary package.
+    6.) The 'Wait for Form Task and Resume' activity should be paired with 'Create Form Task' by providing 'Task Object' as input to suspend the workflow until this particular task is completed by the end-user.
+    7.) Use the 'Rsume After Delay' activity to suspend the execution of the workflow and resume it at a specified date and time.
+    8.) Execute the workflow from Studio. Whenever the Robot executes a long-running activity. Studio enters the read-only state with the 'Resume' option enabled in the ribbon. To continue, complete the underlying task, queue item or job and click on 'Resume'.
+
+Best Practices
+-Long-running activities (Wait and Resume activies) part of the UiPath.Persistence.Activites package can only be used in an 'Orchestration Process' entry point, the file marked as "Main.xaml".
+- Reusable components built out of an Orchestration Process can only be referred to within another Orchestration Process.
+- A process attached to a queue processing should not be modeled into a long-running workflow. If it must be used, ensure to complete the queue item status using the 'Set Transaction Status' activity before the first persistence point (any Wait and Resume activity).
+- Persistence points (Wait and Resume activites) must not be used within the body of a For Each activity as they suspend the worklow after executing the first iteration and this might not be the desired behavior.
+- The 'Delay' and 'Retry Scope' activities are NOT SUPPORTED AND DO NOT WORK PROPERLY when used in the MAIN WORKFLOW OF AN ORCHESTRATION PROCESS. in such cases, they hsould be placed inside a 'No Persist Scope activity.
+- Long-running workflows can be resumed in any available Robot of the same type as the one that suspended a job (for example unattended or non-production) part of the same environment or folder, thus local resources required for excution must be made available after persistence points too.
+- All variables used in the scope of a long-running activity must be serializable. Types of variables listed in this 'page' are serializable: Text, True or False, Number, Array, Date and Time, Data-table and GenericValue variables.
+- Variables used in scopes that do not contain long-running activities are not subjected to the serialization requirement, as the workflow does not get suspended in their scope. Non-serializable data types can be used in separate sequence scopes in the same workflow or by invoking other files, as long as they are between 'Wait' and 'Resume' activities, like "Wait for Job and Resume", "Wait for Queue Item and Resume" and "Wait for Form Task and Resume".
+- Please take into consideration that some properties of objects generated by long-running activites cannot be evaluated in the "Locals" panel.
+- Implement an appropriate batching in workflows that expect a high number of actions per job. Please note that there is a default limit of 1,000 actions (or other job triggers) that a job can wait for at a time.
