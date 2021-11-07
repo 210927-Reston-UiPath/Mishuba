@@ -1,0 +1,7 @@
+create table test (
+    id serial primary Key,
+    Squad varchar(200) not null
+);
+
+insert into test (Squad) values
+('h50');

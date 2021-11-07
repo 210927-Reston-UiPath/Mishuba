@@ -67,7 +67,7 @@ header {
     position: absolute;
         bottom:0%;
                 overflow:scroll;
-                                            background:black;
+                                            background:rgba(209, 0, 199, 0.61);
                   }
 
 footer {

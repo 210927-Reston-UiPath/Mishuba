@@ -1,0 +1,40 @@
+
+
+Long-running workflows
+- a workflow which needs to wait or anexternal servie tro complete, a period of time to pass or a Human user to provide input before it can continue.
+
+        *a normal workflow which needs to wait for an event consumes system resources because it continously polls for the object for which it requires a response.
+        * But
+            ^ A long-running workflow go into a suspended state until the conditions ae met for it to resume.  This greatly reduces resource usage.
+- while the long-running wotkflow is waiting, the workflow context (the state variables and of the execution) remains persistent.
+
+Aysnchronous Processing
+- When executing a set of steps synchronously, like the in case of a Fot Esch activity, the system waits for each iteration of the loop to complete before executing to the next one.
+- When executing the steps asynchronously, like in the case of a parraell for each activity, multiple transactions can be processed at the same time. The transactions are executed in different threads.  Threads are seried of activities that can run oncurrently.
+    $ For example, while processing a group on invoices, one thread can go ina suspended state while it's waiting for a Human user to validate it, while another can continue the processing through to the end.
+
+The orchestration Processing
+- Automating company - wide processing will often require a combination of long-running workflows, ensuring workflow context persistence, calling various services, adding humans in the loop and asynchronous processing.  These elements need to be coordinated using business rules and conditions and the execution needs to be monitored. This is the role of Orchestration processes.
+
+Orchestration Process Elements on the UiPath Platform
+- Long-running workflows must be created using the new Orchestration Process template. A project built using this template can support UiPath.Persistence.Activities and may be combined with invoke Process and non-user Interaction activites, orchestrating human tasks with Robot tasks. If the Project Settings have the "Background Process" property set to "Yes" (the default setting), it can run in Session 0, thus ensuring speedy execution.
+    @ Long-running workflows may orchestrate.
+        * Background processes that mya contain activities performing API calls, and running in Session 0. They can be invoked using invoke Process activity.
+        * UI: a process with user interaction actiites called through the Start Job from Orchestrator activity, and running in a user session.
+        * Human in the loop, the user interacts through tasks that require forms to be completed in Orchestrator. It implies the usage of Create Form task activity paired with, Wait for Form Task and Resume.
+
+Long-running Activities / Persistence Activities
+- Helps the human manipulate jobs, tasks, queues in Orchestrator and Delays.
+- MOst persistence activites are grouped in paris.
+    * In each pair, one activity starts the JOb, creates the Form Task or Adds the Queue item and gets the reference, while the other, the persistence point, makes the workflow or thread go into a suspended state until the job is finished, the task is complegte or the queue item is processed.
+    * Data from the long-running workflow is passed to the jobs, queue items or tasks using business objects.  These objects are a composite data type containing a collection of basic data types to reduce granularity of arguments.  This data retrieved rom completed jobs, tasks or queue items can be mapped back to workflow variables upon resuming execution.
+    * Stating with the 20.4 release, Persistence Activites can be used in normal projects, as long as the project setting "supports Persistence" is set to "Yes".
+
+Parallel For each
+- Creates a thread for each item and processes them concurrently.  THis means that while one thread goes into asuspended state waiting for a specific event, another can continue processing.
+
+When should we choose Orchestration Processes?
+    - When our process will run in an unattended environment and requires that we use a rules engine to stitch together robot tasks, human tasks and asynchronous processing.
+    - When the execution of our process needs to wait for an event to complete and we don't want the robot to keep polling for resources;
+
+    
