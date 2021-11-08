@@ -1,0 +1,48 @@
+UiPath.Persistence.Activities.FormTask.CreateFormTask
+
+- Creates a rom task in On-Premises Orchestrator and in Action Cneter, both cloud and on-premises instances.
+
+properties
+- Common
+    *ConinoueOnError
+        $ Specifies if the automation should continue even when the activity throws an error.  This field only supports Boolean values (True, False). The default value is False.  As a result, if the ield is blank and an error is thrown the execution of the project stops.  IF the value is set to True, the exectuion of the project coninues regardless of any error.
+    * DisplayName
+        $ The display name of the activity
+    TimeoutMS
+        $ Specifies the amount of time (in milliseconds) to wait for the activity to run before an error is thrown. The default value is 30000 milliseconds (30 seconds).
+- Input
+    * Enable Bulk Edit
+        $ If selected, the 'Open Bulk Form Designer' button becomes available in the body o the activity.  This option allows you to generate (from actions that can be bulk edited or completed from the Actions tab in Action Center.)
+    * FormData 
+        $ A collection fo business data in the form "Dictionary<String,Argument> that you want to display in a form within the Actions inbox. Modiying OUT and IN/OUT arguments maps them babck to the worklow after task completion.  This field supports only Dictioanry<String,Argument> objects.
+    * GenerateInputFields
+        $ If selected, all the entries from the Form Data Collection are generated as components in the Form Designer. Leaving it empty does not append additional form fields to the designer.
+    * Orchestrator Folder path
+        $ The path to the Orchestrator Folder you want to use with this activity. IF left empty, the current Orchestrator folder is used. This field supports only strings and String variables.
+    * Reference 
+        $ The label used as referene for future filtering of the tasks. This field supports only string values.
+    * TaskCatalog
+        $ An optional business classification of task items. This field supports only strings and String variables.
+    * TaskPriority
+        $ Enables you to select the priority level of the task. By default, this property is set ot "TaskPriority.Medium" The following options are available "TaskPriority.Low" "TaskPriority.Medium" "TaskPriority.High" "TaskPriority.Critial"
+    * TaskTitle
+        $ The title of the task you want to create. This field supports onl strings and String variables.
+- Misc
+    * Private
+        $ If selected, the values of variables and arguments are no longer logged at Verbose Level.
+- Output    
+    * TaskObject(Output) 
+        $ The task object that is returned rom Orchestrator as a "FormTaskData" objet after the task is created. This object can be pased to the "Wait for orm Task and Resume" activity in order to suspen the execution of the workflow until the tak is completed.
+- Storage
+    * Storage Bucket name   
+        $ The storage bucket you want to use for large data files referenced in the form data.
+    * Storage Folder path
+        $ The full path to the folder in the specified storage bucket. This field supports only strings and String variables.
+The Body of the Activity
+- Some properties can be configured straight from the body of the activity itself, for easier handling, such as 
+    * Task title
+    * Task Priority
+    * Task Catalog
+    * Form Data
+    * Task Object (Output)
+- Clicking the "Open Form Designer" button opens the 'Form Designer' Wizard, which enbales you to customzie the forms that you want to use in your workflow. THe "Open Bulk Form Designer" button becomes available when the Enbale BUlk edit property is selected.  THis option opens the "Bulk Form Designer" allowing you to design orm actions that can be bulk edited or completed in the Actions tab of the corresponding Action Center instance.
