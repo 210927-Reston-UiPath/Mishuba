@@ -28,5 +28,3 @@ The To-Be Process Flowchart
 Automation Desgin decision
     * Since our process requires waiting for other processes and human tasks to be completed, avoiding continous polling for resources by the robots, asynchornous processing and centralized logging we will base the automation design on long-running workflows and the Orchestration Process template.
 
-Solution Overview
-    * 
