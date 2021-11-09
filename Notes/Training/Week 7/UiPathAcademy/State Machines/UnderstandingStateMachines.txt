@@ -1,0 +1,25 @@
+A State-Machine in Real-Life
+- Representation of a thermostat controlled air conditioner.
+    * Use the On/Off button to...
+        $ Use the ON/Off button to start or stop the air conditioner. When started, the air conditioner will go into IDLE state.
+    * Write the desired temperature in...
+        $ Write teh desired temperature in the 'Desired Temp.' filed and click 'SET'. Note that the working trange is beteen 15 and 30 degrees, so any value below 15 or above 30 will be converted to 15 and 30, respectively.
+    * Once a temperature is set, the
+        $ Once a temperature is set, the air conditoner will move to HEAT or COLD state. WHen the desired temperature is reached, it will display under 'Current Temperature' and the air conditioner will return to the IDLE state.
+
+Look at the zip Air Conditioning zip file
+About Status 
+1.) The Entry block contains the activities that are to be performed when the state is entered.
+2.) The Exit block contains the activities that are to be performed upon exiting the state.
+3.) The transitions block lets you add activities that will be performed at entry and exit.
+
+    The Transition(s) section displays all the next destinations based on the user input.
+
+About transitions
+- Transitions are created when you link a State to another State or to a Final State, within a State Machine container.
+- The condition to transition to the 'Destination' state (e.g. Heat State) is for the 'DesiredTemperature' variable value to be hgiher than the 'CurrentTemperature' value.
+
+The Final State
+- THis type off state is ound in Studio under Workflow> State Machine > Final State.  
+    $ you can only create one intitla state, yet it is possible to have more than one Final State.  All state machines must contain an inital state, and at least one final state.
+
