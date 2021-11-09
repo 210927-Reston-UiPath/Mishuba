@@ -1,0 +1,7 @@
+1.) Create a workflow that simulates a vending machine. The functionality should be the ofllowing:
+    - The user is asked to choose the inital credit ($5, $10, $20).
+    - If they've selected an initial amount, they are asked what drink they want: Coffee ($3) or Tea ($12).
+2.) The vending machine should check if the user has enough credit for the selected drink.
+    - IF Yes, display a success mesage and subtract the price o the drink from the total amount to show the remaining credit. The user is then asked if he/she wants to buy another drink or go get their change.
+    - If No, the user is transitioined to the Final State where a message vox is displayed with the available amount to be retruned and a goodbye message.
+3.) If they opted to get their change, the user is transitioned to the Final State where a message box is displayed with the available amount to be returned and a goodbye message.

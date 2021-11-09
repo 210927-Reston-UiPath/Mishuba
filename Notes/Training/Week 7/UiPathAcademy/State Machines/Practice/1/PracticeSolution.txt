@@ -27,3 +27,4 @@ New Dicitonary (Of String,Int32) From {{"Coffee - $3", 3},{"Tea - $2",2}}
     - From "Select initial amount" State to "Give change and Exit" State with the "Condition - ChosenAmountIsNOthing"
     - A self-transition, from "Choose product" State to "Choose product" State with the Condition - Not GetChange
     - From "Choose product" State to "Give change and Exit" State, with the Condition- Get Change.
+
