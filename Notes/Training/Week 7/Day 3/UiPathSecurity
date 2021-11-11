@@ -1,0 +1,56 @@
+Access to Orchestrator
+
+Presentation Layer
+Service Layer
+Presistence Layer
+
+Cloud Deployment
+
+Studio - Deploy - ORchestrator Options (cloud, robot, on-prem)
+
+
+Access to condifdential data and credentials + faulty design of the automation workflows = security threat
+
+
+UiPath's commitment to addressing secuirty concerns
+Features 
+- Features are characteristics that are embedded in the product or solution nd implemented in order to enhance security and mitigate risks.
+
+Guidelines
+- Guidelines are best practices that UiPath recommends when setting up or using the RPA solution.
+
+How to Secure the automation in UiPath Studio
+    - Code Review, Securing Automation Packages, Isolating Environments, Version Control
+
+Code review aims to ensure that the process that will run on live data is safe and no security breaches are possible
+In what areas of workflow automation do you think code review has an impact?
+    * Code review is very useful to ensure the proper usage o credentials, as it will check whether the credentials are used only where needed and are not passed outside the trusted environment.
+    * Sharing data outside the environment is a common thing in automation, by saving files, sending emails, or other interactions with external systems.
+    *Code review can prevent sending sensitive data outsdie the trusted scope.
+    * Accounts or email addresses are sometimes written in the code, and thus may raise security threats.
+    * A malicious developer can utilize his own details to receive money or information overriding conigurable settings, but code review can prevent such events.
+
+How to deploy in Orchestrator the projects cretaed in Studio
+- Direct
+    Step 1
+        Publish in Studio
+    Step 2
+        NuGet package is created
+    Step 3
+        NuGet package is sent directly to Orchestrator
+    Step 4
+        Manual action required protected by permission
+    Step 5
+        Promote specific version in Orchestrator
+
+- Indirect
+    Step 1
+        Publish in Studio
+    Step 2
+        NuGet package is created
+    Step 3
+        NuGt package issaved on  local folder
+    Step 4
+        Permission Required
+    Step 5
+        Manual upload in Orchestrator
