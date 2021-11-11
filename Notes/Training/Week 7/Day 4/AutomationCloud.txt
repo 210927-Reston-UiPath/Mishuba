@@ -72,3 +72,100 @@ What are some of the things you can achieve by using UiPath Insights?
 Who can benefit rom using UiPath Insights?
     Automation COE LeadsBusiness/Process ownersBusiness analystsBusiness executives
 
+Accessing Cloud Insights and Getting the permissions Needed
+    Could Insights is available as a first-party service in UiPath Automation Cloud. To start using it, you need an Enterprise license. If you simply want to test it out, you can do that through our Enterprise Trial license. 
+        On the license page, click the Request Enterprise Trail button
+            Enter you details in the corresponding fields. These details are used by our sales representatives to contact you before the trail period expired regarding your potential upgrade to the enterprise plan
+                Click Request and you're good to goal
+Accessing the UiPath Cloud Insights
+    A user with Admin rights in Automation Cloud can enable Cloud Insights for a Tenant with the following steps:
+        1 From the left navigation panel, open the Admin page
+        2 Under the Tenants context menu, find the tenant you are interested in enabling Cloud insights for 
+        3 From the menu, select the Edit Services options
+        4 Check the box next to Insights and then hit the save button
+        When the product is done setting up, you will see the Insights icon in the let navigation panel
+            You can use it at any-time to access Insights
+
+Types of permissions  
+    5 types of permissions
+        Viewer
+            This grants view-only permissions in Cloud Insights. viewers will only be able to view the template dashboards and dashbaords shared by users with enhanced permssions and will not be able to create their own.
+            They can not only see the dashboards, but also downlaod them or have them sent as PDFs.
+        Designer
+            Users with this permission have edit/create/delete rights in Cloud Insights. Designers may edit dashboards, create new ones, make copies of the templates to their "My Dashboards" section, or delete dashboards.
+                Designers can also share with other users in the tenant.
+        Admin
+            An admin is a user who can configure Cloud Insights. Admins have access to User Management. They are the only users with the ability to enter values or the Tenant ROI dataset. And they have the same dashboard permissions as viewers
+                Admins are by default assigned to users in the Admin group in Automation Cloud. If admins are expected to edit dashboards, they can be granted the Designer permssion on top of Admin.
+        ROI Viewer and ROI Editor
+            ROI Viewer and ROI Editor and both auxiliary permissions. They must be added on to one off the two main permissions: Viewer or Designer. Both these permissions are specifically created to control who can see or make copies of the Business ROI dashboard template and who has access to the ROI dataset.
+                Users assigned to ROI viewer will have view-only access to the Business ROI template Dashboard. They will be able to interact with the dashboard, but they will not be able to copy it ot their own dashboard space (even if they have designer permission).
+                    Users assigned to ROI Editor will have the ability to copy the Business ROI dashboard template into their "My Dashboards" section. They will have access to the ROI baseline data, which will enable them to build new widgets containing the numbers entered by the Admin for the ROI dataset. To be asssigned to ROI Editor, users must have the Designer permission granted first.
+
+Granting access to other users
+    ONly users with Admin Permission may grant access to Cloud Insights to other users. An Admin may grant access to others via the following steps:
+        1 From the top-right menu of Cloud Insights, selelct User Mangement:
+        2 Search for the desired user, assign the desired role, and hit Save:
+
+
+Interacting with Cloud insights
+    * To enable Insights as a first-arty service in Automation Cloud, Admins have to go to the Admin page, navigate to the Tenants tab, click Edit Services and check the box next to Insights
+    * To access Insights, simply click on the icon on the left navigation panel.
+    * There are 3 main tabs in Insights: UiPath Templates, Tenant, and My Dashboards
+    * In UiPath Templates, there are 3 pre-loaded dashboards: Processes, Queues, and Robots. A fourth one, Business ROI, is available for users with ROI Viewer or ROI Editor permissions.
+    * The Tenant tab contains the dashboards created and shared by Designers.
+    * In My Dashboards, all the dashboards that the user created will appear including those coming from copies of the templates under UiPath Templates.
+    * Each Dashboard consists of different widgets that the user can interact with. FOr any dashboard under UiPath Templates, users have filters by date and by Orchestrator folder.
+    * Clicking on ap process name in any widget of the Processes dashboard will turn the process into a filter and the entire dashboard.
+
+
+What is available in the UiPath Templates tab for all the users?
+    Processes
+    Robots
+    Queues
+
+Working with and Customizing the Default Dashboards
+    The Cloud Insights default dashboards
+        There are four pre-loaded dashboards, available in the UiPath Templates tab. They were built by the UiPath team to answer to the most common automation analytics questions.
+            *Processes
+                This provides highlights on metrics such as the run time of your processes their success rate, as well as details on the errors encountered
+            *Queues
+                THis focuses on the most important metrics related to your successful and failed transactions. It also breaks down the exceptions affecting these transactions
+            *Robots
+                This tracks Robot utilization, productivity, and errors
+            *Business ROI
+                This goes beyond operational data and provides metrics on the actual impact generated by your robotic workforce within the business. It achieves this by tracking the money and time saved by your automation deployment
+        With the Designer permission, you can take these dashboard templates copy and edit them to better suit your needs. Below you can see how.
+
+* TO Customize any of the pre-loaded dashboards by creating copies, you need Designer permission (and ROI Editor for Business ROI).
+* To start Customizing, go to the UiPath Templates tab and create a copy of the template you are interesed in customizing. The copy will become avialable in My Dashboards.
+* From the Setting Menu of a dashboard, you can change the time zone. And you can also enable "run on load" and "automatically refresh dashboard". Additionally, for each tile you can set the refresh frequency between "do not refresh" and "refresh every", for which you can set the units.
+* Turning on Automatic refresh of the entire dashboard, or for the individual tiles will increase the loading time, ths negatively impacting the overall performance.
+* In the edit mode of a dashboard, you can add, edit or delete the tiles.
+* To add a title, click "Add tile" and select visualization You will then get to a view called "choose an explore". These are grouped in 5 categories: Jobs, Queues, Robot Logs, Process Manual Values, and Queue Manual Values.
+* You can add fields from the left as dimensions or measures. A dimension is a groupable field that can be used to filter query results, like an attribute, a fact, or even a numerical value.  Measure are based on a function, like sum, average, minimum, maximum, and so on.
+* Once you added dimensions and measure, you need to click RUn.
+* The default visualization type can be changed from the upper bar.
+* Filters can be added by hovering on the fields on the left until the filter icon becomes visible, then clicking on it. To apply the filters, you need to click RUn.
+* To add custom fields, click on the Add butoon on top and select the type: custom dimension (X axis), custom measure (Y axis) or table calculation. This will apply a calculation to all the values in a table, using a formula inputted by the user.
+* Editing individual widgets is done by selecting the option with the same name from the widget in the dashboard. This will take us to the Edit tile view, with the same opitons as before.
+* Dashboards can be downloaded as PDF or CSV.
+* Schedule delivery, another option from the standard menu, allows the user to send the dashboard to different email addresses (not necessarily Automation Cloud users).
+
+Which role can customize the dashboard templates shown under UiPath Templates?
+    A Designer cannot and an Admins cannot either.
+     * The dashboard templates cannot be customized by anyone. Designers can create copies and customize the copies.
+
+On a dashboard created using the templates available, can you also add tiles or just edit the existing one?
+    * Both edit the existing tiles and add new ones.
+
+Measure
+    - a field based on a function, like sum, average, minimum or maximum
+Table calculation
+    - A calculation for all the values in a table, using a formula inputted by the user
+dimension
+    - A groupable field that can be used to filter query results, like an attribute or a fact
+
+
+Creating and Managing alerts
+    - 
