@@ -191,4 +191,86 @@ Robot Logging
     -Stored in SQL Server or Elasticsearch (Use xplack(I think she said plugin)) (or other)
 
 
+Authentication options and prerequisites
+    Options
+        * Local Username and password
+        * Active Directory usernames using Windows Authentication
+        *Google Accoutns with OpenAuthentication 2.0
+        * Azure Active Directory authentication
 
+    Prerequisites
+        * HTTPS configured at IIS level
+        * SSL certificate from a trusted provider
+        * HTTP binding should be redirected to HTTPS
+
+The Orchestrator platform offers multiple Account security settings
+    - Account Lockout
+        * Account lockout helps to protect users form Brute force attacks.
+        * You can prevent additional logins for a period of time after a number of failed attempts.
+        * These setting are configurable per Tenant.
+    - Expiring Passwords
+        * Passwords can now be set to expire after a certain number of days.
+    - Password History
+        * Passwords can now be set to expire after a certain number of days.
+        * Also, the user must change the password on first login. 
+    - Password History
+        * Password history allows administrators to prevent the user from resuing an old password, unless it is beyond the passowrd history length.
+    - Multiple Login Contorl
+        * Multiple logins with the same user are disabled.
+        * WHen an additonal login is perofomred rom ane w machine, the exitisng conncetion will be closed on the previsous machine.
+
+How to protect data in transit and data at rest 
+    - Transport levle security 1.2 Protocl
+    - Advanced Encryption Stardard on 256-bit cipher
+    - Secure Hash Algorithm 2
+
+
+
+
+
+
+
+
+
+
+From Me to Everyone 10:40 AM
+these the quiz question at the end
+im just now starting it
+What are the most common security threats that a code reviewer can cover?
+answer:
+not sending email to private accounts, rom the workflow; not storing sensitive data in local files, not using hardcoded URLs accounts or email addresses
+the question might be in a different order for you
+Passwords in Orchestrator...
+Must be changed on the first login.  Cannot be changed without a direct request to your platform administrator. Can be set to expire after a certain numbers of days
+Authenticating the users on the Orchestrator platform can be done with
+all the aboe
+all of them
+Messages logged by the Robots are sent to Orchestrator and can be stored in:
+SQL Server and Elasticserach by default, but also in other targets, standard or custom
+The Account Lockout security feature provided by the Orchestrator platform ensures:
+Protection against Brute Force attacks
+Account Lockout settings are configurable per:
+Tenant
+What is the purpose of code review?
+To ensure the proper usage of credentials.  To prevent sending sensitive data outside the trusted scope.  To ensure that a malicious developer cannot utilize his own details to receive money or information overriding configurable settings
+From Me to Everyone 10:44 AM
+Access to a local package that is executed by the robot is granted to:
+Robot service and local admin
+CyberArk can be integrated with Orchestrator in order to retrieve the Robot credentials from CyberARK instead o SQL Server DB.
+Ture
+True
+The Mutlitenancy feature in Orchestrator offers the possibility to isolate between tenants the following entities:
+All entities, including logs, users, audit trail, settings, in addition to Robots, assets, queues, etc
+From Hassan Baraka to Everyone 10:44 AM
+good points!
+From Me to Everyone 10:48 AM
+What TLS protocol is recommended by the Orchestrator platform?
+TLS 1.2
+What are the main difference between guidelines and security features?
+Guidelines are recommended general best practices, while security features are already implemented in the product
+The audit page on the Orchestrator platform allows you to filter by:
+Component. Action
+What are the basic security measures, already implemented, concerning the Robot-Orchestrator connection?
+A Robot must be provisioned in Orchestrator before it can connect to it. A user must have local admin rights on the Robot machine in order to connect to Orchestrator
+A valid SSL certificate is required to install Orchestrator
+True
