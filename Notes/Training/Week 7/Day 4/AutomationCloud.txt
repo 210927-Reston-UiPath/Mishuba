@@ -1,0 +1,74 @@
+Measuring Automation (Why Is it IMportant?)
+
+- YOu can highlight where automation has the most impact, plan future iterations, and track your return on investment (ROI).
+
+How can you measure automation>
+- To measure automation, you need to establish concrete goals taht you can use to check your progress towards reaching those goals.
+
+    Three easy steps to achieving above
+        * Start with tracking and measuring your operational metrics (erors utilization, success rate, and so no);
+        * Then tie these operational results to business outcomes (ROI, process outcomes) - more on the difference between operational and business KPIs below;
+        * Finally, measure each performance metric every month, and then total them for every year so you can get a comprehensive understanding of pace and scale.
+
+What can you measure?
+    Automation analytics spans across two types of metrics: operational KPIs and buisness KPIs.
+        1 Operational KPIs contain informaiton that relates to the excution of automation itself, but they don't include things like time saved and money svaed.
+            - errors
+                * Why: Robots don't need coffee, but they can't perfomr perfectly if blcked by obstacles beyond their control. For instance, Robots may be unable to finish a process if any application fails or is under maintenance.
+                * How: It's important to track any errors and the reasons behind them. When you look back a t the trends over time, you'll be able to see patterns and take action to remedy them.
+            - Robot utilization 
+                * Why: Keeping track of how long your Robots have worked each day is important or capcity planning. Robot utilization shows if your Robots could work harder or if you're asking too much of them.
+                * How: You'll want to look at utilization in terms of hours per day, with 24 hours being your max for Unattended Robots and the number of hours a human is working per day with Attended Robots, It's a good idea ot have a few checkpoint for utilization:
+                    $ Average hours worked per day (for all Robots)
+                    $ Hours worked per day over a certain amount of time
+                    $ Hours work\ed per day for specific Robots you think are over- or under-utilized
+                * A low daily utilization rate means you could give your Robots more work to do, while a high dayily rate might indictae an automation backlog. In the case of a high utilization rate, it's most likely time to add more Robots to distribute the workload.
+            - Success rate 
+                * Why: This goes without saying, but an automation that fails isn't all that useful. That's why tracking the success rate is so important!
+                * How: You'll want to aim for a success rate of around 90%. It's surpirsing and seems counterintuitive, but a success rate around. 100% could mean that some failures aren't being correctly tracked
+            - Duration
+                * Why: Similar to the success rate, there are often misconceptions about process duration. It's exciting to see that a process ran super quickly, but short runtimes might mean that an automation failed.
+        2 Business KPIs tie what happens in your RPA deployment (operational) to how it benefits your company (business). THese are the metrics that you can use to acutally grow and scale RPA in your orgaization.
+            - ROI 
+                * Why: You'll want to think of automation ROI in terms of at least two perspectives: hours saved and moeny saved. let's say oyur business is dependent on a lot of time-intensive processes, like manual data entry from PDFs. The speed with which employees can process nd enter information is limited, even if they're master typists. So, we'll assume it takes 15 mintues to prcess each PDF. With RPA, this kind of manual data entry can be sped up to a matter of seconds. NOt only iwll this increase the number of PDFs processed per day, but you'll also free up a lot of employee time activities that can't be automated. The hours spend by an employee have a cost, usually one much higher than that of a software robot. Periods of high demand can be especially expensive to compensate employees for. You're either paying extra for overtime work or finidng, hiring and training temporary employees you can't keep once demand returns to normal. Robots, however, are scalable. When those labor-intensive periods come up, you can automate the manual labor and utilize those svaings in other areas.
+                * How: Robots can accomplish grueling manual tasks in minutes or even seconds. It's important ot note how long a process would take a human to manually complete so that you can compare this baseline to how long a Robot took to do the same thing. From-here, it's easy ot caculate the time saved by automation. YOu can do the same thing to find financial savings- by attaching a dollar value to an employee's time. Keeping the time in hours is the easiest calcution since most jobs have an hourly pay rate.
+            - Process outcomes 
+                * RPA is used to get rid of mundane human tasks, so konwing what Robots have accomplished for the business is paramount. Every automation is supposed to achieve sometjing, so knowing and defining that end goal is important. Building on our previous example of manual data entry from PDs, let's look at one of the most common process outcomes: invoice processing. You would most likely want to offer more competitive SLAs and, to this end, aim to reduce the amount of time it takes for an invoice to be processed rom the momoent it is received to when the amount is paid to a vendor. With RPA you can easily track ho wlong this takes.
+                * How: This is where you want to look at the same metrics you were tracking before you used RPA and apply your RPA results. In our invoice example, you'll need to compare the amount o time it took to process an invoice pre-RPA and post-RPA.
+            
+What is UiPath Insights and Who Is It for?
+    Insights is UiPath's analystic souliton. It provide analyatic capabilities by using any combination o available business and operational metrics. It allows you to build customizable views specific to your needs and priorities. It also comes with several dashboar templates (Robots, Processes, Queues and Business ROI) that are intended to address immediate automation measurement needs from abusiness andOerational perspective. 
+
+What are the key features of UiPath Insights?
+    Here's what makes UiPath Insights an end-to-end analytics solution:
+        * Dynamic dashboards    CUreated library of dashboard templates- including Robots, Processes and Queues
+        * Shareable Reports     Schedule or share dashbaords and Reports
+        * Shart alerts          Create alerts for goals and threshold- setup notifications for critical events
+        * Definable KPIs        Customize the ROI dashboard template to track time and money saved
+        * Deployment options    Available on-premise or as part of Automation Cloud
+    Who is it for?
+        Insights is an end-to-end analytics solution for users across an entire organization. From buisness users (analysts, process and buisness owners, Executive leadership) that need to define, track, measure and share process KPIs and business outcomes, to users across the Automation Cneter of Excellence (COE Leads, RPA developers, Solution architects, Buisness analysts, project managers, RpA operations managers) with an interest in a holistic view of their RPA deployment.
+        Different stakeholders have different objectives with regards to tracking and measuring RPA... THus, when building insights, we took into account the goals, needs and tools required by each stratgic personal thorughout the automation journey:
+    How can you access it?
+        UiPath Insights is available both as a first-party service in Automation Cloud an on-premises. While addressing the same need with the same tools, UiPath Cloud Insights and UiPath Insights on-premises are currently different from a user experience perspecitve.
+    How does Insights fitr into the larger pciture of UiPath's Platform?
+        UiPath's Platfrom, responsible for millions of business-critical automation operations with strategic busines outcomes. 
+        The UiPath Platfomr now covers all the stages of an RPA implementation and the deployment can be done either on-premises, in cloud or using a hybrid approach:
+        failed
+            * Discovering through Atuomation Hub, Process MIning, ask Mining and Task Capture tool
+            * Building through the UiPath Studio family, Document Understanding and pre-built automation componnents and integrations
+            * Managing the automation ecosystem via Automation Cloud, Orchestrator, AI Center, Test suite and Data service
+            * Running it using the different types of UiPath Robots
+            * Engaging the automation with human uers via Assistant, Action Center, Apps and Chatbots
+        Automation analytics, provided to our customers through the Insights solution (either on-premises or cloud) connects our platforms' loops by enabling the ability to manage the automation, by measuring it.
+            By measuring the performance of automation and the impact that it brings to their business, customers will be able to advance towards the fully automated enterprise.
+
+What are some of the things you can achieve by using UiPath Insights?
+    Track and measure Robot utilization, performance and accuracy
+    Share business-specific metrics with organization-wide stakeholders
+    Visualize process-level automatin trends in dashboards
+    Track and analyze business outcomes to guide process improvement
+
+Who can benefit rom using UiPath Insights?
+    Automation COE LeadsBusiness/Process ownersBusiness analystsBusiness executives
+
