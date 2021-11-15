@@ -1,0 +1,64 @@
+ReFramework (Robotic Enterprise Framework)
+
+Recap: Transactions and Types of Processes.
+    1.) Linear
+        * The process steps are performed only once. If the need is to process different data, the automation needs to be executed again. For example, an email request coming in triggers an automation which gathers data and provides a reply to the sender. The process is executed for each individual email.  
+        * Linear processes are usually simple and easy to implement, but not very suitable to situations that require repetitions of steps using different data.
+    2.) Iterative
+        * The steps of the process are performed multiple times, but each time different data items are used. For example, instead of reading a single email on each execution, the automation can retrieve multiple emails and iterate through them doing the same steps. 
+        * This process implementation is done with a simple loop. But it has a disadvantage—if a problem happens while processing one item, the whole process is interrupted and the rest of the items remain unprocessed.
+    3.) Transactional
+        * Similar to iterative processes, the steps of transactional processes repeat multiple times over different data items. However, the automation design is such that each repeatable part processes independently.
+        * These repeatable parts are then called transactions. Transactions are independent from each other because they do not share any data or have any particular order to be processed.
+- The three categories of processes can be seen as maturity stages of an automation project. Starting with simple linear tasks, which go through multiple repetitions, and finally, evolve into a transactional approach.
+    * However, this is not a rule for all cases, and the category should be chosen according to the characteristics of the process (e.g., data being processed and frequency of repetitions) and other relevant requirements (e.g., ease of use and robustness).
+    * The ReFramework template can be used to handle any type of the processes above. In its out-of-the-box version, it is designed to address transactional processes.
+
+What is a transaction?
+- A transaction represents the minimum (atomic) amount of data and the necessary steps required to process the data, by fulfilling a section of a business process. A typical example would be a process that reads a single email from a mailbox and extracts data from it.
+    * We call the data atomic because once it is processed, the assumption is that we no longer need it as we advance with the business process. 
+
+What are some business scenarios in which I will use transaction processing?
+- You need to read data from several invoices that are in a folder, and input that data into another system. Each invoice can be seen as a transaction, because there is a repetitive process for each of them (i.e. extract the data and input it somewhere else).
+- There is a list of people and their email addresses in a spreadsheet, and an email needs to be sent to each of them along with a personalized message. The steps in this process (i.e., get data from spreadsheet, create personalized message, and send email) are the same for each person, so each row in the spreadsheet can be considered a transaction.
+- When looking for a new apartment, a robot can be used to make a search according to some criteria. For each result of the search, the robot extracts the information about the property and inserts the data into a spreadsheet. In this case, the details page for each property constitutes a transaction.
+
+The ReFramework template can be used in 
+    - Attended or unattended business processes.
+    - Input data from a queue in Orchestrator or from a diferent source (e.g., Excel file, mailbox, other application).
+    - Transactional or linear process (i.e. a process with a single transaction).
+
+Iterative = Creating accounts for the news hires from an Excel file sent via email
+Linear = Creating an account for a new hire, based on an email.
+Transactional = Creating accounts for the new hires in a live Excel file, where entries are added hourly.
+
+
+(The REFramework AKA Robotic Enterprise Framework begins here)
+    The Dispatcher and Performer (Producer and Consumer) Model
+        - The Dispatcher and Performer (Producer and Consumer) model is a pre-designed solution to separate the two main stages of a process by placing a queue in between. 
+        - This way, the production of transaction items is entirely independent from their consumption. This asynchronism breaks the dependency between the producer and the consumer. 
+        - It is a pretty straightforward design model that can add a lot of performance improvement, with its pre-built configuration, better reusability, and scalability. It involves an Orchestrator queue, which is populated with data by an automation. Then the transactions are consumed by another automation.
+        - So, the two main stages of a process involving queues are separated as follows:
+            * The stage in which data is read, organized and fed into a queue in Orchestrator is called Dispatcher or Producer.
+            * The stage in which the queue is processed is called Performer or Consumer.
+    # Dispatcher = Producer
+        -The dispatcher process pushes transaction items to an Orchestrator queue. It extracts data from one or multiple sources and uses the same to create queue items for Performer robots to process.
+        -Information is pushed to one or more queues allowing the dispatcher to use a common format for all data stored in queue items.
+    # Performer = Consumer
+        - The performer process pulls transaction items from an Orchestrator queue and processes them as needed by the company. Queue items are processed one at a time.
+        - It uses error handling and retry mechanisms for each processed item.
+        - A major advantage of the performer is its scalability (multiple performers can be used with a single queue).
+    $ example
+    Let's take an example: we have a list of people and their email addresses in a spreadsheet. An email needs to be sent to each of them with a personalized message based on a template. 
+        * We can use the Dispatcher and Performer model in the following manner:
+            % The Dispatcher reads rows from the input spreadsheet and adds the data (i.e., name and email) to a queue; each queue item will have both name and email from one spreadsheet row.
+            % The Performer retrieves an item from the same queue and does the necessary actions using that data, like replacing template values and sending an email.
+
+The advantages of the Dispatcher and Performer model:
+- Better separation of actions (between dispatcher/producer or performer/consumer).
+- Better separation and distinction between architecture and process layers.
+- Better error handling and retry mechanism.
+- Possibility to run processes across several machines (availability).
+- Better reuasbility within the proect's created components.
+- Improved built-in configuration and Orchestrator integration.
+- Automation projects created previously without ReFramework can be easily adapted and deployed using the Dispatcher and Performer model.

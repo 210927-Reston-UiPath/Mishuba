@@ -1,0 +1,64 @@
+1. Prerequisities
+-   making sure the Robot is connected to Orchestrator, creating the Queue used in the process and setting the Retry value as requested in the process documentation.
+2. Configuration In UiPath Studio
+- creating a new process with the ReFramework template. Afterwards, based on the business process requirements, it takes you through each step of customizing the Configuration file accordingly.
+3. Applications used: Open/Close/Kill process
+- editing the workflows that start the required applications and close them when the transaction processing ends. If it isn't possible to close them, then it force-closes them.
+4. Business process: Transaction Data and process
+- editing steps for workflows used to get the transaction data and process it.
+    * Using the checklist as you develop a ReFramework project with queues will minimize the risk of overlooking any of the vital steps of the process. 
+
+
+Ensure the prequisities are covered. Create a new project and fill in the Config file. Configure the workflows used to open, close and kill apps, Edit the GetTransactionData and Process workflows.
+
+Whiteboarding the Automation Project workflows
+- Building the process workflows
+    *  for every process you automate, before starting to configure the framework, look for parts of the process that can be reused. This is very helpful for sharing code and even reusing pieces within the same project.
+        % Before the actual development, we “whiteboard”, or design a process—break the process into smaller reusable components. 
+P.S. Whiteboarding should be applied to the workflows we develop from scratch, not the ones built into the framewor.
+
+When Whiteboarding your process workflows, what information should you take into account?
+    - Workflow name
+    - Pre-condition
+    - Description
+    - Post-action 
+    - Arguments
+    - State(s)
+    
+We should only use whiteboarding for the workflows which are specific to our business process.
+
+
+The Project Configuration
+
+    In the Settings sheet of the Config file you would create an entry for a Credential type asset?
+
+    In the Setting sheet of the Config file you would define a threshold for a Business Rule?
+
+    In the Constants sheet of the Config file you would set the Max Retry Number.
+
+Application Used: Open/Close/Kill
+- Where do pre-build workflows get invoked:
+    * UiDemo_Open.xaml
+        # This workflow opens the UI Demo application and logs in. It is invoked in the 'InitAllApplications' file.
+    * UiDemo_Close.xaml
+        # This workflow closes the UI Demo application elegantly. It is invoked in the 'CloseAllApplications' file.
+    * UiDemo_ForceClose.xaml
+        # This workflow terminates the UI Demo process. It is invoked in the 'KillAllProcesses' file.
+
+When an error has occurred while processing a transaction the SetTransactionsStatus.xaml is the first to call CloseAllApplications.xaml and KillAllProcesses.xaml
+
+The Get Transaction Data and Process Transaction States
+    Pre-buit Workflows that get Invoked:
+    - UiDemo_AddTransactions.xaml
+        * This workflow enters transaction data into UI Demo, gets the transaction number and clicks Accept. It is invoked in the 'Process' file.
+
+Let's say each Queue Item for our process contains three values. How can we extract values from an object of type QueueItem?
+    - By using the 'SpecificContent' property and supplying the name of the field as the key.
+
+Running the Project
+- What should you make sure beore test-running your project?
+    * That Queue Items are available in the Queue.
+
+Testing a ReFramework Project with Queues using UiPath Test Suite
+    - UiPath Test Suite is one solution that serves two purposes: application testing and RPA testing. The main goal of RPA testing is to address automation issues as early as possible, in the RPA development phase. The 'Test Suite' name incorporates four components: Test Manager, Studio Pro, Orchestrator, and Robots.
+    - To focus solely on the testing features and for the sake of simplicity, we will be using a different automation project and going through several test cases.
