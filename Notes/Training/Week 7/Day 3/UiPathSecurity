@@ -66,11 +66,11 @@ How to keep track of users' activity and any other changes through RPA projects
 Robot Security
     - Provisioning
         * A robot must be provisoned in Orchestrator before it can connect to it.
-        Orchestrator generates a unique key fro the provisioned robot.
+        Orchestrator generates a unique key for the provisioned robot.
     - Authentication
         * Robots use the machine name and Robot key provided by Orchestrator to authenticate in the first phase.
     - Access to Setting
-        * Access to the Setting pag on the robot machine, where the Robot Key and ORchestrator URL can be edited, requires elevated rights.
+        * Access to the Setting page on the robot machine, where the Robot Key and Orchestrator URL can be edited, requires elevated rights.
         * A user also needs elevated rights to disconnect a robot from Orchestrator.
 
 How to secure the automation in UiPath Robot
@@ -83,26 +83,26 @@ How are the credentials used by Robot stored?
     - Orchestrator Credential Assets
         * Centralized database, in which credentials are encrypted using AES 256-bit and stored on the SQL Server database.
         * Can be accessed by connected robots.
-        * Should be conigured with "value per robot" to prevent unauthorized access.
+        * Should be configured with "value per robot" to prevent unauthorized access.
     - Windows Credential Manager
         *Works as a  local machine storage
         * should be used when Orchestrator is not available
-        * Can also be used as a allback in case Orchestrator is down and the robot does not require anything from Orchestrator except Credential Assets.
+        * Can also be used as an allback in case Orchestrator is down and the robot does not require anything from Orchestrator except Credential Assets.
 
 working with senstive data
     How can the sensitive data be protected 
-       * Configuring a trutsed channel: VPN connections, secure FTP sessions, HTTPS websites.
+       * Configuring a trusted channel: VPN connections, secure FTP sessions, HTTPS websites.
        * Data encryption, when using untrusted channels
-       * Usage o limited access environments, such as restriced shared folders or restricted SharePoint domains.
+       * Usage on limited access environments, such as restriced shared folders or restricted SharePoint domains.
 
 
 Development/UAT/Production
     * Development Environment 
-        - the RPA Developers and their robots interact only with systems that have sndbox envirnoments. 
+        - the RPA Developers and their robots interact only with systems that have sandbox envirnoments. 
         - The robots should not be able to connect to the UAT and production orchestrator
     * Production Environment
         - The robots permanently montiored for malicious tampering of package and the execution of correct version of the package
-        - ccess to the robots in Production restricgted to trusted individuals.
+        - access to the robots in Production restricted to trusted individuals.
 
 Package Securing on the Robot Machine
     Step 1
