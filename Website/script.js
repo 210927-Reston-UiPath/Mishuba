@@ -23,7 +23,14 @@ function checkout()
 }
 // end of the shopping cart section
 
-
+//Working on the news sections
+function tick() {
+        $('#NewsTickerScroll li:first').slideUp( function() {
+            $(this).appendTo($('#NewsTickerScroll')).slideDown();
+        });
+    } 
+    setInterval(function() { tick () }, 5000);
+// End of the news section ticker.
 
 /* The game homepage game javascript code here */
 var MishubaHomeGame = document.getElementById("MishubaHomeGame");

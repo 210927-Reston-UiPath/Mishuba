@@ -1,9 +1,9 @@
+html, body {
+    font-family:Helvetica, Arial, sans-serif;
+}
 
 body {
     margin: 0%;
-        border-width: ;
-        border-style: ;
-        border-color: ;
             padding: 0;
                 content: 100;
 
@@ -32,12 +32,14 @@ header {
 #News {
     width:12%;
     height:100%;
+    margin: 0 auto;
         position:absolute;
             left:0;
                 float:none;
                     clear:none;
-                        overflow:inherit;
+                        overflow:auto;
                             background:blue;
+                            text-align: center;
                             
 }
 
@@ -114,6 +116,28 @@ footer {
                         overflow:hidden;
 
 }
+
+/* this is for the actual news updates */
+.NewsTicker {
+    width: 98%;
+    height: 40%;
+    overflow: hidden;
+    border: 1px solid whitesmoke;
+    margin: 0px;
+    padding: 0px; 
+    list-style-type: none;
+    box-shadow: 0px 0px 5px greenyellow ;
+
+}
+.Ticker li {
+    height: 20%;
+    border-bottom: 1px dotted black;
+    padding: 5 px;
+    margin: 0px 5px;
+    text-align: center;
+}
+
+/* this is the end of the stuff for the actual news updates. */
 
 #IntroVideo {
     width:auto;
