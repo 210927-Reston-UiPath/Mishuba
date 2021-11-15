@@ -118,8 +118,8 @@ Orchestrator Security Overview
     * Orchestrtor is built on three layers:
         - The Presentation Layer (accessed via brower)
             * Communication between clients (browser, robots) and Orchestrator is encrypted using the secure https Channel.
-            * User session is saved ina session cookie (with conigurable expiration time).
-            *the password completxity is configurable
+            * User session is saved in a session cookie (with conigurable expiration time).
+            * the password completxity is configurable
             * account automatic locking after a configurable number of failed attempts.
             * protection against XSRF (CSRF) and clickjacking implemented in the code.
         - TheService Layer (containing the business logic)
@@ -127,7 +127,7 @@ Orchestrator Security Overview
             * role-base access control (RBAC).
             * no data sent outside customer's network.
             * logging - defaut events are logged for auditing, and so are the user actions.
-            * the section containing the encryption key in the coniguration file can be encrypted.
+            * the section containing the encryption key in the configuration file can be encrypted.
         - The Persistence Layer (containing the database where the events and relevant information are stored).
             * Orchestrator supports encrypted communication with SQL Server. 
             * each password is encrypted with a different encryption key.
@@ -136,11 +136,11 @@ Orchestrator Security Overview
 
 How to secure the automation in UiPath orchestrator 
 - Retrieving Credentials
-- User Roels
+- User Roles
 - Multitenancy
 - Audit Trail
 - Robot Logging
-- Authenticaion Securit
+- Authenticaion Security
 - Account Security
 - Encryption
 
@@ -175,8 +175,8 @@ How does ORchestrator retrieve credentials for Robot?
                     $ limited view ribhts in production(or training purposes).
                     $ target aduience: business department, they might be the one triggering the jobs and reviewing the queue items that were processed.
 
-Whawt is multitenncy:
-Keeps stuff isolated like (Robots, Processes, Assets, Wueues) from (Data, configuration, users, roles)
+What is multitenncy:
+Keeps stuff isolated like (Robots, Processes, Assets, Queues) from (Data, configuration, users, roles)
 
 HOw does thr Audit Trail work in Orchestrator?
 
