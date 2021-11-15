@@ -37,7 +37,7 @@ header {
             left:0;
                 float:none;
                     clear:none;
-                        overflow:auto;
+                        overflow:hidden;
                             background:blue;
                             text-align: center;
                             
