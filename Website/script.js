@@ -1,3 +1,4 @@
+// the shopping cart javascript below
 function buy(name) {
     let cart = document.querySelector('#cart tbody');
 
@@ -20,3 +21,34 @@ function checkout()
 {
     document.querySelectorAll('#cart tbody tr').forEach(row => row.remove());
 }
+// end of the shopping cart section
+
+
+
+/* The game homepage game javascript code here */
+var MishubaHomeGame = document.getElementById("MishubaHomeGame");
+var block = document.getElementById("block");
+
+function jump(){
+    if(MishubaHomeGame.classList != "animate") {
+    MishubaHomeGame.classList.add("animate");
+    }
+    setTimeout(function(){
+        MishubaHomeGame.classList.remove("animate");
+    },500);
+}
+
+//fix the numbers in this section so that the game works.
+var checkDead = setInterval(function(){
+    var MishubaHomeGameTop =
+    parseInt(window.getComputedStyle(MishubaHomeGame).getPropertyValue("top"));
+    var blockLeft =
+    parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+    if(blockLeft<94 && blockleft>100 && MishubaHomeGameTop >= 40) {
+        block.style.animation = "none";
+        block.style.display = "none";
+        alert("you lose.");
+    }
+},10);
+
+//End of the javascript HomePageGame

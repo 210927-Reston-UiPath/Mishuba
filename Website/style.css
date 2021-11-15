@@ -47,7 +47,7 @@ header {
     position: absolute;
         left: 12%;
             overflow: auto;
-                background:rgb(255, 255, 255);
+                background:red;
 }
 
 #TsunamiFlowInformation {
@@ -67,7 +67,7 @@ header {
     position: absolute;
         bottom:0%;
                 overflow:scroll;
-                                            background:rgba(209, 0, 199, 0.61);
+                                            background:black;
                   }
 
 footer {
@@ -118,12 +118,49 @@ footer {
 }
 
 #IntroVideo {
-    
     width:auto;
     height:auto;     
             }      
 
+    /* Mishuba game sectin starts here. I will space it out like tabs */
+#HomeGame {
+    width: 93%;
+    height: 30%;
+    border: 1px solid black;
+}
 
+        /*The character and its animation*/
+    #MishubaHomeGame{
+        width: 6%;
+        height: 30%;
+        position: relative;
+        top: 70%;
+        
+    }
+        .animate{
+            animation: jump 500ms;
+        }
+            @keyframes jump{
+                    0%{top: 50.33%}
+                    30%{top: 70%}
+                    70%{top: 70%}
+                    100%{top: 50.33%;}
+                }
+
+        /*The block and its animation*/
+    #block {
+        width: 4%;
+        height: 10%;
+        background-color: black;
+        position: relative;
+        top: 60%;
+        left: 96%;
+        animation: block 1s infinite linear;
+    }
+        @keyframes block{
+            0%{left:96%;}
+            100%{left:-12%}
+        }
 
 #TFBio {
     position: relative;

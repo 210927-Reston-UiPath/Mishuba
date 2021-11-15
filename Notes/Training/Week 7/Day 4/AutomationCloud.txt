@@ -168,4 +168,157 @@ dimension
 
 
 Creating and Managing alerts
-    - 
+    - Steps to create an alerts 
+        * Hover over the widget that contains the information you are interested in staying informed on. The alert sign appears in the shape of a bell icon.
+        * As you click on it, you can add a custom title.
+        * In the Conditions field, you need to select an operator, such as "is greater than", "is less than" or "is equal to" and input the control value.
+        * You need to input the recipients for the alert.
+        * You can finally set the frequency of the alert.
+
+Alerts can be scheduled to be sent to other email addresses than the one of the user scheduling the alert.
+
+
+Working with the Business ROI Dashboard
+    - Configuring the ROI dataset (as an Admin):
+        * From the top right menu, select Configure ROI dataset.
+        * Select the input preference: Use Process or Use Queue.
+        * For each process in the list, you need to input the manual time in minutes that it takes ahuman to complete the process, and teh hourly cost. Consider end-to-end processes here, not individual transactions.
+        * Besides the two standard columns, you can add up to 10 custom columns. In our case, we've added FTE to reflect how many people are involved for each process.
+
+Working with the Business ROI dashboard (as an ROI EDitor)
+    * By default, this dashboard contains widgets for money saved, time saved in hours, as well as total money saved as the year's goal.
+    * We can copy the dashboard just as we do will the others. The copy will appear under My Dashboard, with the name that we choose.
+    * Every widget can be edited from the Tile actions menu, by selecting Explore. From there, dimensions and measures can be added.
+    * If changes are made, a Run is needed to make the results available.
+
+ROI editors can add up to 10 customs columns to the ROI dataset
+    - False 
+
+Which of the following indicators appear in the Business ROI dashboard template?
+    Money saved
+    Time saved in Hours
+    Total money saved (as the year's goal)
+
+User Management in Cloud Insights
+    What can Designers do?
+        They have rights to edit, create and delete dashboards in UiPath Cloud Insights.
+        They can create copies of the dashboard templates under UiPath Templates.
+        Inside a dashboard, they can re-order the widgets
+        They can edit the name of the dashboard and of the individual tiles.
+        They can download dashboards and schedule them for delivery.
+        They can create brand-new dashboards from scratch, where they can add tiles.
+        They can share dashboards with the other tenant users.
+    What can Viewers do?
+        They can view the dashboard templates under UiPath Templates and dashboards shared by designers under Tenant.
+        They can download dashboards and schedule them for delivery.
+        THey can also clear the cache and refresh.
+    What can Admins do?
+        They can canfigure UiPath Cloud insights by:
+            - Adding and removing users
+            - Editing users by adding and removing permissions.
+            - They can configure the ROI dataset by inputting information and adding custom columns.
+        On the actual dashboards, Admins have simple Viewer permissions> But they can grant themselves more powerful permission if required.
+    What can ROI Viewers do?
+        This is an auxiliary permission and it typically comes on top of Viewer, although ti can be paird with Designer also.
+            If it's paired with Viewer:
+                *It offers view-only permissions to the Business ROI dashboard.
+                * ROI Viewers can also download the Business ROI dashboard or schedule it for delivery.
+            It it's paired with Designer:
+                * It offers view-only permissions to the Business ROI dashboard.
+                * It offers access to the Process Manual Values and Queue Manual Values, but it doesn't grant access to the ROI template formulas and it doesn't allow dashboard copying.
+                * ROI Viewers can also download the Business ROI dashboard or schedule it for delivery.
+    What can ROI Editors do?
+        This is an auxiliary permission and it typically comes on top of Designer, allowing users to:
+            View, download and schedule for delivery the Business ROI dashboard.
+            Create a copy and customize the Business ROI dashboard.
+            Add new tiles or edit the exisitng ones in the Business ROI dashboard copied.
+
+Which of the following actions can you perform in Coud Insights as a user with Designer permissions?
+    Edit widgets
+    Create new dashboards
+    Delete your own dashboards
+    Create alerts
+    Share dashboards to Tenant
+    Download a dashboard as a PDFs
+
+Which permissions allow downloading dashboards as PDF and scheduling dashboards for delivery via e-mail?
+    Viewers, Designers, and Admins
+
+Who can add in Cloud Insights users that were not added In Automation Cloud first?
+    All Admins
+
+The ROI Viewer auxiliary role can be granted only to users having the Viewer role, not to those having the designer one
+    False
+
+
+Practice 1: The Success Rate for all Jobs
+    Mission: Have the success rate for all jobs displayed as a single value visualization. Then add a custom title (such as "How successful are your jobs?") and display the value in your favorite color.
+        Step 1
+            Start from a dashboard  
+                Open an existing dashboard or create a new one.
+        Step 2
+            Add a tile
+                Add a new tile and then choose Visualization.
+        Step 3
+            Add the Success Rate
+                1. Click on the Jobs Explore
+                2. Click on the Jobs fields
+                3. Click on the Success Rate Measure
+        Step 4
+            Change the title
+                Naviage to the top let of the tile and replace "Untitled" with the name you like or with the one suggested.
+        Step 5
+            Change the color
+                To change the color, click Edit and then you can adjust the value color shown.
+
+Practice 2: Top 10 Processes with the Most Faulted Jobs
+    Mission: Configure a tile to display the top 10 processes with the most faulted jobs. Use a scatterplot as the layout for the tile and make it reflect the number of faulted jobs as size points.
+        Step 1
+            Open a dashboard
+                Open an existing dashboard or create a new one.
+        Step 2
+            Add a tile
+                Add a tile and then choose Visualization
+        Step 3
+            Choose the measures
+                1. Click on the Jobs Explore
+                2. Click on the Jobs fields
+                3. Click on the Process Name field, Faulted Jobs Measure, and Processes Ran Measure.
+        Step 4
+            Change to scatterplot
+                1 Press Run
+                2 Choose the scatter plot visualization
+        Step 5
+            Change the view the reflect the number of processes run
+                To show the size of the points by the number or processes run:
+                    1. Click on edit.
+                    2. Navigate to the series tab shown here.
+        Step 6
+            Size the points by porcesses ran
+                Select the field called Jobs Processes Ran shown above.
+
+Practice 3: Top 10 Processes by Number of Runs and Job strategic
+    Mission: Configure a tile to display the top 10 processes by number or runs and job state in the past 30 days. Display the results as a stacked column chart.
+        Step 1
+            Open a dashboard
+                Open an existing dashboard or create a new one.
+        Step 2
+            Add a tile
+                Add a tile and then choose visualization.
+        Step 3
+            Choose the fields
+                1 Click on the Jobs Explore
+                2 Click on the Jobs fields
+                3 Click on the Process Name Field, Processes Run measure, and pivot this date on the Job State field shown above.
+        Step 4
+            Add the filter for the last 30 days
+                1 Click the drop down next to the End Dat field.
+                2 Press the filter button next to the Date field.
+                3 You will now see the fitler added to the top of the Tile.
+                4 Change the last 7 days to 30 to finalize the filter.
+        Step 5
+            Display the results as a stacked column chart
+                1 Click Edit and then click on the Plot tab
+                2 Select the option to stack the columns.
+                3 Additionally, if you want to change the location of the legend, click on the Plot tab and scroll to the bottom. You can move the legend to the center, left, or right o the Visualization.
+                
