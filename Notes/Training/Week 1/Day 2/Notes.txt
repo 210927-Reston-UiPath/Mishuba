@@ -1,7 +1,7 @@
 Week 1 Day 2 notes. (Git)
 
 Always attempt to answer the question
-If yuou don;t know the answer, do you best to make an educated guess.
+If you don;t know the answer, do you best to make an educated guess.
 
 Don't make our answers
 - Too Short
