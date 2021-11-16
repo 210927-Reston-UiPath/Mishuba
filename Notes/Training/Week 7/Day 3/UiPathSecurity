@@ -178,17 +178,17 @@ How does ORchestrator retrieve credentials for Robot?
 What is multitenncy:
 Keeps stuff isolated like (Robots, Processes, Assets, Queues) from (Data, configuration, users, roles)
 
-HOw does thr Audit Trail work in Orchestrator?
+How does the Audit Trail work in Orchestrator?
 
 The audit Trail tracks the actions performed by all users in Orchestrator:
 
 Credentials Assets Queues
-    _ and it allows iltering by components and actions.
+    - and it allows filtering by components and actions.
 
 Robot Logging
-    -Actions the Developer wants to track
-    -Logged messages
-    -Stored in SQL Server or Elasticsearch (Use xplack(I think she said plugin)) (or other)
+    - Actions the Developer wants to track
+    - Logged messages
+    - Stored in SQL Server or Elasticsearch (Use xplack(I think she said plugin)) (or other)
 
 
 Authentication options and prerequisites
