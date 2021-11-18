@@ -1,0 +1,7 @@
+
+
+When scheduling a showcase, where is the time and date schedule for us to acquire. 
+        - how do we determine when to put in the showcase in the status or would we put in a date.
+            - When scheduling the showcase on week 6 do we automatically put it for week 10 or 12, will it depend on the batch or will it depend on batch issues.
+
+What do they mean when they say delete a batch, will it be just deleting the batch from the excel sheet or is it stored somewhere.
