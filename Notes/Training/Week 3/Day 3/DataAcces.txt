@@ -1,10 +1,10 @@
 Select Statement
 - Used for retrieveing data from the database
 -The select statement has several clauses
-    0 select - specifies waht columns to have in the result select
-    - From - speciies what table to query
+    0 select - specifies what columns to have in the result select
+    - From - specifies what table to query
     - Where - Defines a condition filtering out rows that don't match
-    - Group by - Aggregates mutliple rows into one. If they have thre same values or all the expressions in the group by list (Need one or multilple columns to do so)
+    - Group by - Aggregates multiple rows into one. If they have the same values or all the expressions in the group by list (Need one or multiple columns to do so)
     - Having - defines a condition for filtering after group by
     - Order by - Specifies the sort order of the result set
 - Logical order of operations to the select statement: from, where, group by, having, select, order by,

@@ -10,7 +10,6 @@ body {
       }
 
 header {
-                        position: relative;
                             top:0;
                             left:0;
                                 width: 100%;
@@ -64,12 +63,15 @@ header {
 }
 
 #TsunamiFlowStyle {
+    margin: 0%;
+    padding: 0;
+    content: 100;
     width: 100%;
     height: 10%;
     position: absolute;
         bottom:0%;
                 overflow:scroll;
-                                            background:black;
+                                            background:rgb(255, 255, 255);
                   }
 
 footer {
@@ -81,32 +83,35 @@ footer {
         background:yellow;
 }
 
+#Motto {
+    width: 35%;
+    height:100%;
+        position: absolute;
+            left: 0;
+                float:inline-start;
+                    clear:inline-start;
+                    overflow: hidden;
+}
+
 #Tycadome {
-                    width: 50%;
+                    width: 30%;
                     height:100%;
                         position: absolute;
-                            left:0;
-                                float:none;
-                                    clear:both;
-                                    font: ;
-                                    text: ;
-
+                            left: 35%;
+                            float:inline-start;
+                            clear:inline-start;
+                            overflow: hidden;
         }
 
 #Mantra {
-                    width:50%;
+                    width:35%;
                     height:100%;
                         position: absolute;
-                            right:0;
-                                float:none;
-                                    clear:both;
-                                        overflow:hidden;
-                                        font: ;
-                                        text: ;
+                            left: 65%;
+                                    float:inline-start;
+                                    clear:inline-start;
+                                    overflow: hidden;
         }
-
-
-
 
 
 #TsunamiNews {
@@ -126,9 +131,21 @@ footer {
     margin: 0px;
     padding: 0px; 
     list-style-type: none;
-    box-shadow: 0px 0px 5px greenyellow ;
+    box-shadow: 0px 0px 5px greenyellow;
 
 }
+
+.BizzTicker{
+    width: 100%;
+    height: 95%;
+    overflow: hidden;
+    border: 1px solid black;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    box-shadow: 0px 0px 5px white;
+}
+
 .Ticker li {
     height: 20%;
     border-bottom: 1px dotted black;
@@ -136,6 +153,8 @@ footer {
     margin: 0px 5px;
     text-align: center;
 }
+
+
 
 /* this is the end of the stuff for the actual news updates. */
 
@@ -207,18 +226,32 @@ footer {
 
 
 #SomethingList {
-    position: relative;
-    top:0;
-    left:0;
-                overflow:hidden;
+    position: absolute;
+    left:0%;
+    float:inline-end;
+    overflow:hidden;
         }
 #TheList {
-    position: relative;
-    top:0;
-    left:0;
-                overflow:hidden;
+    position: absolute;
+    left:35%;
+    width: 40%;
+    height: 100%;
+    float: inline-end;
+    overflow: hidden;
+    border: 1px solid black;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    box-shadow: 0px 0px 5px white;
         }
 
+#Donation {
+            position: absolute;
+            left:80%;
+            left:80%;
+            float: inline-end;
+            overflow: hidden;
+}
 
 
 
@@ -232,12 +265,6 @@ footer {
                         position: relative;
                         top:0;
                         left:0;
-        }
-
-#Donation {
-                    position: relative;
-                    top:0;
-                    left:0;
         }
 
 #QuickLinks {

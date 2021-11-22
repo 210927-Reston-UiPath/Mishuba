@@ -16,10 +16,10 @@ Special Types of Indexes
 - Different types of Indexes
     - B-tree    
         - stands for "balanced tree" and is a type of index that cna be created in relational databases
-        - Hash - Hash indexes support only single-column indexes and do not alow \uniqueness checking.
+        - Hash - Hash indexes support only single-column indexes and do not allow uniqueness checking.
 
-        Hash indexes support only the = operator, so WHERE clauses that speciy range operations will not be able to take advantage of hash indexes. MOst commony used in Data Management
-        GIST - A GIST index is lossy, meaning that the index might produce
+        Hash indexes support only the = operator, so WHERE clauses that specify range operations will not be able to take advantage of hash indexes. Most commonly used in Data Management
+       (gather more notes) GIST - A GIST index is lossy, meaning that the index might produce
 
 
 

@@ -2,15 +2,15 @@ Batabases
 
     -An organized collection of structured information, or data, typically stored electroniclaly in a computer system.
     -Usually controlled by a database management system (DBMS
-        - serves as an interface between the database and tis end users or programs, allowing users to retrieve, updata, and manage how the inormation is organized and optimized.
+        - serves as an interface between the database and this end users or programs, allowing users to retrieve, updata, and manage how the inormation is organized and optimized.
         - also facilitates oversight and control of databases, enabling a variety of adminstrative operations such as performance monitioring tuning.
 
 
 Relational databases
 
-- type of database taht stores and provides access to data points that are related to one another
-- based on the relational model, an intuitive, straightorward way of representing data in tables
-- Stores dat into relations (tables)
+- type of database that stores and provides access to data points that are related to one another
+- based on the relational model, an intuitive, straightforward way of representing data in tables
+- Stores data into relations (tables)
 
 SQL
 - Structured Query Language
@@ -34,12 +34,12 @@ SQL
 
 SQL sublanguage vs Sql Dialect
 - DQL Dialect refers to SQL variant used by a database vendor.
-    - The SqL dialect we'll be using aPcSQL since the database vendor we' be using a PostgreSQL
+    - The SqL dialect we'll be using a PcSQL since the database vendor we'll be using a PostgreSQL
 SQL Sublanguages refer to the different categories of the statements/commands in SQL
 
 DDL 
 - Data Definition Language
-- USed for creating Database tables, deining the database structure COmmands 
+- USed for creating Database tables, defining the database structure Commands 
     - Commands
     - Create
     - Alter
@@ -64,7 +64,7 @@ tCL
 - Transaction Control Language
 
 - Commands
-    - COmmit 
+    - Commit 
     - Savepoint
     - Rollbact
     - Transact
@@ -72,7 +72,7 @@ tCL
 
 Database Design
 -Data Definition Language
-    - Concerned with designing the 
+    - Concerned with designing the tables' information.
 
     Alter Drop
 
@@ -81,13 +81,13 @@ Constraints
         * https://www.postgresql.org/docs/9.0/ddl-constraints.html
 
 - In creating tables, columns can have Constraints
-Used for setting guidelines ain what data belongs to acolumn
+Used for setting guidelines in what data belongs to acolumn
 - types     
     - Data types
     - Not Null
     - Unique
     - Check (check the value)
-    - Exclusion (If i take two different rows one had to be true and the other must be false)
+    - Exclusion (If I take two different rows one had to be true and the other must be false)
     - Primary Key - unique and not Null
     - Foreign Key
 
@@ -102,7 +102,7 @@ Keys
             - Unique identifier for a row in a table 
             - in implementation we choose one candidate key to identify the row
         Foreign Key
-            - A set of columns which hold the values of some primary key ot establish a relationship to another row 
+            - A set of columns which hold the values of some primary key to establish a relationship to another row 
         Composite Key
             - Any key that's more than one column
 
@@ -116,12 +116,12 @@ Let's DTR in SQL
 - Relatinoships in SQL are defined by muliplicity
 1:1 (One to One)
     - This means that two sets of data are unique to each other
-    - EX: A wizard can only have one apprentice, and an apprentice can only folow one wizard
+    - EX: A wizard can only have one apprentice, and an apprentice can only follow one wizard
 1:M (one to many)
     - This means that one set of data can have many instances of the other data set
     - Ex: A wizard can have many apprentices, but apprentices can only follow one wizard
 M:M (many to many)
-    - This means that both data sets can have many instances of  each other
+    - This means that both data sets can have many instances of each other
     - Ex: in a wizard school, a wizard can teach many apprentices, and apprentices can learn from multiple wizards 
 
 Implementation of SQL relationships
@@ -130,7 +130,7 @@ Implementation of SQL relationships
 1:M
     - Two tables, FK that is not unique
 M:M
-    - 3 Tables one off which is a join/junction table
+    - 3 Tables one of which is a join/junction table
 
 Er Diagram
 

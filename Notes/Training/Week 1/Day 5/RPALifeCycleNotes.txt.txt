@@ -1,0 +1,25 @@
+Stages of RPA Lifecycle:
+
+Stage 1 – Identification
+
+RPA strategists and architects identify a business process with business teams for RPA development. The development follows an agile and customized methodology.
+
+Stage 2 – Discovery/Analysis
+A Process Architect analyses and identifies the requirements of the client’s processes. The degree of automation is decided on this analysis and the complexity of the process. The benefits/outcomes of automation are thus highlighted automatically.
+
+Stage 3 – Design
+On the basis of requirement analysis, Process and Technical Architects create PDD (Process Definition Document) which describes the information of each step in every process. The next step is to create an Object Model Diagram or a flowchart to understand the flow of the process. Once the flowchart is ready, the RPA tool to automate the process is selected.
+
+Stage 4 – Development
+In the development process/phase, automation scripts and codes are created by developers with the help of selected RPA tools (UiPath, Blue Prism, etc) and technologies along with the reference of PDD.
+
+Stage 5 – Testing
+Post-development phase testing is conducted by the testing team, which includes QA like normal SDLC flow. The best practice is to have a dedicated testing team to perform QA. The bot is tested in the pre-production environment to ensure that it is performing as per the requirement which is to automate a specific task.
+
+Stage 6 – Implementation
+Once all the components are built, unit testing should be conducted. All the components are tested to smoothen the integration. If there are any issues upon diagnosis, then the bot goes back to the development and testing teams for resolution. The recommended UiPath architecture includes Dev and Test environments that allow the processes to be tested outside the live-production systems.
+
+Robotic Process Automation (RPA) lifecycle provides a structure to the automation process where at each stage we can ensure that the implementation is as expected. It is all about using robots to handle the repetitive or complex tasks which need high precision. RPA tools vary according to the requirement and degree of complexity which needs to be handled between multiple applications.
+
+Reference Link
+https://www.infobeans.com/robotic-process-automation-lifecycle#:~:text=Robotic%20Process%20Automation%20%28RPA%29%20lifecycle%20provides%20a%20structure,repetitive%20or%20complex%20tasks%20which%20need%20high%20precision.
