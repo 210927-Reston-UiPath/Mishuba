@@ -1,5 +1,6 @@
 
 //Working on the news sections
+
 function tick() {
         $('#NewsTickerScroll li:first').slideUp( function() {
             $(this).appendTo($('#NewsTickerScroll')).slideDown();

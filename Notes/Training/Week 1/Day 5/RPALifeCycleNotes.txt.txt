@@ -1,5 +1,9 @@
 Stages of RPA Lifecycle:
 
+Agile Methodology
+Scrum Methodology
+Sprint Methodology
+
 Stage 1 – Identification
 
 RPA strategists and architects identify a business process with business teams for RPA development. The development follows an agile and customized methodology.
