@@ -1,0 +1,48 @@
+Introduction to Orchestrator
+Orchestrator is used to manage the creation, monitoring and deployment of resources n an enironment. it is  eb application that.
+    Controls & monitors the productivity o robots
+    Displays the workflows to the robots
+    Manages the robots by scheduling them at any time
+
+
+Orchestrator Capabilites
+- The important capabiites of ORchestrator are:
+    $ Provisioning
+    $deployment
+    $ Configuration
+        Versions
+    $ Queueing
+        All the data items you want as a transcation you can add to the Queueing, then you can work on the transcation items one by one.
+    $ Monitoring
+        How is your process or automation deployed working? are there any types of logs.
+    $ Logging
+        Log levels
+        Used for analizing purposes
+        Think about logging and storing in a database
+
+    $ Inter-connectivity
+        Centeralized point 
+        Cloud integration (Do this first)
+            * you should be able to asscess the functionality from there. Any type of documentation
+            Ui Path has its own Cloud
+                # anything else has to be integrated first.
+                            Think about connecting these
+                            (Elastic Search
+                            Logstash
+                            Kibana)
+
+Publishing a Project To Orchestrator
+
+
+Ui Path assistant
+    Just search for it on the window search bar
+        Make sure you sign in
+    Use to ran automation (acts as a personal assistant)
+
+
+    Dispatcher - a process/workflow which uploads the queue items to the Orchestrator
+    Performr- A process or workflow which consumes each queue iem (transcatio) and perform more operations independectly of rest of the queue itms and upon processing it keeps on changing the transcation statuses.
+
+
+
+

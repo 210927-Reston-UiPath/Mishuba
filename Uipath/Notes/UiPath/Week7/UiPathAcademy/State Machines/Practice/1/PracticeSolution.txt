@@ -1,0 +1,30 @@
+1.) Start teh project as a 'Sequence' and drag a 'State Machine' activity inside it.
+
+2.) Create a State ("Select initial amount") and link it to the Start. In the 'Entry' section.
+    -Use an 'Input Dialog' activity to get the user input. Define the options as an array in the designated field in the Properites panel: {"$5", "$10", "20"}. Store the output under a new variable ("ChosenAmount");
+    -Use an 'If' activity and set 'ChosenAmount IsNotNothing' as Condition.
+    In the 'Then' section, drag another 'Sequence' adn insert an 'Assign' activity to convert the amount into Int32 using the name it "CurrentAmount". In the expression value field, type 'Cint(ChosenAmount.Replace("$",""))'.
+3.) Define a new Dicitonary variable name "DrinkPrice" to store the prices for the individual drinks. Type the following expression in the 'Default' value field of the dictionary variable type:
+
+New Dicitonary (Of String,Int32) From {{"Coffee - $3", 3},{"Tea - $2",2}}
+
+4. Create a new State ("Choose product") and in the 'Entry' section of the State:
+    -Use an 'Input Dialog' to display the drink options and let the user choose. In the 'Options' expression value ield, under 'input', type "{"Coffee - $3", "Tea - $2"}". The outpu should be stored under a new variable ("ChosenDrink");
+    -Use an "If" activity with the Condition "CurrentAmount>=DrinkPrice(ChosenDrink)":
+        * If 'True' ("Then" section), use an 'Assign' to calculate the "currentAmount" by subtracting the price of the drink ("CurrentAmount-DrinkPrice(ChosenDrink)").
+
+        Use an 'Input Dialog' to display the remaining amount inside the "Input Label" field ("String.Format("Done! your current credit ${0}. What do you want to do next?", CurrentAmount.ToString)") and allow the user to choose between buying a new drink and requesting the change. Store the outcome in a new variable ("NextAction").
+
+        Insert and 'if' activity and type "NextActionIsNothing Or NextAction.Equals("Get change")" in the Condition field.
+        If "True", use an 'Assign' activity to assign the value 'True' to a global Boolean variable ("GetChange"). Be aware that you don't need the 'Else' section within this particular activity.
+
+        *If 'False' ('Else' section), display a corresponding message in a 'Message Box' and use an "Assign' to change the value of "GetChange" to 'True'.
+
+5.) Create a 'final State ("Give change and Exit"). In the 'Entry' section, use a 'Message Box' to display the value of the "CurrentAmount" variable.
+
+6.) Create the following Transitions:
+    - From "Select initial amount" State to "Choose product" State with the "Cndition - ChosenAmountIsNotNothing"
+    - From "Select initial amount" State to "Give change and Exit" State with the "Condition - ChosenAmountIsNOthing"
+    - A self-transition, from "Choose product" State to "Choose product" State with the Condition - Not GetChange
+    - From "Choose product" State to "Give change and Exit" State, with the Condition- Get Change.
+

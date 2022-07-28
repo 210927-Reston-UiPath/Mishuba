@@ -1,0 +1,16 @@
+## Control Flow
+- usually used in tandem with boolean expressions.
+- Conditionals
+	- if else statements
+	- if statements
+	- if else if statements
+	- switch statement
+	- Nested if-else statement
+- statements in programming that are used to evaluate a variable or two vars for execution
+- a way of controlling execution by evaluating one condition (at least) can be with mutliple different kinds of operators, any condition minimum of one.
+- decision based on a value, like a flowcharts.
+- finite executions
+-Looping contructs
+	- do while
+	- for
+	- 

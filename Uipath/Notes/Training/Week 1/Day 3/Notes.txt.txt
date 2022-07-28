@@ -1,0 +1,34 @@
+Squad motto
+Together everyone accomplishs more.
+Teamwork makes the dreamwork.
+Power naps
+always try to be 1% better than yesterday.
+
+
+Review 
+(if anybody wants to update or add to the notes I will be greatly appreciative. 
+
+What is git
+If i live in fl (that is the main road) (Branch Main)
+	The different city equal a type of branch (Sub Branch)
+	The different neighborhoods in florida will equal a different type of branch (Sub Branch)
+
+
+
+Git is the subway line.
+Different Repos have it own subway
+
+
+<!-- someone help make this one better please -->
+Git a place to store information like a library (system the library uses [like a history library)
+- books (are different branches in repos...)
+- shelf (a keys to help merge the branches) 
+
+(basically)
+Git is a system
+Github uses git (online repos.... [like google drive/onedrive for code).
+	- using git to as a version control systemt to track changes in the code to store.
+Git is an underline technology to monitor
+Git is a system not langugae.
+Github is a place where like minded coders can come together to work on the same project that can't be solved by one person.
+

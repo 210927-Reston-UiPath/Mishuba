@@ -1,0 +1,31 @@
+Stored Procedure
+
+- A stored procedure is a prepared SQL code that you can save, so it can be reused over and over again
+
+Why use Stored Procedures?
+- Stroed Procedures are used to create custom functions
+    - Once created, stored procedures can be used in app or as a part of other databases workflows
+    - Ensure consistent results
+
+Advantages and Disadvantages
+
+Advantages (Reduce work flow traffic,)
+
+Disadvantages ( )
+
+How to use it
+- Stored Procedure Syntax
+    CREATE PROCEDURE procedure_name
+    as
+    sal_statement
+    GO;
+
+-Execute a Stored Procedure Syntax
+    EXEC procedure_name;
+
+Declaring Variables
+- CREATE FUNCTION function_name(argument1 type, argument2 type)
+        - you have the option to declare a variable that gets passed into your funcion.  THis could be a Column rom a table or data from an entry in a table or any piece of inormation you would like ot access to
+
+
+

@@ -1,0 +1,121 @@
+##Why you should be a trainer
+
+avi@revature.com
+
+(SideNote For myself <! -- quantum computing --> check spelling)
+    {Look up some different theories on quantum computing}
+- Computers will create two types of jobs. People who tell computers what to do and people who listen to the computer.
+
+- Information Security
+
+- bitcoin  
+    *Value systems
+
+- It's not rocket surgery
+
+
+What is code
+- Declarative Knowledge: sqrt(x) = y^2
+
+imperative Knowledge:
+
+    How to find the sqrt of x
+        1 Guess a number < x, known as Guess
+        2 put it in x = g^2
+        3. if that is x, stop
+        4. if it is > x, guess a lower number
+        5. if it is < x, guess a higher number.
+
+        Algorithm
+            define how to do something
+
+        Programming is Giving Computers Instructions
+        - 
+
+
+        ada Lovelace
+            - The analytical engine, on the contrary, is not merely adapted or tabulating the results of one particular function and of no other, but or developing and tabulating any funciton whatever. In act the engine may be described as being the material expression of any indefinite function of any degree of generality and complexity.
+                Science of operations, constructed with peculiar reference to abstract number as the subject of those operations.
+                    but the science of operations, as derived from mathematics more especially, is a science of itself.
+
+        Culture
+        Values
+            -Lifelong Leanrer
+                *Curiosity
+                *Bravery
+                *Self-Compassion
+                *Feedback
+                *Iteration
+                *Teaching
+
+FAIL 
+First Atttempt In Learning
+
+When confused asked a question
+    -feedback and Iteration
+
+When learning 
+- it is ok to be wrong 
+- try to teach what you think you know to someone else.
+- write a blog post after doing some research on the topic.
+
+- discover what you know and what you don't know
+
+Grit 
+- Perseverance
+- Habits
+- Process-Oriented
+- Hope
+- Humility
+- Self-Worth
+
+how to practice Grit
+- develop Habits
+- stop caring about motivation
+- write a song about it when trying to learn something
+- write a blog plog when trying to learn how to do something
+- the process/ learning pains/ 
+- humbleness 
+
+gratitude
+- Being Positive
+- Comparing Down (helps humbleness)
+- Responsibility
+- Empathy 
+- Kindness
+- Perspective
+- still being a servant your community/society (mentally, physcially, emotionally)
+- practice being gratefull
+
+
+What's going to make you succeed/
+
+1. Focus
+2. Asking questions
+    - Don't be afraid to ask questions
+3. Collaborating
+    - Activities
+4. Staying Positive
+5. Hard work
+6. Comparssion
+7. Kindness
+8. Perseverance
+
+Mission
+- "Revature is the leading provider of entry-level tech talent powering global leaders."
+
+
+Values
+
+
+Busines Model Revature 
+Launch Careers
+- By providing associates with quality, real world, technical training, they win by launching a career in tech previously out-of-reach.
+Diverse talent
+- Our clients can grow their teams in an increasingly competitive environment while increasing diversity and demonstrating the value of Revature associates
+Grow Reach
+- By unlocking opportunities for our associates and provide our clients with diverse technical talent, we invest in improving and inrease our impact.
+
+
+Having a why helps gives you the drive required to help you succeed.
+Revatures why (Unlocking opportunities)

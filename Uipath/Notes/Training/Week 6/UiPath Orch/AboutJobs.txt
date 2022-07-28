@@ -1,0 +1,47 @@
+A job represents the execution of a process on a UiPath Robot. You can launch the execution of a job in either attended or unattended mode. You cannot launch a job from Orchestrator on attended robots, unless for debugging or development purposes.
+
+Attended jobs can be triggered from the Uipath Assistant or the Robot Command Line Interface.  Unattended jobs are launched from Orchestrator, either directly on the spot from the Jobs or Processes page, or in a preplanned manner through triggers on the Triggers page.
+The Jobs page represents the job control center, where you can monitor launched jobs view their details and logs, and stop/kill/resume/restart a job.
+
+
+
+Account-Machine Mappings
+- When starting a job or defining a trigger, you can define specific account-machine pairs on which execution takes place.  Account-machine mappings enable you to tie unattended usage under particular accounts to specific machine templates.  The gives granular control over the execution targets of your automation. Account-machine mappings can be tenant-based(not tied to specific folder), or folder-based (tied to a specific foler).
+
+Execution targets
+- According tot he mechanism used for launching jobs in ORchestrator, you can choose and configure a job alloction strategy and an execution target, impicitly.  This article describes the alloction strategies and execution targets available when launching jobs from the Jobs page.
+
+    1.) Allocate Dynamically
+        * Dynamic allocation with no explicit account and machine selection allows you to execute a foreground process multiple times under the account and machine that become available first.  Background processes get executed on any account, regardless if it's busy or not, as long as you hvae suficient runtimes.
+
+    2.) Account
+        * The process is executed under a specific user or robot account.  Only specifying the account results in Orchestrator allocating the machine dynamically.  Specifying both the account and the machine means the job launches on that very account-machine pair.
+
+    3.) Machine 
+        * The process is executed on one of the host machines attached to the selected machine template. Specifying the template displays an additional Connected Machines option, allowing you to selelct a specific host machine from the pool of connected host machines.  Only specifying the machine results in Orchestrator allocating the account dynamically. Specifying both the account and the machine means the job launches on that very account-machine pair. (Make sure that runtime matching the job type are allocated to the associated machine template. Only connected host machines associated with the active folder are displayed.)
+    - If you configure a job to execute the same process multiple times, a job entry is created for each execution.  The jobs are ordered based on their priority and creation time, with higher priority, older jobs being placed first in line.  As soon as robot becomes available, it executes the next job in line.  Until then the jobs remain in a pending state.
+
+Execution Priority
+    - You can control which job has precedence over other competing jobs through the Job Priority field either when deploying the process or when configuring a job/trigger for that process. A job can have one of the following priorities (low (down arrow), Normal (Right arrow), High (Up Arrow))
+
+    - Starting a Job manually
+        The priority is inheritied from where it was intially configured.  You can either leave it as it is or change it.
+            * Automations Page > Jobs
+                Inherits the priority set at the process level.
+            * Automations Page > Triggers\
+                Inherits the priority set at the trigger level. If the trigger itself inherited the prioity at the process level, then that one is used.
+            * Automations Page > Processes
+                Uses the priority set for that process.
+
+        If you configure a job to execute the same process multiple times, a job entry is created for each execution.  The jobs are ordered based on their priority and creation time, with higher priority, older jobs being placed first in line. As soon as a robot becomes available, it executes the next job in line. Until then, the jobs remains in a pending state.
+
+Starting a Job through a trigger
+    - The priority is set by default to inherited, meaning it inherits the value at the process level.  Choosing a process automatically updates the arrow icon to illustrate what value has been set at the process level.  Any jobs lanuched by the trigger have the priority set at the trigger level.  If the default Inherited is kept, the jobs are launched with the priority at the process level.
+
+Jobs on High-Density Robots
+    - If you start a job on multiple High-Density Robots from the same Window Server machine, it means that the selected process is executed by each specified Robot, at the same time. An instance for each of these executions is created by displayed on the Jobs page.
+        *If you are using High-Density Robots and did not enable RDP on that machine, each time you start a job, the following error is dispayed: "A specified logon session does not exist. It may already been terminated."     
+
+Recording
+- For unattended faulted jobs, if your process had the Enbale Recording option switched on, You can download the corresponding execution media to check the last momoents of the exection before failure.  The Download Recording option is only dipslayed on the Jobs window. If you have View permissions on Execution Media.
+

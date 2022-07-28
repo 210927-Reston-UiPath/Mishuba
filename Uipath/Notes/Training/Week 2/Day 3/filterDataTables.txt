@@ -1,0 +1,6 @@
+ways to filter data from a datatable
+
+1.) Filter Data Table Activity
+2.) DataTable.Select() method
+3.) Filter with LINQ
+

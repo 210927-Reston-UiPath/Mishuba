@@ -1,0 +1,54 @@
+What is RPA?
+    -Robotic Process Automation is the technology that enables sofftware 'robots' to carry out repetitive, rule-based digital tasks.
+    - Helpful because
+        - They do not get tired
+        - They help eliminate mistakes
+        - they help you free up time.
+
+Processes That are perfect for RPA
+- A process is a set of interrelated or interacting activities that transforms inputs into outputs.
+- Processes have 4 components: inputs, process flows, source applications, and outputs
+- 2 criteria for automation potential: process fitness & automation complexity
+- Process fitness   
+    - Determines how fit a process is for automation
+    - check if your process is: rule-based, repetitive, standard input, stable
+        - is it moving
+        - are there set guidelines for it.
+        - rule based
+
+- Automation complexity
+    - How hard it is to automate a process
+    - Check: Number of screens, types of applications, business logic scenarios, types and number of inputs.    
+      - Smaller the number of inputs the better
+      - 
+
+- UiPath Ecosystem
+    - UiPath Studio
+        - An intergrated development environment for RPA developers to design, develop, and debug automation projects
+    - Orchestrator
+        - Where automated processes are published as Nuget packages 
+        - (think of it as you as the bot to make a cakes and it goes to the folder and find the recipe for cakes and then makes it.)
+    - robots    
+        - An execution agent that runs an automation.
+
+Types of robots
+- Attended
+    - might require user input 
+- Unattended
+    - 
+
+RPLA Life Cycle
+- Discover
+    -Discover automation opportunities powered by AI and your people
+- Build
+    - Build automations quickly from the simple to the advanced
+- Manage
+    - Manage, deploy, and optimize automation at enterprise scale
+- Run 
+    - Run automations through robots that work with your applications and data.
+- Engage
+    -Engage people and robots as one team for seamless process collaboration
+Measure
+    - Measure operations and performance to align with business outcomes.
+
+

@@ -1,0 +1,276 @@
+Access to Orchestrator
+
+Presentation Layer
+Service Layer
+Presistence Layer
+
+Cloud Deployment
+
+Studio - Deploy - Orchestrator Options (cloud, robot, on-prem)
+
+
+Access to condifdential data and credentials + faulty design of the automation workflows = security threat
+
+
+UiPath's commitment to addressing secuirty concerns
+Features 
+- Features are characteristics that are embedded in the product or solution and implemented in order to enhance security and mitigate risks.
+
+Guidelines
+- Guidelines are best practices that UiPath recommends when setting up or using the RPA solution.
+
+How to Secure the automation in UiPath Studio
+    - Code Review, Securing Automation Packages, Isolating Environments, Version Control Systems
+
+Code review aims to ensure that the process that will run on live data is safe and no security breaches are possible
+In what areas of workflow automation do you think code review has an impact?
+    * Code review is very useful to ensure the proper usage of credentials, as it will check whether the credentials are used only where needed and are not passed outside the trusted environment.
+    * Sharing data outside the environment is a common thing in automation, by saving files, sending emails, or other interactions with external systems.
+    * Code review can prevent sending sensitive data outside the trusted scope.
+    * Accounts or email addresses are sometimes written in the code, and thus may raise security threats.
+    * A malicious developer can utilize his own details to receive money or information overriding configurable settings, but code review can prevent such events.
+
+How to deploy in Orchestrator the projects created in Studio
+- Direct
+    Step 1
+        Publish in Studio
+    Step 2
+        NuGet package is created
+    Step 3
+        NuGet package is sent directly to Orchestrator
+    Step 4
+        Manual action required protected by permission
+    Step 5
+        Promote specific version in Orchestrator
+
+- Indirect
+    Step 1
+        Publish in Studio
+    Step 2
+        NuGet package is created
+    Step 3
+        NuGt package issaved on  local folder
+    Step 4
+        Permission Required
+    Step 5
+        Manual upload in Orchestrator
+
+How to keep track of users' activity and any other changes through RPA projects
+    Studio
+        - It is common practice to keep the sources (the XAML files) in a Source Code Control System (SCCS), especially when mutliple RPA developers are working on the same automation projects.
+
+    Orchestrator
+        - Orchestrator has its own versioning system, but for NuGet Packages instead of XAML files.
+        This is useful not only during QA when changes and bug fixes are being implemented and retested, but also during production, when the tested version of the package is transferred (through download/upload) from the test environment to the production one.
+
+Robot Security
+    - Provisioning
+        * A robot must be provisoned in Orchestrator before it can connect to it.
+        Orchestrator generates a unique key for the provisioned robot.
+    - Authentication
+        * Robots use the machine name and Robot key provided by Orchestrator to authenticate in the first phase.
+    - Access to Setting
+        * Access to the Setting page on the robot machine, where the Robot Key and Orchestrator URL can be edited, requires elevated rights.
+        * A user also needs elevated rights to disconnect a robot from Orchestrator.
+
+How to secure the automation in UiPath Robot
+    - Storing Credentials
+    - Mainpulating Sensitive Data
+    - Isolating Environments
+    -Packgae Securing
+
+How are the credentials used by Robot stored?
+    - Orchestrator Credential Assets
+        * Centralized database, in which credentials are encrypted using AES 256-bit and stored on the SQL Server database.
+        * Can be accessed by connected robots.
+        * Should be configured with "value per robot" to prevent unauthorized access.
+    - Windows Credential Manager
+        *Works as a  local machine storage
+        * should be used when Orchestrator is not available
+        * Can also be used as an allback in case Orchestrator is down and the robot does not require anything from Orchestrator except Credential Assets.
+
+working with senstive data
+    How can the sensitive data be protected 
+       * Configuring a trusted channel: VPN connections, secure FTP sessions, HTTPS websites.
+       * Data encryption, when using untrusted channels
+       * Usage on limited access environments, such as restriced shared folders or restricted SharePoint domains.
+
+
+Development/UAT/Production
+    * Development Environment 
+        - the RPA Developers and their robots interact only with systems that have sandbox envirnoments. 
+        - The robots should not be able to connect to the UAT and production orchestrator
+    * Production Environment
+        - The robots permanently montiored for malicious tampering of package and the execution of correct version of the package
+        - access to the robots in Production restricted to trusted individuals.
+
+Package Securing on the Robot Machine
+    Step 1
+        NuGet package is published or updated to ORchestrator
+    Step 2
+       NuGet package is ready to be downloaded by Robot when needed 
+    Step 3
+        NuGet package is stored on Robot in a folder with restricted access
+    Step 4
+        The package is verified for any tampering before execution
+
+Orchestrator Security Overview
+    * Orchestrtor is built on three layers:
+        - The Presentation Layer (accessed via brower)
+            * Communication between clients (browser, robots) and Orchestrator is encrypted using the secure https Channel.
+            * User session is saved in a session cookie (with conigurable expiration time).
+            * the password completxity is configurable
+            * account automatic locking after a configurable number of failed attempts.
+            * protection against XSRF (CSRF) and clickjacking implemented in the code.
+        - TheService Layer (containing the business logic)
+            * Installation of Orchestrator website only with SSL certificate.
+            * role-base access control (RBAC).
+            * no data sent outside customer's network.
+            * logging - defaut events are logged for auditing, and so are the user actions.
+            * the section containing the encryption key in the configuration file can be encrypted.
+        - The Persistence Layer (containing the database where the events and relevant information are stored).
+            * Orchestrator supports encrypted communication with SQL Server. 
+            * each password is encrypted with a different encryption key.
+            * login attempts are logged: result, IP address, timestamp, browser info.
+            * permissions to data stored in the SQL Server can be granted to user roles in order to prevent unauthorized use.
+
+How to secure the automation in UiPath orchestrator 
+- Retrieving Credentials
+- User Roles
+- Multitenancy
+- Audit Trail
+- Robot Logging
+- Authenticaion Security
+- Account Security
+- Encryption
+
+How does ORchestrator retrieve credentials for Robot?
+    Step 1
+       Robot receives the instruction rom ORchestrator to start a process.
+    Step 2
+        Robot asks for credentials from Orchestrator, needed to create an interactive WIndows session
+    Step 3
+        Orchestrator verifies i fthe credentials requested are avaialbe on the SQL Server Databazse/CyberArk
+    Step 4
+        Orchestrator decrypts and sends the username as plain text, and the password as SecureString
+
+    User Roles in Orchestrator
+        These are 2 predefined roles in ORchestrator:
+            - Administrator
+            - Robot
+
+            _but other roles, such as Developer, Support and Business can be conigured by the administrators
+
+            - User Role
+                * Developer
+                    $ Default role or developers when logging on the platforms
+                    $ The rights can vary from one  environment to another, almost full access on the developent environment, view-only in UAT, limited (or non-existent) in production.
+                    $It is recommended to dallow enough privilaegs in UAT so that the monitoring and bug fixing can be efficient.        
+                * Support 
+                    Production only role, given to the support team that will have to monitor the processes running in the production environment.
+                    $ should not allow package, uploading or robot, editing, as those should onlhy be done by the administrators.
+                    $ should allow starting and stopping jobs, viewing robots, schedules and logs.
+
+                * Business
+                    $ limited view ribhts in production(or training purposes).
+                    $ target aduience: business department, they might be the one triggering the jobs and reviewing the queue items that were processed.
+
+What is multitenncy:
+Keeps stuff isolated like (Robots, Processes, Assets, Queues) from (Data, configuration, users, roles)
+
+How does the Audit Trail work in Orchestrator?
+
+The audit Trail tracks the actions performed by all users in Orchestrator:
+
+Credentials Assets Queues
+    - and it allows filtering by components and actions.
+
+Robot Logging
+    - Actions the Developer wants to track
+    - Logged messages
+    - Stored in SQL Server or Elasticsearch (Use xplack(I think she said plugin)) (or other)
+
+
+Authentication options and prerequisites
+    Options
+        * Local Username and password
+        * Active Directory usernames using Windows Authentication
+        *Google Accoutns with OpenAuthentication 2.0
+        * Azure Active Directory authentication
+
+    Prerequisites
+        * HTTPS configured at IIS level
+        * SSL certificate from a trusted provider
+        * HTTP binding should be redirected to HTTPS
+
+The Orchestrator platform offers multiple Account security settings
+    - Account Lockout
+        * Account lockout helps to protect users form Brute force attacks.
+        * You can prevent additional logins for a period of time after a number of failed attempts.
+        * These setting are configurable per Tenant.
+    - Expiring Passwords
+        * Passwords can now be set to expire after a certain number of days.
+    - Password History
+        * Passwords can now be set to expire after a certain number of days.
+        * Also, the user must change the password on first login. 
+    - Password History
+        * Password history allows administrators to prevent the user from resuing an old password, unless it is beyond the passowrd history length.
+    - Multiple Login Contorl
+        * Multiple logins with the same user are disabled.
+        * WHen an additonal login is perofomred rom ane w machine, the exitisng conncetion will be closed on the previsous machine.
+
+How to protect data in transit and data at rest 
+    - Transport levle security 1.2 Protocl
+    - Advanced Encryption Stardard on 256-bit cipher
+    - Secure Hash Algorithm 2
+
+
+
+
+
+
+
+
+
+
+From Me to Everyone 10:40 AM
+these the quiz question at the end
+im just now starting it
+What are the most common security threats that a code reviewer can cover?
+answer:
+not sending email to private accounts, rom the workflow; not storing sensitive data in local files, not using hardcoded URLs accounts or email addresses
+the question might be in a different order for you
+Passwords in Orchestrator...
+Must be changed on the first login.  Cannot be changed without a direct request to your platform administrator. Can be set to expire after a certain numbers of days
+Authenticating the users on the Orchestrator platform can be done with
+all the aboe
+all of them
+Messages logged by the Robots are sent to Orchestrator and can be stored in:
+SQL Server and Elasticserach by default, but also in other targets, standard or custom
+The Account Lockout security feature provided by the Orchestrator platform ensures:
+Protection against Brute Force attacks
+Account Lockout settings are configurable per:
+Tenant
+What is the purpose of code review?
+To ensure the proper usage of credentials.  To prevent sending sensitive data outside the trusted scope.  To ensure that a malicious developer cannot utilize his own details to receive money or information overriding configurable settings
+From Me to Everyone 10:44 AM
+Access to a local package that is executed by the robot is granted to:
+Robot service and local admin
+CyberArk can be integrated with Orchestrator in order to retrieve the Robot credentials from CyberARK instead o SQL Server DB.
+Ture
+True
+The Mutlitenancy feature in Orchestrator offers the possibility to isolate between tenants the following entities:
+All entities, including logs, users, audit trail, settings, in addition to Robots, assets, queues, etc
+From Hassan Baraka to Everyone 10:44 AM
+good points!
+From Me to Everyone 10:48 AM
+What TLS protocol is recommended by the Orchestrator platform?
+TLS 1.2
+What are the main difference between guidelines and security features?
+Guidelines are recommended general best practices, while security features are already implemented in the product
+The audit page on the Orchestrator platform allows you to filter by:
+Component. Action
+What are the basic security measures, already implemented, concerning the Robot-Orchestrator connection?
+A Robot must be provisioned in Orchestrator before it can connect to it. A user must have local admin rights on the Robot machine in order to connect to Orchestrator
+A valid SSL certificate is required to install Orchestrator
+True

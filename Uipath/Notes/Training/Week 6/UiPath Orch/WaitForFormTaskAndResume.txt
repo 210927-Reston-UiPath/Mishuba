@@ -1,0 +1,31 @@
+UiPath.Persitence.Activities.FormTask.WaitForFormTaskAndResume
+
+- Can be used to suspend the execution of the current workflow until a specified Task is completed. To designate a Task, a 'FormTaskData' object obtained from the 'Create Form Task' activity must be supplied. Upon completion of the task, the execution of the workflow is resumed.
+
+properties
+- Common
+    * ContinueOnError   
+        $ Specifies if the automation should continue even when the acitivty throws an error.  This field only supports Boolean values (Ture, False). The default value is False. As a result, if the field is blank and an error is thrown, the execution of the project stops. If the value is set to True, the excution of the project continues regardless of any error.
+    * DisplayName   
+        $ The display name of the activity
+    * StatusMessage
+        $ The message specified in this property field is displayed in orchestrator alongside the workflow that is suspended by this activity. This field supports only strings and String variables.
+    * TimeoutMs
+        $ Specifies the amount of time (in milliseconds) to wait for the activity to run before an error is thrown, The default value is 30000 milliseconds (30 seconds).
+-Input
+    * TaskObject(Input)
+        $ The Task you want to suspend, stored in a 'FormTaskData' variable. This variable can be obtained from a "Create orm Task" activity. This field supports only "FormTaskData' variables.
+- Misc
+    * Private
+        $ IF selected the values of variables and arguments are not longer logged at Verbose level.
+- Output
+    * TaskAction
+        $ The action taken by the user to complete the Task.
+    * TaskObject(Output)
+        $ The updated ask object obtained from Orchestrator after the execution of this activity.
+In The Body of the Activity
+- Some properties can be configured straight from the body o the activity itself, for easier handling such as;
+    $ Task Object (Input)
+    $ Task Action
+    $ Task Object (Output)
+    

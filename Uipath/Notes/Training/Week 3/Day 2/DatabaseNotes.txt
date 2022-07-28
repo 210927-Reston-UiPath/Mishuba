@@ -1,0 +1,165 @@
+Batabases
+
+    -An organized collection of structured information, or data, typically stored electroniclaly in a computer system.
+    -Usually controlled by a database management system (DBMS
+        - serves as an interface between the database and this end users or programs, allowing users to retrieve, updata, and manage how the inormation is organized and optimized.
+        - also facilitates oversight and control of databases, enabling a variety of adminstrative operations such as performance monitioring tuning.
+
+
+Relational databases
+
+- type of database that stores and provides access to data points that are related to one another
+- based on the relational model, an intuitive, straightforward way of representing data in tables
+- Stores data into relations (tables)
+
+SQL
+- Structured Query Language
+- a programming language used by nearly all relational databases to query, manipulate, and define data, and to provide access control
+- Used to provide structure to your database
+- Declared
+    - Say what we want, not how to implement how to get what we want.
+
+Architecture
+
+- Quwry Processing includes translations on high level queries into low level expressions that can be used at physical level of file system, query optiomization and actual execution of query to get the actual result.
+
+- DBMS Engine is the core part of a DBMS'S that provide access to the data in a database managed try the DBMS
+
+Elephant SQL
+
+
+SQL
+- Structued Query Language
+- A programming Language used by nearly all relational databases to query, manipulate, and define data, and to provide access control
+
+SQL sublanguage vs Sql Dialect
+- DQL Dialect refers to SQL variant used by a database vendor.
+    - The SqL dialect we'll be using a PcSQL since the database vendor we'll be using a PostgreSQL
+SQL Sublanguages refer to the different categories of the statements/commands in SQL
+
+DDL 
+- Data Definition Language
+- USed for creating Database tables, defining the database structure Commands 
+    - Commands
+    - Create
+    - Alter
+    - Drop
+
+DML
+- Data Manipulation Language
+- All operations on individual rows
+    - Commands
+        -Select
+        -Insert
+        -Update
+        -Delete
+
+DCL 
+- Data Control Language
+-Commands
+grant
+revoke
+
+tCL 
+- Transaction Control Language
+
+- Commands
+    - Commit 
+    - Savepoint
+    - Rollbact
+    - Transact
+
+
+Database Design
+-Data Definition Language
+    - Concerned with designing the tables' information.
+
+    Alter Drop
+
+Constraints
+- Documentation link
+        * https://www.postgresql.org/docs/9.0/ddl-constraints.html
+
+- In creating tables, columns can have Constraints
+Used for setting guidelines in what data belongs to acolumn
+- types     
+    - Data types
+    - Not Null
+    - Unique
+    - Check (check the value)
+    - Exclusion (If I take two different rows one had to be true and the other must be false)
+    - Primary Key - unique and not Null
+    - Foreign Key
+
+Think about dictionaries for Project 0
+
+Keys
+-   Keyss are used to uniquely identify a data set, and also to establish relationships between entities 
+        Candidate Key   
+            - Minimal set of columns in a table that every other column depends on 
+            - The values of any candidate key can uniquely identify a rows
+        Primary Key
+            - Unique identifier for a row in a table 
+            - in implementation we choose one candidate key to identify the row
+        Foreign Key
+            - A set of columns which hold the values of some primary key to establish a relationship to another row 
+        Composite Key
+            - Any key that's more than one column
+
+Referential Integrity
+ (make sure you drop things in order if not these may not be able to be dropped later)
+- Refers to the accuracy and consistency of data within a relationship
+- Whenever a foreign key value is used it must rference
+
+
+Let's DTR in SQL
+- Relatinoships in SQL are defined by muliplicity
+1:1 (One to One)
+    - This means that two sets of data are unique to each other
+    - EX: A wizard can only have one apprentice, and an apprentice can only follow one wizard
+1:M (one to many)
+    - This means that one set of data can have many instances of the other data set
+    - Ex: A wizard can have many apprentices, but apprentices can only follow one wizard
+M:M (many to many)
+    - This means that both data sets can have many instances of each other
+    - Ex: in a wizard school, a wizard can teach many apprentices, and apprentices can learn from multiple wizards 
+
+Implementation of SQL relationships
+1:1 
+    - Put both entities in the same tables or separate the entites in two tables with a FK reference that is Unique and not Null
+1:M
+    - Two tables, FK that is not unique
+M:M
+    - 3 Tables one of which is a join/junction table
+
+Er Diagram
+
+- Shows the relationships of entity sets stored in a database
+- Visual representation of your DB design
+
+
+Why separate our data
+- Can't insert some data without also having some other data
+- Forced to delete some data in order to delete some other data
+- Redundancy can mean accidental consistency when updating
+
+Normalization
+- Designing a database in a certain way to ease data management
+- Normal Forms:
+    - 1NF
+        - Atomic values
+        - No repeating groups of columns
+        - No duplicate rows
+    - 2NF 
+        - Has to be 1NF
+        - No partial dependencies
+ ***    - No composite keys mean you're 2NF by Default
+    - 3NF
+        - Has to be 2NF
+        - No Transitive dependencies
+    ***         -https://www.lifewire.com/transitive-dependency-1019760
+
+
+Normalization in a nutshell
+"The data in a table must depend on the key (1N), the whole key(2NF), and nothing but they key (3NF)."
+

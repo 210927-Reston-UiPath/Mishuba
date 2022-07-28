@@ -1,0 +1,18 @@
+Hyperautomation
+
+
+Automation Hub
+-Liertally UiPath LInkedin
+- A collaborative space for sharing automation ideas as well as checking for progress on projects of interest
+- it is meant to acelerate the adoption of RPA across an organization by creating a Community of Interest for RPA, thus putting employees in the drivers' seat of automation initiatives
+- Automation Store in Automation hub alows business users to browse and search for ready-made automation that can be downloaded and used.
+
+Task Capture
+-UiPath Task Capture is a process discovery tool that helps you get detailed insights about automation candiates directly from your employees.
+- YOu can use Task Capture to capture to capture ech step that you perform in a process in the form of screenshots and cllect smart data about progress statistics
+- Bas on this captured data. Task Capture creates a detailed process definition document od PDF, which is a word document describiing the process and it XAML, that can ve easily exported to Automation Hub.
+
+Process Mining
+- UiPath Process Mining is a process mining solution that transforms data from your if systems info visual interactive dashboards, allowing you to see existing value decreases bottlenecks, and discrepancies, as well as understanding the root-causes and possible risks.
+- It offers real-time, valuable insights to improve business processes over time.
+

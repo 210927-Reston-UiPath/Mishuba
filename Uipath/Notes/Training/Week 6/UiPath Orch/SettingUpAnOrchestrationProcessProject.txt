@@ -1,0 +1,29 @@
+Orchestration Process Setup Checklist
+- Before starting to design a project using the Orchestration Process template consider the following setup checklist:
+
+Tasks/actions   
+- The Task/Action Admin role is defined:
+    * The task admin sees all the generated tasks and handles having them assigned to users.  Can also validate a task themselves. SHould be granted the following permissions in Orchestrator:
+        # 'Create' on Task/Action Assignment;
+        # ' View Edit Create' on Task/Action Catalogs;
+        # ' View, Edit, Create' on Tasks/Actions.
+    * If needed, Task User role is defined:
+        # the task user sees all the tasks assigned to themselves such that he is able to validate them. Should be granted the following permissions:
+            $ 'View, Edit, Create' on Tasks/Actions.
+    * The Robot Role has the correct permissions set for Tasks/Actions:
+        # 'View, Edit, Create' on Action Assignment;
+        # 'View, Edit, Create' on Action Catalogs;
+        # 'View, Edit, Create' on Actions.
+    * If your are running on an on-premises environment, Tasks are enabled:
+        # Follow the instructions found "here" to enable the asks feature on your environment.
+
+The Jobs long-running activities
+- In order to use the "Start job and Get Reference" and "Wait for Job and Resume" activities:
+    * This feature is only supported for Unattended envirionments. Starting a long-running process on an Attended Robot is not supported as the job cannot be killed from Orchestrator nor can it be effectively resumed.
+- Your Robot role should be updated with the following permissions:
+    * 'View' on Processes;
+    * ' View, Edit, Create' on Jobs;
+    * 'View' on Environments.
+
+General 
+- As the process can be pciked up by other robots in the same envirnment, local resources (like local apps and files) should be made available to all robots which can execute the process.

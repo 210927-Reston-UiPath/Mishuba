@@ -1,0 +1,12 @@
+DataTables
+
+- DataTable variables represent a type of variable that can store big pieces of information, and act as a database or a simple spreadsheet with rows and columns.
+
+WOkring wiht worksheets
+- UiPath offers 2 separate ways of accessing and manipulating workbooks:
+	-Workbook or File access level
+		Workbook activites executed in the background
+		- Doesn't require MS Excel to be installed
+		- Works only for xls & xlsx files
+		- Excel or Excel App integration
+		- xlsm, csv, xls, xlsx

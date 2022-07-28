@@ -1,0 +1,6 @@
+add 5 associates to the associate table
+get trainers that are based on a certain campus
+get the number of trainers at certain campuses 
+    give the number in desceding nd ascending order
+Use joins, set operations, and subqueries to
+    get all 

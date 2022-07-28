@@ -1,0 +1,4 @@
+Naming the states in a State Machine is very important for maintenance and future development;
+
+In UiPath Studio, the order of the Transitions shownn in each State is very important, as it matches the order in which they are evaluated.
+

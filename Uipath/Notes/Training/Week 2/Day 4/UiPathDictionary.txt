@@ -1,0 +1,143 @@
+####
+
+
+https://www.youtube.com/watch?v=6DGvWojJPe0
+
+Dictionary is a collecion of keys and values
+	Every Dictinary has a pairs of keys and values.
+	Dictionary<TKey, TValue>
+The Dictionary<TKey, TValue> is a class of System.Collections.Generic namespace. It can store any data types in a form of keys and values. It provides a mapping from a set of keys to a set of values.
+
+System.Collections.Generic namespace can be imported in UiPath Studio.
+
+
+System.Collections.Generic.Dictionary<TKey, TValue>
+
+	The System.Collections.Generic
+		-Namespace
+
+	.Dictionary
+		-Class
+	
+	<TKey, TValue>
+		-Parameters
+
+System.Collections.Generic.Dictionary<TKey, TValue>
+
+Parameters
+	-Tkey - The type of keys in the dictionary
+	-TValue
+		-The type of values n the dictionary
+	
+	Example
+		- Dictionary<string, string>
+		- Dictionary<string, int>
+		- Dictioanry<string, object>
+		- Dictionary<int, string>
+		- Dictionary<string, Boolean>
+
+	Keys		Value
+	Apple		It is a fruit
+	Elephant	It is an animal
+	Todays Date	06/22/2019
+	One		1
+
+How to create Dictionary
+	create a variable of Dictionary with Variable type 
+Dictionary <String, Object> 
+	or 
+IDictionary <String, Object>
+
+Name		Variable type
+Dictionary    Dictionary<String,Object>
+
+We must initalize the dictionary
+	Dictionary = new Dictionary(Of String, Object>
+
+What is IDictionary
+IDictionary is the base interface for generic collections of key/value pairs. Create a Dictionary and access it through the IDictionary Interface.
+
+Name		Value
+Dictionary	IDictionry<String,Object>
+
+We must initialize the Dictionary
+	Dictionary = new Dictionary(Of String, Object>
+
+	Assign
+	Dictionary  =    new Dictionary(Of String,Object)
+
+How to Add Items to Dictionary
+
+- Install 
+Microsoft.Activities.Extensions
+
+from Manage Package to use Dictionary Activities.
+	- this is required to use the dictionary package in UiPath.
+
+- Drag and Drop the "Add to Dictionary" Activity to UiPath Studio. Once you drop the activity It will show one popup to select Types of Key and Value.
+
+It will be under Microsoft-Activities-Extensions-Statements
+
+
+Now drag and drop the "Add to Dictionary" activity to UiPath Studio.
+Once you drop the activity. It will show one popup to select Types of Key and Value.
+
+Choose the Type of Key and Value as per requirement and Press Ok.
+
+Enter the Key/Value and the name of the Dictionary to add items to Dictionary.
+
+
+How to clear Dictionary?
+- Drag and Drop the "Clear Dictionary" Activity to UiPath Studio.
+Once you drop the activity. It will show one popup to select Types of Key and Value.
+
+- Choose the Type of Key and Value as per requirement and Press Ok.
+
+- Enter the name of the Dictionary to Clear all the items from Dictionary.
+
+How to Get Value from Dictionary>
+- Drag and Drop the "Get From Dictionary" Activity to UiPath Studio to get the value of given Key from Dictionary.
+
+-Once you drop the activity. It will show one popup to select Types of Key and Value.
+
+-Choose the Type of Key and Value as per requirement and Press OK.
+
+Enter the name of the Dictionary, Key and variable in Value.
+
+How to check for an existing key in Dictionary?
+
+- Use this Activity to check whether a specified Key exists in the dictionary or not.  Drag and Drop the "Key Exists in Dictionary" Activity to UiPath Studio
+
+- Once you drop the activity. It will show one popup to select Types of Key and Value. Choose the Type of Key and Value as per requirement and Press Ok.
+
+- Enter the name Dictionary and the key and variable in Result.
+	-The result is Boolean
+
+How to Remove Elements from Dictionary?
+- Use this Activity to Remove an item with the specified key from the Dictionary. Drag and Drop the "Remove From Dictionary" activity in UiPath Studio.
+
+-Once you drop the activity. It will show one popup to select Types of Key and Value.  Chosse the Type of Key and Value as per requirement and Press Ok.
+
+Enter the name of the Dictionary, Key and variable in Result.
+	- Boolean type
+
+
+How to Check for an Exisitng Value in Dictionary?
+	-Use this Activity to check whether a specified Value exists in the dictionary or not.  Drag and Drop the "Value Exists In Dictionary". Activity to UiPath Studio.
+
+	-Once you drop the activity. It will show one popup to select the Types of Key and Value. Choosing the Type of Key and Value as per requirement and Press Ok.
+
+	-Enter the name of the Dictionary, Value and variable in Result.
+
+
+How to loop through a dictionary in UiPath?
+-If you want to loop through Dictionary to access each Key-Value pair the use the For Each Activity.
+-Create the Dictionary and add items to it.
+-Take a For Each activity which will iterate over each item (key-value) in dictionary.
+
+Display the key-value pair using Message Box activity.
+
+
+
+
+

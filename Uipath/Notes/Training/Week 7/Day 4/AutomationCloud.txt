@@ -1,0 +1,324 @@
+Measuring Automation (Why Is it IMportant?)
+
+- YOu can highlight where automation has the most impact, plan future iterations, and track your return on investment (ROI).
+
+How can you measure automation>
+- To measure automation, you need to establish concrete goals taht you can use to check your progress towards reaching those goals.
+
+    Three easy steps to achieving above
+        * Start with tracking and measuring your operational metrics (erors utilization, success rate, and so no);
+        * Then tie these operational results to business outcomes (ROI, process outcomes) - more on the difference between operational and business KPIs below;
+        * Finally, measure each performance metric every month, and then total them for every year so you can get a comprehensive understanding of pace and scale.
+
+What can you measure?
+    Automation analytics spans across two types of metrics: operational KPIs and buisness KPIs.
+        1 Operational KPIs contain informaiton that relates to the excution of automation itself, but they don't include things like time saved and money svaed.
+            - errors
+                * Why: Robots don't need coffee, but they can't perfomr perfectly if blcked by obstacles beyond their control. For instance, Robots may be unable to finish a process if any application fails or is under maintenance.
+                * How: It's important to track any errors and the reasons behind them. When you look back a t the trends over time, you'll be able to see patterns and take action to remedy them.
+            - Robot utilization 
+                * Why: Keeping track of how long your Robots have worked each day is important or capcity planning. Robot utilization shows if your Robots could work harder or if you're asking too much of them.
+                * How: You'll want to look at utilization in terms of hours per day, with 24 hours being your max for Unattended Robots and the number of hours a human is working per day with Attended Robots, It's a good idea ot have a few checkpoint for utilization:
+                    $ Average hours worked per day (for all Robots)
+                    $ Hours worked per day over a certain amount of time
+                    $ Hours work\ed per day for specific Robots you think are over- or under-utilized
+                * A low daily utilization rate means you could give your Robots more work to do, while a high dayily rate might indictae an automation backlog. In the case of a high utilization rate, it's most likely time to add more Robots to distribute the workload.
+            - Success rate 
+                * Why: This goes without saying, but an automation that fails isn't all that useful. That's why tracking the success rate is so important!
+                * How: You'll want to aim for a success rate of around 90%. It's surpirsing and seems counterintuitive, but a success rate around. 100% could mean that some failures aren't being correctly tracked
+            - Duration
+                * Why: Similar to the success rate, there are often misconceptions about process duration. It's exciting to see that a process ran super quickly, but short runtimes might mean that an automation failed.
+        2 Business KPIs tie what happens in your RPA deployment (operational) to how it benefits your company (business). THese are the metrics that you can use to acutally grow and scale RPA in your orgaization.
+            - ROI 
+                * Why: You'll want to think of automation ROI in terms of at least two perspectives: hours saved and moeny saved. let's say oyur business is dependent on a lot of time-intensive processes, like manual data entry from PDFs. The speed with which employees can process nd enter information is limited, even if they're master typists. So, we'll assume it takes 15 mintues to prcess each PDF. With RPA, this kind of manual data entry can be sped up to a matter of seconds. NOt only iwll this increase the number of PDFs processed per day, but you'll also free up a lot of employee time activities that can't be automated. The hours spend by an employee have a cost, usually one much higher than that of a software robot. Periods of high demand can be especially expensive to compensate employees for. You're either paying extra for overtime work or finidng, hiring and training temporary employees you can't keep once demand returns to normal. Robots, however, are scalable. When those labor-intensive periods come up, you can automate the manual labor and utilize those svaings in other areas.
+                * How: Robots can accomplish grueling manual tasks in minutes or even seconds. It's important ot note how long a process would take a human to manually complete so that you can compare this baseline to how long a Robot took to do the same thing. From-here, it's easy ot caculate the time saved by automation. YOu can do the same thing to find financial savings- by attaching a dollar value to an employee's time. Keeping the time in hours is the easiest calcution since most jobs have an hourly pay rate.
+            - Process outcomes 
+                * RPA is used to get rid of mundane human tasks, so konwing what Robots have accomplished for the business is paramount. Every automation is supposed to achieve sometjing, so knowing and defining that end goal is important. Building on our previous example of manual data entry from PDs, let's look at one of the most common process outcomes: invoice processing. You would most likely want to offer more competitive SLAs and, to this end, aim to reduce the amount of time it takes for an invoice to be processed rom the momoent it is received to when the amount is paid to a vendor. With RPA you can easily track ho wlong this takes.
+                * How: This is where you want to look at the same metrics you were tracking before you used RPA and apply your RPA results. In our invoice example, you'll need to compare the amount o time it took to process an invoice pre-RPA and post-RPA.
+            
+What is UiPath Insights and Who Is It for?
+    Insights is UiPath's analystic souliton. It provide analyatic capabilities by using any combination o available business and operational metrics. It allows you to build customizable views specific to your needs and priorities. It also comes with several dashboar templates (Robots, Processes, Queues and Business ROI) that are intended to address immediate automation measurement needs from abusiness andOerational perspective. 
+
+What are the key features of UiPath Insights?
+    Here's what makes UiPath Insights an end-to-end analytics solution:
+        * Dynamic dashboards    CUreated library of dashboard templates- including Robots, Processes and Queues
+        * Shareable Reports     Schedule or share dashbaords and Reports
+        * Shart alerts          Create alerts for goals and threshold- setup notifications for critical events
+        * Definable KPIs        Customize the ROI dashboard template to track time and money saved
+        * Deployment options    Available on-premise or as part of Automation Cloud
+    Who is it for?
+        Insights is an end-to-end analytics solution for users across an entire organization. From buisness users (analysts, process and buisness owners, Executive leadership) that need to define, track, measure and share process KPIs and business outcomes, to users across the Automation Cneter of Excellence (COE Leads, RPA developers, Solution architects, Buisness analysts, project managers, RpA operations managers) with an interest in a holistic view of their RPA deployment.
+        Different stakeholders have different objectives with regards to tracking and measuring RPA... THus, when building insights, we took into account the goals, needs and tools required by each stratgic personal thorughout the automation journey:
+    How can you access it?
+        UiPath Insights is available both as a first-party service in Automation Cloud an on-premises. While addressing the same need with the same tools, UiPath Cloud Insights and UiPath Insights on-premises are currently different from a user experience perspecitve.
+    How does Insights fitr into the larger pciture of UiPath's Platform?
+        UiPath's Platfrom, responsible for millions of business-critical automation operations with strategic busines outcomes. 
+        The UiPath Platfomr now covers all the stages of an RPA implementation and the deployment can be done either on-premises, in cloud or using a hybrid approach:
+        failed
+            * Discovering through Atuomation Hub, Process MIning, ask Mining and Task Capture tool
+            * Building through the UiPath Studio family, Document Understanding and pre-built automation componnents and integrations
+            * Managing the automation ecosystem via Automation Cloud, Orchestrator, AI Center, Test suite and Data service
+            * Running it using the different types of UiPath Robots
+            * Engaging the automation with human uers via Assistant, Action Center, Apps and Chatbots
+        Automation analytics, provided to our customers through the Insights solution (either on-premises or cloud) connects our platforms' loops by enabling the ability to manage the automation, by measuring it.
+            By measuring the performance of automation and the impact that it brings to their business, customers will be able to advance towards the fully automated enterprise.
+
+What are some of the things you can achieve by using UiPath Insights?
+    Track and measure Robot utilization, performance and accuracy
+    Share business-specific metrics with organization-wide stakeholders
+    Visualize process-level automatin trends in dashboards
+    Track and analyze business outcomes to guide process improvement
+
+Who can benefit rom using UiPath Insights?
+    Automation COE LeadsBusiness/Process ownersBusiness analystsBusiness executives
+
+Accessing Cloud Insights and Getting the permissions Needed
+    Could Insights is available as a first-party service in UiPath Automation Cloud. To start using it, you need an Enterprise license. If you simply want to test it out, you can do that through our Enterprise Trial license. 
+        On the license page, click the Request Enterprise Trail button
+            Enter you details in the corresponding fields. These details are used by our sales representatives to contact you before the trail period expired regarding your potential upgrade to the enterprise plan
+                Click Request and you're good to goal
+Accessing the UiPath Cloud Insights
+    A user with Admin rights in Automation Cloud can enable Cloud Insights for a Tenant with the following steps:
+        1 From the left navigation panel, open the Admin page
+        2 Under the Tenants context menu, find the tenant you are interested in enabling Cloud insights for 
+        3 From the menu, select the Edit Services options
+        4 Check the box next to Insights and then hit the save button
+        When the product is done setting up, you will see the Insights icon in the let navigation panel
+            You can use it at any-time to access Insights
+
+Types of permissions  
+    5 types of permissions
+        Viewer
+            This grants view-only permissions in Cloud Insights. viewers will only be able to view the template dashboards and dashbaords shared by users with enhanced permssions and will not be able to create their own.
+            They can not only see the dashboards, but also downlaod them or have them sent as PDFs.
+        Designer
+            Users with this permission have edit/create/delete rights in Cloud Insights. Designers may edit dashboards, create new ones, make copies of the templates to their "My Dashboards" section, or delete dashboards.
+                Designers can also share with other users in the tenant.
+        Admin
+            An admin is a user who can configure Cloud Insights. Admins have access to User Management. They are the only users with the ability to enter values or the Tenant ROI dataset. And they have the same dashboard permissions as viewers
+                Admins are by default assigned to users in the Admin group in Automation Cloud. If admins are expected to edit dashboards, they can be granted the Designer permssion on top of Admin.
+        ROI Viewer and ROI Editor
+            ROI Viewer and ROI Editor and both auxiliary permissions. They must be added on to one off the two main permissions: Viewer or Designer. Both these permissions are specifically created to control who can see or make copies of the Business ROI dashboard template and who has access to the ROI dataset.
+                Users assigned to ROI viewer will have view-only access to the Business ROI template Dashboard. They will be able to interact with the dashboard, but they will not be able to copy it ot their own dashboard space (even if they have designer permission).
+                    Users assigned to ROI Editor will have the ability to copy the Business ROI dashboard template into their "My Dashboards" section. They will have access to the ROI baseline data, which will enable them to build new widgets containing the numbers entered by the Admin for the ROI dataset. To be asssigned to ROI Editor, users must have the Designer permission granted first.
+
+Granting access to other users
+    ONly users with Admin Permission may grant access to Cloud Insights to other users. An Admin may grant access to others via the following steps:
+        1 From the top-right menu of Cloud Insights, selelct User Mangement:
+        2 Search for the desired user, assign the desired role, and hit Save:
+
+
+Interacting with Cloud insights
+    * To enable Insights as a first-arty service in Automation Cloud, Admins have to go to the Admin page, navigate to the Tenants tab, click Edit Services and check the box next to Insights
+    * To access Insights, simply click on the icon on the left navigation panel.
+    * There are 3 main tabs in Insights: UiPath Templates, Tenant, and My Dashboards
+    * In UiPath Templates, there are 3 pre-loaded dashboards: Processes, Queues, and Robots. A fourth one, Business ROI, is available for users with ROI Viewer or ROI Editor permissions.
+    * The Tenant tab contains the dashboards created and shared by Designers.
+    * In My Dashboards, all the dashboards that the user created will appear including those coming from copies of the templates under UiPath Templates.
+    * Each Dashboard consists of different widgets that the user can interact with. FOr any dashboard under UiPath Templates, users have filters by date and by Orchestrator folder.
+    * Clicking on ap process name in any widget of the Processes dashboard will turn the process into a filter and the entire dashboard.
+
+
+What is available in the UiPath Templates tab for all the users?
+    Processes
+    Robots
+    Queues
+
+Working with and Customizing the Default Dashboards
+    The Cloud Insights default dashboards
+        There are four pre-loaded dashboards, available in the UiPath Templates tab. They were built by the UiPath team to answer to the most common automation analytics questions.
+            *Processes
+                This provides highlights on metrics such as the run time of your processes their success rate, as well as details on the errors encountered
+            *Queues
+                THis focuses on the most important metrics related to your successful and failed transactions. It also breaks down the exceptions affecting these transactions
+            *Robots
+                This tracks Robot utilization, productivity, and errors
+            *Business ROI
+                This goes beyond operational data and provides metrics on the actual impact generated by your robotic workforce within the business. It achieves this by tracking the money and time saved by your automation deployment
+        With the Designer permission, you can take these dashboard templates copy and edit them to better suit your needs. Below you can see how.
+
+* TO Customize any of the pre-loaded dashboards by creating copies, you need Designer permission (and ROI Editor for Business ROI).
+* To start Customizing, go to the UiPath Templates tab and create a copy of the template you are interesed in customizing. The copy will become avialable in My Dashboards.
+* From the Setting Menu of a dashboard, you can change the time zone. And you can also enable "run on load" and "automatically refresh dashboard". Additionally, for each tile you can set the refresh frequency between "do not refresh" and "refresh every", for which you can set the units.
+* Turning on Automatic refresh of the entire dashboard, or for the individual tiles will increase the loading time, ths negatively impacting the overall performance.
+* In the edit mode of a dashboard, you can add, edit or delete the tiles.
+* To add a title, click "Add tile" and select visualization You will then get to a view called "choose an explore". These are grouped in 5 categories: Jobs, Queues, Robot Logs, Process Manual Values, and Queue Manual Values.
+* You can add fields from the left as dimensions or measures. A dimension is a groupable field that can be used to filter query results, like an attribute, a fact, or even a numerical value.  Measure are based on a function, like sum, average, minimum, maximum, and so on.
+* Once you added dimensions and measure, you need to click RUn.
+* The default visualization type can be changed from the upper bar.
+* Filters can be added by hovering on the fields on the left until the filter icon becomes visible, then clicking on it. To apply the filters, you need to click RUn.
+* To add custom fields, click on the Add butoon on top and select the type: custom dimension (X axis), custom measure (Y axis) or table calculation. This will apply a calculation to all the values in a table, using a formula inputted by the user.
+* Editing individual widgets is done by selecting the option with the same name from the widget in the dashboard. This will take us to the Edit tile view, with the same opitons as before.
+* Dashboards can be downloaded as PDF or CSV.
+* Schedule delivery, another option from the standard menu, allows the user to send the dashboard to different email addresses (not necessarily Automation Cloud users).
+
+Which role can customize the dashboard templates shown under UiPath Templates?
+    A Designer cannot and an Admins cannot either.
+     * The dashboard templates cannot be customized by anyone. Designers can create copies and customize the copies.
+
+On a dashboard created using the templates available, can you also add tiles or just edit the existing one?
+    * Both edit the existing tiles and add new ones.
+
+Measure
+    - a field based on a function, like sum, average, minimum or maximum
+Table calculation
+    - A calculation for all the values in a table, using a formula inputted by the user
+dimension
+    - A groupable field that can be used to filter query results, like an attribute or a fact
+
+
+Creating and Managing alerts
+    - Steps to create an alerts 
+        * Hover over the widget that contains the information you are interested in staying informed on. The alert sign appears in the shape of a bell icon.
+        * As you click on it, you can add a custom title.
+        * In the Conditions field, you need to select an operator, such as "is greater than", "is less than" or "is equal to" and input the control value.
+        * You need to input the recipients for the alert.
+        * You can finally set the frequency of the alert.
+
+Alerts can be scheduled to be sent to other email addresses than the one of the user scheduling the alert.
+
+
+Working with the Business ROI Dashboard
+    - Configuring the ROI dataset (as an Admin):
+        * From the top right menu, select Configure ROI dataset.
+        * Select the input preference: Use Process or Use Queue.
+        * For each process in the list, you need to input the manual time in minutes that it takes ahuman to complete the process, and teh hourly cost. Consider end-to-end processes here, not individual transactions.
+        * Besides the two standard columns, you can add up to 10 custom columns. In our case, we've added FTE to reflect how many people are involved for each process.
+
+Working with the Business ROI dashboard (as an ROI EDitor)
+    * By default, this dashboard contains widgets for money saved, time saved in hours, as well as total money saved as the year's goal.
+    * We can copy the dashboard just as we do will the others. The copy will appear under My Dashboard, with the name that we choose.
+    * Every widget can be edited from the Tile actions menu, by selecting Explore. From there, dimensions and measures can be added.
+    * If changes are made, a Run is needed to make the results available.
+
+ROI editors can add up to 10 customs columns to the ROI dataset
+    - False 
+
+Which of the following indicators appear in the Business ROI dashboard template?
+    Money saved
+    Time saved in Hours
+    Total money saved (as the year's goal)
+
+User Management in Cloud Insights
+    What can Designers do?
+        They have rights to edit, create and delete dashboards in UiPath Cloud Insights.
+        They can create copies of the dashboard templates under UiPath Templates.
+        Inside a dashboard, they can re-order the widgets
+        They can edit the name of the dashboard and of the individual tiles.
+        They can download dashboards and schedule them for delivery.
+        They can create brand-new dashboards from scratch, where they can add tiles.
+        They can share dashboards with the other tenant users.
+    What can Viewers do?
+        They can view the dashboard templates under UiPath Templates and dashboards shared by designers under Tenant.
+        They can download dashboards and schedule them for delivery.
+        THey can also clear the cache and refresh.
+    What can Admins do?
+        They can canfigure UiPath Cloud insights by:
+            - Adding and removing users
+            - Editing users by adding and removing permissions.
+            - They can configure the ROI dataset by inputting information and adding custom columns.
+        On the actual dashboards, Admins have simple Viewer permissions> But they can grant themselves more powerful permission if required.
+    What can ROI Viewers do?
+        This is an auxiliary permission and it typically comes on top of Viewer, although ti can be paird with Designer also.
+            If it's paired with Viewer:
+                *It offers view-only permissions to the Business ROI dashboard.
+                * ROI Viewers can also download the Business ROI dashboard or schedule it for delivery.
+            It it's paired with Designer:
+                * It offers view-only permissions to the Business ROI dashboard.
+                * It offers access to the Process Manual Values and Queue Manual Values, but it doesn't grant access to the ROI template formulas and it doesn't allow dashboard copying.
+                * ROI Viewers can also download the Business ROI dashboard or schedule it for delivery.
+    What can ROI Editors do?
+        This is an auxiliary permission and it typically comes on top of Designer, allowing users to:
+            View, download and schedule for delivery the Business ROI dashboard.
+            Create a copy and customize the Business ROI dashboard.
+            Add new tiles or edit the exisitng ones in the Business ROI dashboard copied.
+
+Which of the following actions can you perform in Coud Insights as a user with Designer permissions?
+    Edit widgets
+    Create new dashboards
+    Delete your own dashboards
+    Create alerts
+    Share dashboards to Tenant
+    Download a dashboard as a PDFs
+
+Which permissions allow downloading dashboards as PDF and scheduling dashboards for delivery via e-mail?
+    Viewers, Designers, and Admins
+
+Who can add in Cloud Insights users that were not added In Automation Cloud first?
+    All Admins
+
+The ROI Viewer auxiliary role can be granted only to users having the Viewer role, not to those having the designer one
+    False
+
+
+Practice 1: The Success Rate for all Jobs
+    Mission: Have the success rate for all jobs displayed as a single value visualization. Then add a custom title (such as "How successful are your jobs?") and display the value in your favorite color.
+        Step 1
+            Start from a dashboard  
+                Open an existing dashboard or create a new one.
+        Step 2
+            Add a tile
+                Add a new tile and then choose Visualization.
+        Step 3
+            Add the Success Rate
+                1. Click on the Jobs Explore
+                2. Click on the Jobs fields
+                3. Click on the Success Rate Measure
+        Step 4
+            Change the title
+                Naviage to the top let of the tile and replace "Untitled" with the name you like or with the one suggested.
+        Step 5
+            Change the color
+                To change the color, click Edit and then you can adjust the value color shown.
+
+Practice 2: Top 10 Processes with the Most Faulted Jobs
+    Mission: Configure a tile to display the top 10 processes with the most faulted jobs. Use a scatterplot as the layout for the tile and make it reflect the number of faulted jobs as size points.
+        Step 1
+            Open a dashboard
+                Open an existing dashboard or create a new one.
+        Step 2
+            Add a tile
+                Add a tile and then choose Visualization
+        Step 3
+            Choose the measures
+                1. Click on the Jobs Explore
+                2. Click on the Jobs fields
+                3. Click on the Process Name field, Faulted Jobs Measure, and Processes Ran Measure.
+        Step 4
+            Change to scatterplot
+                1 Press Run
+                2 Choose the scatter plot visualization
+        Step 5
+            Change the view the reflect the number of processes run
+                To show the size of the points by the number or processes run:
+                    1. Click on edit.
+                    2. Navigate to the series tab shown here.
+        Step 6
+            Size the points by porcesses ran
+                Select the field called Jobs Processes Ran shown above.
+
+Practice 3: Top 10 Processes by Number of Runs and Job strategic
+    Mission: Configure a tile to display the top 10 processes by number or runs and job state in the past 30 days. Display the results as a stacked column chart.
+        Step 1
+            Open a dashboard
+                Open an existing dashboard or create a new one.
+        Step 2
+            Add a tile
+                Add a tile and then choose visualization.
+        Step 3
+            Choose the fields
+                1 Click on the Jobs Explore
+                2 Click on the Jobs fields
+                3 Click on the Process Name Field, Processes Run measure, and pivot this date on the Job State field shown above.
+        Step 4
+            Add the filter for the last 30 days
+                1 Click the drop down next to the End Dat field.
+                2 Press the filter button next to the Date field.
+                3 You will now see the fitler added to the top of the Tile.
+                4 Change the last 7 days to 30 to finalize the filter.
+        Step 5
+            Display the results as a stacked column chart
+                1 Click Edit and then click on the Plot tab
+                2 Select the option to stack the columns.
+                3 Additionally, if you want to change the location of the legend, click on the Plot tab and scroll to the bottom. You can move the legend to the center, left, or right o the Visualization.
+                

@@ -1,0 +1,19 @@
+This part is about converting strings to doubles and ints 
+
+how to use integers in UiPath
+CInt()
+
+Convert.ToInt32()
+Convert.ToInt....*you get the picture
+
+Integer.Parse()
+
+
+how to use doubles in UiPath
+
+CDbl()
+
+Convert.ToDouble()
+
+Double.Parse()
+

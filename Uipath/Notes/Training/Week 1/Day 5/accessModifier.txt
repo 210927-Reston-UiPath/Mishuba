@@ -1,0 +1,41 @@
+## Access Modifer
+
+4 access modifiers
+- Public 
+    Can be access from anywhere.
+    (public library)
+
+    example
+    Public Class Mishuba
+
+- Protected
+    Can only be access from within the class or from a child of that class.
+    (family heirloom)
+
+- Friends 
+    within the same namespace
+    can only be used in module, interface or namespace level.
+
+    example
+
+    Friend TsunamiFlow as String
+
+    You can declare a friend element at the .....
+
+- Protected Friend
+
+    Protected Friend Nifaqe as String
+
+- Private
+    a secret
+
+    Private Eno as String
+
+Private Protected 
+    can only be access by children within the same namespace
+
+    Private Protected SpecialSkill String
+
+    accessed only from within the same class, as well as from derived classes fond in the same assembly as the containing class.
+    You cannot declare it witin an interface or structure, nor can you declare it at the level of a source file or namespace, inside an interfacde or a structure, or in a procedure.
+

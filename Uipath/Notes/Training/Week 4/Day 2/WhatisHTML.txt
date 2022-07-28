@@ -1,0 +1,101 @@
+What is html?
+- Stands for hyper text markup langauge
+
+How is your webpage read by the browser?
+- 4 Steps:
+    1. Request 
+        - CLient requests
+    2. Response
+        - Server responds
+    3. Build
+        - Browsers
+    4.
+        -
+
+HTML Version?
+- The web hypertext application technology working group (WRATWG) is in charge of maintaining this living standard.
+
+Semantic Elements
+- HTML5 introduced semantic Elements
+- these are elemnts taht clearly describe their meaning in a human readable way
+
+What is CSS
+- Cascading Style Sheets
+    - Applies style in webpage using  cascading algorithm
+        - really fancy way o saing style is applied in layers
+    - Since html describes the structure of the webpage, css describes the style.
+
+Ways to include css i html
+1. Inline
+    - uses style attribute of html tags
+2. Internal
+    - Uses Style tag found in head
+3. 
+
+How styles are applied
+-We apply styles using rules in css.
+-Rules are a key value pair of what element property to style, and the style that should be applied.
+
+
+Order in which styles are applied
+1. IMportance
+    - adding important to a rule ensures that the stle always get applied
+Specificity
+    - order  (most specific to least specific)
+        a. Inlineb. 
+        b. include
+        c. class/attribute/pseudo class
+        d. element/pseudo-element
+    -Source Order
+
+CSS BOX MODEL
+-Margin
+-Border
+-Padding
+-Content
+
+Selectors
+
+document.getElementbyID
+document.getElementby
+document.getElementby
+
+Events
+- Any type of interaction with the web page
+
+-Dyanamic Web Design
+
+-A web is dyanmic with user interaction
+
+Event Handling
+-Funvtions that get called when event happens
+
+Event Listeners
+- Added to elements call an event handler when a certain event occurs
+
+Javascript
+
+create by brendan Eich in about a week
+    @BrendanEich
+
+functional language (does have some OO support)
+    The 00 support is more object based and not object oriented though
+    
+    Loosely typed (but that does not mean it doesnt't have data types
+    
+    Interpreted 
+        not compiled
+
+ECMASCRIPT
+- Standardization of Javascript
+- Just like how HTML has HTML5, JS has E56 the latest standardized Version
+
+Sunbons
+
+Symbols
+Undefined
+Null
+Boolean
+oBjects
+Numbers
+Strings

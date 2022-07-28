@@ -1,0 +1,29 @@
+What is the ReFramework?
+    - A framework is a template that helps you design (automation) processes.
+    - The Robotic Enterprise Framework (ReFramework) is a UiPath Studio template built using state machines. It acts as the starting point for production-ready RPA projects, especially the ones that require scalable processing. It is created to fit all of the best practices regarding logging, exception handling, application initialization, being ready to tackle any business scenario. 
+        * The template contains several pre-built state containers for initializing applications, retrieving input data, processing the data, and ending the transaction. All of these states are connected through multiple transitions which cover almost every need in a standard automation scenario.
+
+Why use ReFramework?
+- Robot stops on the first unexpected error
+    * ReFramework has a built-in exception handling mechanism to catch all unexpected exceptions and to try continuing the process execution.
+- An application crash stops the automation
+    * Usually, when an application stops responding, we humans restart it and continue our work. The ReFramework does something similar, having a built-in retry mechanism to recover from unexpected application exceptions. All applications used in the process are closed, then the process goes back to the Initialization state and retries the current transaction.
+    * When an Orchestrator queue is used for input data, the Retry feature of the Queue must be used, instead of the ReFramework retry mechanism.
+- Invalid transaction data stops processing all other transactions
+    * The ReFramework uses a special exception type, BusinessRuleException, for the case when the input data is not valid. In this case, the transaction is marked as 'failed' and the execution continues with the next transaction. 
+    * It is the responsibility of the RPA Developer to implement the logic to raise BusinessRuleExceptions when the input data is not valid.
+-Hardcoded and/or sparse values for File Paths, emails, 
+    * The ReFramework has a centralized configuration file and also uses assets in Orchestrator for an easier management of the configuration value after deployment.
+-Difficult to troubleshoot an error in prodution.
+    * To help with the maintenance of automation projects, the ReFramework has a logging mechanism and screenshots are taken automatically when an unexpected error occurs.
+- Large automation projects are difficult to maintain.
+    * The ReFramework template is built using a state machine with different states and workflows for each stage of the process (starting the process, getting the data, processing the data, ending the process). This way, it is easier to organize the workflows in the project.
+
+The ReFramework Architecutre
+- The REFramework is implemented as a state machine workflow, which is a kind of workflow that defines states that represent a particular circumstance of the execution. Depending on certain conditions, the execution can transition from one state to another to represent the steps of a process. 
+
+we can use ReFramework with Orchestrator Queues
+    - this means taking the transaction data from the queue and entering it into our UiDemo application.
+We can use ReFramework without Orchestrator Queues
+    - The second way is instead of using queue items, e use transaction items of a different type such as rows from an Excel file (DataRow), Email (MailMessages), or paths to files (String).
+        * It uses the same data structure, only that it will read it from a different source, not an Orchestrator queue, and use each item of the input collection as a transaction.
